@@ -1,0 +1,17 @@
+$font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segfoe UI", Roboto,
+  Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-seri;
+
+:root {
+  --primary-color: #3b56fb;
+  --secondary-color: #565759;
+  --third-color: #a14595;
+  --bg-color-success: #24a213;
+  --bg-color-danger: #d70731;
+  --bg-color-info: #07d7d5;
+  --bg-color-warning: #c8d707;
+  --bg-color-primary: var(--primary-color);
+  --bg-color-secondary: var(--secondary-color);
+}
+
+@import "./source/reset.scss";
+@import "./source/margin.scss";

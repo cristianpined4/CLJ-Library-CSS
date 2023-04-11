@@ -1,0 +1,50 @@
+$margenes: 0.6rem, 1.2rem, 1.8rem, 2.4rem, 3rem;
+
+@mixin my($m) {
+  margin-top: $m;
+  margin-bottom: $m;
+}
+
+@mixin mt($m) {
+  margin-top: $m;
+}
+
+@mixin mb($m) {
+  margin-bottom: $m;
+}
+
+@mixin mx($m) {
+  margin-left: $m;
+  margin-right: $m;
+}
+
+@mixin ml($m) {
+  margin-left: $m;
+}
+
+@mixin mr($m) {
+  margin-right: $m;
+}
+
+$i: 1;
+@each $m in $margenes {
+  .mt-#{$i} {
+    @include mt($m);
+  }
+  .mb-#{$i} {
+    @include mb($m);
+  }
+  .ml-#{$i} {
+    @include ml($m);
+  }
+  .mr-#{$i} {
+    @include mr($m);
+  }
+  .mx-#{$i} {
+    @include mx($m);
+  }
+  .my-#{$i} {
+    @include my($m);
+  }
+  $i: $i + 1;
+}
