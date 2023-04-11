@@ -1,0 +1,50 @@
+$relleno: 0.6rem, 1.2rem, 1.8rem, 2.4rem, 3rem;
+
+@mixin py($p) {
+  padding-top: $p;
+  padding-bottom: $p;
+}
+
+@mixin pt($p) {
+  padding-top: $p;
+}
+
+@mixin pb($p) {
+  padding-bottom: $p;
+}
+
+@mixin px($p) {
+  padding-left: $p;
+  padding-right: $p;
+}
+
+@mixin pl($p) {
+  padding-left: $p;
+}
+
+@mixin pr($p) {
+  padding-right: $p;
+}
+
+$i: 1;
+@each $p in $relleno {
+  .pt-#{$i} {
+    @include pt($p);
+  }
+  .pb-#{$i} {
+    @include pb($p);
+  }
+  .pl-#{$i} {
+    @include pl($p);
+  }
+  .pr-#{$i} {
+    @include pr($p);
+  }
+  .px-#{$i} {
+    @include px($p);
+  }
+  .py-#{$i} {
+    @include py($p);
+  }
+  $i: $i + 1;
+}
