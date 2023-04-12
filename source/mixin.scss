@@ -1,0 +1,55 @@
+@mixin my($m) {
+  margin-top: $m;
+  margin-bottom: $m;
+}
+
+@mixin mt($m) {
+  margin-top: $m;
+}
+
+@mixin mb($m) {
+  margin-bottom: $m;
+}
+
+@mixin mx($m) {
+  margin-left: $m;
+  margin-right: $m;
+}
+
+@mixin ml($m) {
+  margin-left: $m;
+}
+
+@mixin mr($m) {
+  margin-right: $m;
+}
+
+@mixin py($p) {
+  padding-top: $p;
+  padding-bottom: $p;
+}
+
+@mixin pt($p) {
+  padding-top: $p;
+}
+
+@mixin pb($p) {
+  padding-bottom: $p;
+}
+
+@mixin px($p) {
+  padding-left: $p;
+  padding-right: $p;
+}
+
+@mixin pl($p) {
+  padding-left: $p;
+}
+
+@mixin pr($p) {
+  padding-right: $p;
+}
+
+@mixin make-column($columns) {
+  width: (100% / $grid-columns) * $columns;
+}

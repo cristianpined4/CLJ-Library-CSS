@@ -1,3 +1,4 @@
+@import url("https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css");
 @import url("https://fonts.googleapis.com/css?family=Work+Sans:400,600");
 :root {
   --primary-color: #3b56fb;
@@ -9,6 +10,7 @@
   --bg-color-warning: #c8d707;
   --bg-color-primary: var(--primary-color);
   --bg-color-secondary: var(--secondary-color);
+  --bg-color-third: var(--bg-color-third);
 }
 
 html,
@@ -30,7 +32,7 @@ body {
   font-family: "Work Sans", sans-serif;
   font-weight: 400;
   line-height: 1.5;
-  color: #000000;
+  color: #2e2e2e;
 }
 
 p {
@@ -330,6 +332,49 @@ small,
 .py-5 {
   padding-top: 3rem;
   padding-bottom: 3rem;
+}
+
+.container {
+  max-width: 1200px;
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: cal(30px/2);
+  padding-right: cal(30px/2);
+}
+.container .row::after {
+  content: "";
+  display: table;
+  clear: both;
+}
+.container [class*=col-] {
+  float: left;
+  padding-left: cal(30px/2);
+  padding-right: cal(30px/2);
+}
+@media (min-width: 576px) {
+  .container [class*=col-] .class {
+    font: inherit;
+  }
+}
+@media (min-width: 768px) {
+  .container [class*=col-] .class {
+    font: inherit;
+  }
+}
+@media (min-width: 992px) {
+  .container [class*=col-] .class {
+    font: inherit;
+  }
+}
+@media (min-width: 1200px) {
+  .container [class*=col-] .class {
+    font: inherit;
+  }
+}
+@media (min-width: 1400px) {
+  .container [class*=col-] .class {
+    font: inherit;
+  }
 }
 
 /*# sourceMappingURL=style.css.map */
