@@ -683,7 +683,7 @@ small,
 		color: $body;
 	}
 }
-@if ($type == "light") {
+@if ($type == "warning") {
 	.alert-success {
 		color: $body;
 	}
@@ -707,7 +707,7 @@ small,
 		color: $body;
 	}
 }
-@if ($type == "light") {
+@if ($type == "warning") {
 	.alert-danger {
 		color: $body;
 	}
@@ -731,7 +731,7 @@ small,
 		color: $body;
 	}
 }
-@if ($type == "light") {
+@if ($type == "warning") {
 	.alert-warning {
 		color: $body;
 	}
@@ -755,7 +755,7 @@ small,
 		color: $body;
 	}
 }
-@if ($type == "light") {
+@if ($type == "warning") {
 	.alert-info {
 		color: $body;
 	}

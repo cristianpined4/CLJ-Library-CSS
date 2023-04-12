@@ -21,7 +21,7 @@
 			color: $body;
 		}
 	}
-	@if ($type == "light") {
+	@if ($type == "warning") {
 		.alert-#{$type} {
 			color: $body;
 		}
