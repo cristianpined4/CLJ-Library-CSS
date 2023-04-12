@@ -4,6 +4,12 @@
   margin-right: auto;
   padding-left: calc($gutter-width / 2);
   padding-right: calc($gutter-width / 2);
+  &.md {
+    max-width: 768px;
+  }
+  &.lg {
+    max-width: 992px;
+  }
   .row::after {
     content: "";
     display: table;
