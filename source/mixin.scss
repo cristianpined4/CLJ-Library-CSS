@@ -51,5 +51,5 @@
 }
 
 @mixin make-column($columns) {
-  width: (100% / $grid-columns) * $columns;
+  width: calc((100% / $grid-columns) * $columns);
 }
