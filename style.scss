@@ -1,16 +1,8 @@
-:root {
-  --primary-color: #3b56fb;
-  --secondary-color: #565759;
-  --third-color: #a14595;
-  --bg-color-success: #24a213;
-  --bg-color-danger: #d70731;
-  --bg-color-info: #07d7d5;
-  --bg-color-warning: #c8d707;
-  --bg-color-primary: var(--primary-color);
-  --bg-color-secondary: var(--secondary-color);
-}
-
+@import "./source/import.scss";
+@import "./source/variables.scss";
+@import "./source/mixin.scss";
 @import "./source/reset.scss";
 @import "./source/text.scss";
 @import "./source/margin.scss";
 @import "./source/padding.scss";
+@import "./source/grid.scss";

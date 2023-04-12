@@ -1,0 +1,22 @@
+$primary-color: #3b56fb;
+$secondary-color: #565759;
+$third-color: #a14595;
+$bg-color-success: #24a213;
+$bg-color-danger: #d70731;
+$bg-color-info: #07d7d5;
+$bg-color-warning: #c8d707;
+$font-family: "Work Sans", sans-serif;
+$font-size: 18px;
+$text-color: #2e2e2e;
+$relleno: 0.6rem, 1.2rem, 1.8rem, 2.4rem, 3rem;
+$margenes: 0.6rem, 1.2rem, 1.8rem, 2.4rem, 3rem;
+$container-max-width: 1200px;
+$grid-columns: 12;
+$gutter-width: 30px;
+$grid-breakpoints: (
+  sm: 576px,
+  md: 768px,
+  lg: 992px,
+  xl: 1200px,
+  xxl: 1400px,
+);

@@ -1,3 +1,4 @@
+@import url("https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css");
 @import url("https://fonts.googleapis.com/css?family=Work+Sans:400,600");
 :root {
   --primary-color: #3b56fb;
@@ -9,6 +10,7 @@
   --bg-color-warning: #c8d707;
   --bg-color-primary: var(--primary-color);
   --bg-color-secondary: var(--secondary-color);
+  --bg-color-third: var(--bg-color-third);
 }
 
 html,
@@ -30,7 +32,7 @@ body {
   font-family: "Work Sans", sans-serif;
   font-weight: 400;
   line-height: 1.5;
-  color: #000000;
+  color: #2e2e2e;
 }
 
 p {
@@ -330,6 +332,32 @@ small,
 .py-5 {
   padding-top: 3rem;
   padding-bottom: 3rem;
+}
+
+@media (min-width: 576px) {
+  .class {
+    font: inherit;
+  }
+}
+@media (min-width: 768px) {
+  .class {
+    font: inherit;
+  }
+}
+@media (min-width: 992px) {
+  .class {
+    font: inherit;
+  }
+}
+@media (min-width: 1200px) {
+  .class {
+    font: inherit;
+  }
+}
+@media (min-width: 1400px) {
+  .class {
+    font: inherit;
+  }
 }
 
 /*# sourceMappingURL=style.css.map */

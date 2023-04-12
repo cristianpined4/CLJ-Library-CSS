@@ -1,3 +1,16 @@
+:root {
+  --primary-color: #{$primary-color};
+  --secondary-color: #{$secondary-color};
+  --third-color: #{$third-color};
+  --bg-color-success: #{$bg-color-success};
+  --bg-color-danger: #{$bg-color-danger};
+  --bg-color-info: #{$bg-color-info};
+  --bg-color-warning: #{$bg-color-warning};
+  --bg-color-primary: var(--primary-color);
+  --bg-color-secondary: var(--secondary-color);
+  --bg-color-third: var(--bg-color-third);
+}
+
 html,
 body {
   overflow-x: hidden;
