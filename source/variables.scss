@@ -5,6 +5,12 @@ $bg-color-success: #24a213;
 $bg-color-danger: #d70731;
 $bg-color-info: #07d7d5;
 $bg-color-warning: #c8d707;
+$style-type: (
+  success: $bg-color-success,
+  danger: $bg-color-danger,
+  warning: $bg-color-warning,
+  info: $bg-color-info,
+);
 $font-family: "Work Sans", sans-serif;
 $font-size: 18px;
 $text-color: #2e2e2e;

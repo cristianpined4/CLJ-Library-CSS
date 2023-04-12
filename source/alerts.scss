@@ -1,23 +1,22 @@
-@each $type, $class in $style-type {
-	.alert-#{$type} {
-		background-color: $class;
-		color: white;
-		border: 0.2rem solid darken($class, 10%);
-		border-radius: 0.5rem;
-		margin: 1rem 0;
-		padding: 1rem;
-		opacity: 0.85;
-		& span {
-			font-weight: 500;
-		}
-	}
+@each $type, $bg in $style-type {
+  .alert-#{$type} {
+    background-color: $bg;
+    color: white;
+    border: 0.2rem solid darken($bg, 10%);
+    border-radius: 0.5rem;
+    margin: 1rem 0;
+    padding: 1rem;
+    opacity: 0.85;
+    & span {
+      font-weight: 500;
+    }
+  }
 
-	.alert-animated {
-	}
-	
+  .alert-animated {
+  }
 
-    /*Definir para colores claros*/
-	/*@if ($type == "light") {
+  /*Definir para colores claros*/
+  /*@if ($type == "light") {
 		.alert-#{$type} {
 			color: $body;
 		}
