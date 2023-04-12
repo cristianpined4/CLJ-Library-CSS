@@ -11,8 +11,13 @@
 			font-weight: 500;
 		}
 	}
+
+	.alert-animated {
+	}
+	
+
     /*Definir para colores claros*/
-	@if ($type == "light") {
+	/*@if ($type == "light") {
 		.alert-#{$type} {
 			color: $body;
 		}
@@ -21,5 +26,5 @@
 		.alert-#{$type} {
 			color: $body;
 		}
-	}
+	}*/
 }
