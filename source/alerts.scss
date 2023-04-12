@@ -1,29 +1,35 @@
-@each $type, $bg in $style-type {
-  .alert-#{$type} {
-    background-color: $bg;
-    color: white;
-    border: 0.2rem solid darken($bg, 10%);
-    border-radius: 0.5rem;
-    margin: 1rem 0;
-    padding: 1rem;
-    opacity: 0.85;
-    & span {
-      font-weight: 500;
+.alert {
+  border-radius: 0.5rem;
+  margin: 1rem 0.3rem;
+  padding: 1rem;
+  opacity: 0.75;
+  color: white;
+  transform: translateX(100%);
+  @each $type, $bg in $style-type {
+    &.alert-#{$type} {
+      background-color: $bg;
+      @if ($type == "warning") {
+        color: #2c2b2b;
+      }
+      border: 0.2rem solid darken($bg, 10%);
+      & span {
+        font-weight: 600;
+      }
     }
   }
 
-  .alert-animated {
+  &.show {
+    animation-duration: 3s;
+    animation-name: alertAnimate;
+    transform: translateX(0%);
   }
 
-  /*Definir para colores claros*/
-  /*@if ($type == "light") {
-		.alert-#{$type} {
-			color: $body;
-		}
-	}
-	@if ($type == "warning") {
-		.alert-#{$type} {
-			color: $body;
-		}
-	}*/
+  @keyframes alertAnimate {
+    from {
+      transform: translateX(100%);
+    }
+    to {
+      transform: translateX(0%);
+    }
+  }
 }

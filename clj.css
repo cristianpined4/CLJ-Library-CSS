@@ -664,101 +664,55 @@ small,
   margin-left: 0.25rem;
 }
 
-.alert-success {
+.alert {
+  border-radius: 0.5rem;
+  margin: 1rem 0.3rem;
+  padding: 1rem;
+  opacity: 0.75;
+  color: white;
+  transform: translateX(100%);
+}
+.alert.alert-success {
   background-color: #24a213;
-  color: white;
   border: 0.2rem solid #1a740e;
-  border-radius: 0.5rem;
-  margin: 1rem 0;
-  padding: 1rem;
-  opacity: 0.85;
 }
-.alert-success span {
-  font-weight: 500;
+.alert.alert-success span {
+  font-weight: 600;
 }
-
-/*Definir para colores claros*/
-/*@if ($type == "light") {
-	.alert-success {
-		color: $body;
-	}
-}
-@if ($type == "warning") {
-	.alert-success {
-		color: $body;
-	}
-}*/
-.alert-danger {
+.alert.alert-danger {
   background-color: #d70731;
-  color: white;
   border: 0.2rem solid #a60526;
-  border-radius: 0.5rem;
-  margin: 1rem 0;
-  padding: 1rem;
-  opacity: 0.85;
 }
-.alert-danger span {
-  font-weight: 500;
+.alert.alert-danger span {
+  font-weight: 600;
 }
-
-/*Definir para colores claros*/
-/*@if ($type == "light") {
-	.alert-danger {
-		color: $body;
-	}
-}
-@if ($type == "warning") {
-	.alert-danger {
-		color: $body;
-	}
-}*/
-.alert-warning {
+.alert.alert-warning {
   background-color: #c8d707;
-  color: white;
+  color: #2c2b2b;
   border: 0.2rem solid #9aa605;
-  border-radius: 0.5rem;
-  margin: 1rem 0;
-  padding: 1rem;
-  opacity: 0.85;
 }
-.alert-warning span {
-  font-weight: 500;
+.alert.alert-warning span {
+  font-weight: 600;
 }
-
-/*Definir para colores claros*/
-/*@if ($type == "light") {
-	.alert-warning {
-		color: $body;
-	}
-}
-@if ($type == "warning") {
-	.alert-warning {
-		color: $body;
-	}
-}*/
-.alert-info {
+.alert.alert-info {
   background-color: #07d7d5;
-  color: white;
   border: 0.2rem solid #05a6a4;
-  border-radius: 0.5rem;
-  margin: 1rem 0;
-  padding: 1rem;
-  opacity: 0.85;
 }
-.alert-info span {
-  font-weight: 500;
+.alert.alert-info span {
+  font-weight: 600;
 }
-
-/*Definir para colores claros*/
-/*@if ($type == "light") {
-	.alert-info {
-		color: $body;
-	}
+.alert.show {
+  animation-duration: 3s;
+  animation-name: alertAnimate;
+  transform: translateX(0%);
 }
-@if ($type == "warning") {
-	.alert-info {
-		color: $body;
-	}
-}*/
+@keyframes alertAnimate {
+  from {
+    transform: translateX(100%);
+  }
+  to {
+    transform: translateX(0%);
+  }
+}
 
 /*# sourceMappingURL=clj.css.map */
