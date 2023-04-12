@@ -2,23 +2,34 @@
   max-width: $container-max-width;
   margin-left: auto;
   margin-right: auto;
-  padding-left: cal(#{$gutter-width} / 2);
-  padding-right: cal(#{$gutter-width} / 2);
+  padding-left: calc($gutter-width / 2);
+  padding-right: calc($gutter-width / 2);
   .row::after {
     content: "";
     display: table;
     clear: both;
   }
 
-  [class*="col-"] {
-    float: left;
-    padding-left: cal(#{$gutter-width} / 2);
-    padding-right: cal(#{$gutter-width} / 2);
+  .row {
+    .col {
+      float: left;
+      padding-left: calc($gutter-width / 2);
+      padding-right: calc($gutter-width / 2);
+    }
     @each $type, $bp in $grid-breakpoints {
-      @media (min-width: $bp) {
-        .class {
-          font: inherit;
+      @media screen and (min-width: $bp) {
+        @for $i from 1 through $grid-columns {
+          .col.#{$type}-#{$i} {
+            @include make-column($i);
+          }
         }
+      }
+    }
+    @media screen and (max-width: 768px) {
+      .col {
+        width: 100%;
+        padding-left: 0;
+        padding-right: 0;
       }
     }
   }
