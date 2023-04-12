@@ -1,0 +1,25 @@
+@each $type, $class in $style-type {
+	.alert-#{$type} {
+		background-color: $class;
+		color: white;
+		border: 0.2rem solid darken($class, 10%);
+		border-radius: 0.5rem;
+		margin: 1rem 0;
+		padding: 1rem;
+		opacity: 0.85;
+		& span {
+			font-weight: 500;
+		}
+	}
+    /*Definir para colores claros*/
+	@if ($type == "light") {
+		.alert-#{$type} {
+			color: $body;
+		}
+	}
+	@if ($type == "light") {
+		.alert-#{$type} {
+			color: $body;
+		}
+	}
+}
