@@ -347,6 +347,9 @@ small,
 .container.lg {
   max-width: 992px;
 }
+.container.fluid {
+  max-width: 100%;
+}
 .container .row::after {
   content: "";
   display: table;
@@ -617,7 +620,8 @@ small,
   color: #6c757d;
   opacity: 1;
 }
-.form .btn {
+
+.btn {
   margin-bottom: 0.5rem;
   padding: 0.5rem 1.3rem;
   font-weight: 600;
@@ -625,42 +629,42 @@ small,
   border: none;
   transition: all 300ms ease-in;
 }
-.form .btn.primary {
+.btn.primary {
   background-color: #3b56fb;
 }
-.form .btn.secondary {
+.btn.secondary {
   background-color: #565759;
 }
-.form .btn.success {
+.btn.success {
   background-color: #24a213;
 }
-.form .btn.danger {
+.btn.danger {
   background-color: #d70731;
 }
-.form .btn.warning {
+.btn.warning {
   background-color: #c8d707;
   color: #252525;
 }
-.form .btn.info {
+.btn.info {
   background-color: #07d7d5;
 }
-.form .btn.rounded {
+.btn.rounded {
   border-radius: 15px;
 }
-.form .btn:active, .form .btn:focus, .form .btn:hover {
+.btn:active, .btn:focus, .btn:hover {
   box-shadow: rgba(37, 37, 37, 0.4588235294) 1px 5px 5px;
   transform: scale(1.05);
 }
-.form .btn.sm {
+.btn.sm {
   font-size: 0.75rem;
 }
-.form .btn.lg {
+.btn.lg {
   font-size: 1.25rem;
 }
-.form .btn.icon-left i {
+.btn.icon-left i {
   margin-right: 0.25rem;
 }
-.form .btn.icon-right i {
+.btn.icon-right i {
   margin-left: 0.25rem;
 }
 
