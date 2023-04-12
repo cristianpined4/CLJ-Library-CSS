@@ -334,28 +334,45 @@ small,
   padding-bottom: 3rem;
 }
 
+.container {
+  max-width: 1200px;
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: cal(30px/2);
+  padding-right: cal(30px/2);
+}
+.container .row::after {
+  content: "";
+  display: table;
+  clear: both;
+}
+.container [class*=col-] {
+  float: left;
+  padding-left: cal(30px/2);
+  padding-right: cal(30px/2);
+}
 @media (min-width: 576px) {
-  .class {
+  .container [class*=col-] .class {
     font: inherit;
   }
 }
 @media (min-width: 768px) {
-  .class {
+  .container [class*=col-] .class {
     font: inherit;
   }
 }
 @media (min-width: 992px) {
-  .class {
+  .container [class*=col-] .class {
     font: inherit;
   }
 }
 @media (min-width: 1200px) {
-  .class {
+  .container [class*=col-] .class {
     font: inherit;
   }
 }
 @media (min-width: 1400px) {
-  .class {
+  .container [class*=col-] .class {
     font: inherit;
   }
 }
