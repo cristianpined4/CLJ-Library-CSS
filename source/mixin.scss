@@ -79,3 +79,15 @@
 @mixin make-column($columns) {
   width: calc((100% / $grid-columns) * $columns);
 }
+
+@mixin make-offset($columns) {
+  margin-left: calc((100% / $grid-columns) * $columns);
+}
+
+@mixin make-pull($columns) {
+  right: calc((100% / $grid-columns) * $columns);
+}
+
+@mixin make-push($columns) {
+  left: calc((100% / $grid-columns) * $columns);
+}

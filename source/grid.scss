@@ -30,11 +30,26 @@
       padding-left: calc($gutter-width / 2);
       padding-right: calc($gutter-width / 2);
     }
+    & .col[class*="push-"],
+    & .col[class*="pull-"] {
+      position: relative;
+    }
     @each $type, $bp in $grid-breakpoints {
       @media screen and (min-width: $bp) {
         @for $i from 1 through $grid-columns {
           .col.#{$type}-#{$i} {
             @include make-column($i);
+          }
+          .col.offset-#{$type}-#{$i} {
+            @include make-offset($i);
+          }
+
+          .col.pull-#{$type}-#{$i} {
+            @include make-pull($i);
+          }
+
+          .col.push-#{$type}-#{$i} {
+            @include make-push($i);
           }
         }
       }
