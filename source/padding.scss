@@ -18,5 +18,39 @@ $i: 1;
   .py-#{$i} {
     @include py($p);
   }
+  .p-#{$i} {
+    @include py($p);
+    @include px($p);
+  }
   $i: $i + 1;
+}
+
+@each $type, $bp in $grid-breakpoints {
+  @media only screen and (min-width: $bp) {
+    @each $p in $relleno {
+      .pt-#{$type}-#{$i} {
+        @include pt($p);
+      }
+      .pb-#{$type}-#{$i} {
+        @include pb($p);
+      }
+      .pl-#{$type}-#{$i} {
+        @include pl($p);
+      }
+      .pr-#{$type}-#{$i} {
+        @include pr($p);
+      }
+      .px-#{$type}-#{$i} {
+        @include px($p);
+      }
+      .py-#{$type}-#{$i} {
+        @include py($p);
+      }
+      .p-#{$type}-#{$i} {
+        @include py($p);
+        @include px($p);
+      }
+      $i: $i + 1;
+    }
+  }
 }

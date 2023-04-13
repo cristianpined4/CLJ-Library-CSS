@@ -18,5 +18,40 @@ $i: 1;
   .my-#{$i} {
     @include my($m);
   }
+  .m-#{$i} {
+    @include my($m);
+    @include mx($m);
+  }
   $i: $i + 1;
+}
+
+@each $type, $bp in $grid-breakpoints {
+  @media only screen and (min-width: $bp) {
+    $i: 1;
+    @each $m in $margenes {
+      .mt-#{$type}-#{$i} {
+        @include mt($m);
+      }
+      .mb-#{$type}-#{$i} {
+        @include mb($m);
+      }
+      .ml-#{$type}-#{$i} {
+        @include ml($m);
+      }
+      .mr-#{$type}-#{$i} {
+        @include mr($m);
+      }
+      .mx-#{$type}-#{$i} {
+        @include mx($m);
+      }
+      .my-#{$type}-#{$i} {
+        @include my($m);
+      }
+      .m-#{$type}-#{$i} {
+        @include my($m);
+        @include mx($m);
+      }
+      $i: $i + 1;
+    }
+  }
 }

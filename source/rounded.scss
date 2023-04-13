@@ -1,0 +1,35 @@
+.rounded {
+  border-radius: 15px;
+}
+
+.rounded-left-up-and-right-down {
+  border-radius: 15px 0px;
+}
+
+.rounded-left-down-and-right-up {
+  border-radius: 0px 15px;
+}
+
+.rounded-circle {
+  border-radius: 50%;
+}
+
+@each $type, $bp in $grid-breakpoints {
+  @media screen and (min-width: $bp) {
+    .rounded-#{$type} {
+      border-radius: 15px;
+    }
+
+    .rounded-left-up-and-right-down-#{$type} {
+      border-radius: 15px 0px;
+    }
+
+    .rounded-left-down-and-right-up-#{$type} {
+      border-radius: 0px 15px;
+    }
+
+    .rounded-circle-#{$type} {
+      border-radius: 50%;
+    }
+  }
+}

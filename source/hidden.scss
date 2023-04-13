@@ -1,0 +1,13 @@
+.hidden {
+  display: none !important;
+}
+@each $type, $bp in $grid-breakpoints {
+  @media only screen and (min-width: $bp) {
+    .hidden-#{$type} {
+      display: none !important;
+    }
+    .show-#{$type} {
+      display: block !important;
+    }
+  }
+}

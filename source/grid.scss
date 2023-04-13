@@ -4,12 +4,17 @@
   margin-right: auto;
   padding-left: calc($gutter-width / 2);
   padding-right: calc($gutter-width / 2);
-  &.md {
-    max-width: 768px;
+
+  @each $type, $bp in $grid-breakpoints {
+    @media screen and (min-width: $bp) {
+      @if ($bp != $container-max-width) {
+        &.#{$type} {
+          max-width: $bp;
+        }
+      }
+    }
   }
-  &.lg {
-    max-width: 992px;
-  }
+
   &.fluid {
     max-width: 100%;
   }

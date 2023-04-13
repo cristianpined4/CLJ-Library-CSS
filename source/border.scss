@@ -1,0 +1,53 @@
+@for $i from 1 through 5 {
+  .border-#{$i} {
+    @include border-x($i);
+    @include border-y($i);
+  }
+  .border-t-#{$i} {
+    @include border-t($i);
+  }
+  .border-b-#{$i} {
+    @include border-b($i);
+  }
+  .border-l-#{$i} {
+    @include border-l($i);
+  }
+  .border-r-#{$i} {
+    @include border-r($i);
+  }
+  .border-x-#{$i} {
+    @include border-x($i);
+  }
+  .border-y-#{$i} {
+    @include border-y($i);
+  }
+}
+
+@each $type, $bp in $grid-breakpoints {
+  @media only screen and (min-width: $bp) {
+    @for $i from 1 through 5 {
+      .border-#{$type}-#{$i} {
+        @include border-x($i);
+        @include border-y($i);
+      }
+      .border-#{$type}-t-#{$i} {
+        @include border-t($i);
+      }
+      .border-#{$type}-b-#{$i} {
+        @include border-b($i);
+      }
+      .border-#{$type}-l-#{$i} {
+        @include border-l($i);
+      }
+      .border-#{$type}-r-#{$i} {
+        @include border-r($i);
+      }
+      .border-#{$type}-x-#{$i} {
+        @include border-x($i);
+      }
+      .border-#{$type}-y-#{$i} {
+        @include border-y($i);
+      }
+    }
+  }
+}

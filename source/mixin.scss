@@ -50,6 +50,32 @@
   padding-right: $p;
 }
 
+@mixin border-y($b) {
+  border-top: calc(#{$b}px) solid #505050;
+  border-bottom: calc(#{$b}px) solid #505050;
+}
+
+@mixin border-t($b) {
+  border-top: calc(#{$b}px) solid #505050;
+}
+
+@mixin border-b($b) {
+  border-bottom: calc(#{$b}px) solid #505050;
+}
+
+@mixin border-x($b) {
+  border-left: calc(#{$b}px) solid #505050;
+  border-right: calc(#{$b}px) solid #505050;
+}
+
+@mixin border-l($b) {
+  border-left: calc(#{$b}px) solid #505050;
+}
+
+@mixin border-r($b) {
+  border-right: calc(#{$b}px) solid #505050;
+}
+
 @mixin make-column($columns) {
   width: calc((100% / $grid-columns) * $columns);
 }

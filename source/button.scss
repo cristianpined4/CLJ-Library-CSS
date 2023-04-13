@@ -2,31 +2,19 @@
   margin-bottom: 0.5rem;
   padding: 0.5rem 1.3rem;
   font-weight: 600;
-  color: white;
   border: none;
   transition: all 300ms ease-in;
-  &.primary {
-    background-color: $primary-color;
+  @each $type, $bg in $style-type {
+    &.#{$type} {
+      background-color: $bg;
+      @if ($type == "warning") {
+        color: #252525;
+      } @else {
+        color: white;
+      }
+    }
   }
-  &.secondary {
-    background-color: $secondary-color;
-  }
-  &.success {
-    background-color: $bg-color-success;
-  }
-  &.danger {
-    background-color: $bg-color-danger;
-  }
-  &.warning {
-    background-color: $bg-color-warning;
-    color: #252525;
-  }
-  &.info {
-    background-color: $bg-color-info;
-  }
-  &.rounded {
-    border-radius: 15px;
-  }
+
   &:active,
   &:focus,
   &:hover {
