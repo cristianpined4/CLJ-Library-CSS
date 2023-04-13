@@ -6,6 +6,8 @@ $bg-color-danger: #d70731;
 $bg-color-info: #07d7d5;
 $bg-color-warning: #c8d707;
 $style-type: (
+  primary: $primary-color,
+  secondary: $secondary-color,
   success: $bg-color-success,
   danger: $bg-color-danger,
   warning: $bg-color-warning,
@@ -31,3 +33,9 @@ $form-label-margin-bottom: 0.5rem;
 $form-group-margin-bottom: 1rem;
 $form-input-padding: 0.375rem 0.75rem;
 $form-input-border-radius: 0.25rem;
+$card-padding: 1rem;
+$card-background: #fff;
+$card-border-color: #ddd;
+$card-border-width: 1px;
+$card-border-radius: 0.35rem;
+$card-font-size: 20px;
