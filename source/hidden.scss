@@ -1,6 +1,9 @@
 .hidden {
   display: none !important;
 }
+.show {
+  display: block !important;
+}
 @each $type, $bp in $grid-breakpoints {
   @media only screen and (min-width: $bp) {
     .hidden-#{$type} {

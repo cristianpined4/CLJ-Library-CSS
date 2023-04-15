@@ -3,10 +3,7 @@
     border-color: #{$bg} !important;
   }
 }
-.border-0 {
-  border: none  !important;
-}
-@for $i from 1 through 5 {
+@for $i from 0 through 5 {
   .border-#{$i} {
     @include border-x($i);
     @include border-y($i);
@@ -33,10 +30,7 @@
 
 @each $type, $bp in $grid-breakpoints {
   @media only screen and (min-width: $bp) {
-    .border-#{$type}-0 {
-      border: none !important;
-    }
-    @for $i from 1 through 5 {
+    @for $i from 0 through 5 {
       .border-#{$type}-#{$i} {
         @include border-x($i);
         @include border-y($i);

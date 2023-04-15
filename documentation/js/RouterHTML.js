@@ -6,9 +6,9 @@
     Params: 
         - navLink : css selector for links <a></a>.
         - container : css selector where the content will be displayed.
-        - path : address of the folder where the .md files are stored.
+        - path : address of the folder where the .html files are stored.
 
-    Note: the link href path must match the name of the .md file without the extension.
+    Note: the link href path must match the name of the .html file without the extension.
 */
 
 "use strict";

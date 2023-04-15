@@ -6,15 +6,13 @@ document.addEventListener("DOMContentLoaded", (e) => {
   let frag = "";
   menu.forEach((el) => {
     frag += `
-      <li class="list-item blue">
-        <a class="white-text" href="${el}">${el}</a>
-      </li>
+        <a class="list-item blue white-text" href="${el}">${el}</a>
     `;
   });
-  document.querySelector("aside.menu ul.list").innerHTML = frag;
+  document.querySelector("aside.menu nav.list").innerHTML = frag;
 
   RouterHTML({
-    navLink: "aside.menu ul.list li.list-item a",
+    navLink: "aside.menu nav.list a",
     container: "section.contenido",
     path: "./documentation/views",
   });
