@@ -9,6 +9,7 @@
   <title>Documentación CLJ CSS</title>
   <meta name="description"
     content="Documentación para la librería CLJ CSS creada y diseña por Cristian Pineda, Lisseth Palacios, Jasson Gómez para la materia Herramientas de productividad UES impartida por el Ing. Diego Herrera">
+  <link rel="shortcut icon" href="./documentation/svg/favicon.png" type="image/png">
   <style>
     pre {
       background-color: #323232;
@@ -33,16 +34,51 @@
 </head>
 
 <body>
-  <header></header>
+  <header>
+    <div class="navbar">
+      <div class="navbar-logo">
+        <img src="documentation/svg/logo.png" style="height: 3rem;">
+      </div>
+      <ul class="navbar-nav hidden show-md">
+        <li class="navbar-item">
+          <a href="Inicio">Inicio</a>
+        </li>
+        <li class="navbar-item">
+          <a href="Descargar">Descargar</a>
+        </li>
+        <li class="navbar-item">
+          <a href="Documentacion">Documentación</a>
+        </li>
+      </ul>
+      <ul class="navbar-nav hidden-md show">
+        <li class="navbar-item dropdown">
+          <i class="fa-solid fa-bars"></i>
+          <ul class="dropdown-menu">
+            <li class="navbar-item">
+              <a href="Inicio">Inicio</a>
+            </li>
+            <li class="navbar-item">
+              <a href="Descargar">Descargar</a>
+            </li>
+            <li class="navbar-item">
+              <a href="Documentacion">Documentación</a>
+            </li>
+          </ul>
+        </li>
+      </ul>
+    </div>
+  </header>
   <main class="container">
     <div class="row">
       <aside class="menu col sm-12 md-3 mt-2">
-        <nav class="list"></nav>
+        <nav class="list shadow"></nav>
       </aside>
       <section class="contenido col sm-12 md-9"></section>
     </div>
   </main>
-  <footer></footer>
+  <footer class="blue-grey darken-4 white-text mt-2 py-2">
+    <p class="m-0 p-0 text-center text-xs">&copy; Copyright 2023 - Cristian Pineda - Lisseth Palacios - Jasson Gómez</p>
+  </footer>
   <script src="./documentation/js/app.js" type="module"></script>
 </body>
 

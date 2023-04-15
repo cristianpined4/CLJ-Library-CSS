@@ -1,6 +1,6 @@
 import RouterHTML from "./RouterHTML.js";
 
-const menu = ["Alertas", "Bordes", "Botones", "Colores"];
+const menu = ["Alertas", "Bordes", "Botones", "Colores", "Texto", "Tipografia"];
 
 document.addEventListener("DOMContentLoaded", (e) => {
   let frag = "";
@@ -12,7 +12,7 @@ document.addEventListener("DOMContentLoaded", (e) => {
   document.querySelector("aside.menu nav.list").innerHTML = frag;
 
   RouterHTML({
-    navLink: "aside.menu nav.list a",
+    navLink: "aside.menu nav.list a,.navbar-nav .navbar-item a",
     container: "section.contenido",
     path: "./documentation/views",
   });

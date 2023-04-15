@@ -4,6 +4,13 @@
 .show {
   display: block !important;
 }
+.navbar > .show {
+  display: flex !important;
+}
+
+.navbar > .hidden {
+  display: none !important;
+}
 @each $type, $bp in $grid-breakpoints {
   @media only screen and (min-width: $bp) {
     .hidden-#{$type} {
@@ -11,6 +18,13 @@
     }
     .show-#{$type} {
       display: block !important;
+    }
+    .navbar > .show-#{$type} {
+      display: flex !important;
+    }
+
+    .navbar > .hidden-#{$type} {
+      display: none !important;
     }
   }
 }

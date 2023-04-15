@@ -1,0 +1,63 @@
+.card {
+  background-color: $card-background;
+  border: $card-border-width solid $card-border-color;
+  border-radius: $card-border-radius;
+  box-shadow: #16161675 1px 3px 6px;
+
+  & img,
+  & .overflow {
+    border-top-right-radius: $card-border-radius;
+    border-top-left-radius: $card-border-radius;
+  }
+
+  & .overflow {
+    width: 100%;
+    overflow: hidden;
+  }
+
+  & .overflow img {
+    border-top-right-radius: 0px;
+    border-top-left-radius: 0px;
+    transform: scale(1.2);
+    transition: all 300ms ease-in-out;
+  }
+
+  & .overflow:hover,
+  & .overflow img:hover {
+    transform: scale(1);
+  }
+
+  & .title {
+    font-size: $card-font-size;
+  }
+
+  & .text {
+    font-size: calc($card-font-size - 4px);
+  }
+
+  & .body {
+    @include my(0.5rem);
+    padding: $card-padding;
+  }
+
+  & .footer {
+    background-color: darken($card-background, 10%);
+    padding: $card-padding;
+  }
+
+  @each $type, $background in $style-type {
+    &.#{$type} {
+      background-color: #{$background};
+      border-color: #{$background};
+      @if ($type == "warning") {
+        color: #2c2b2b;
+      } @else {
+        color: #fff;
+      }
+
+      & .footer {
+        background-color: darken($background, 10%);
+      }
+    }
+  }
+}

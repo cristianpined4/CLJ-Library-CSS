@@ -1,7 +1,15 @@
 .list {
   list-style: none;
-  box-shadow: #16161675 1px 3px 6px;
   margin-bottom: 1rem;
+  &.shadow {
+    box-shadow: #16161675 1px 3px 6px;
+  }
+  & > li,
+  & > li > ul,
+  & > li > li {
+    padding-left: 3rem;
+  }
+
   & .list-item {
     @include py(0.5rem);
     @include px(1rem);
@@ -13,6 +21,12 @@
       text-decoration: none;
       cursor: pointer;
       color: #000;
+    }
+
+    & > li,
+    & > li > ul,
+    & > li > li {
+      padding-left: 3rem;
     }
 
     &:hover {
