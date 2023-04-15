@@ -1,0 +1,19 @@
+.list {
+  list-style: none;
+  box-shadow: #16161675 1px 3px 6px;
+  margin-bottom: 1rem;
+  & .list-item {
+    @include py(0.5rem);
+    @include px(1rem);
+    border-bottom: 3px solid #888888;
+    & > * {
+      text-decoration: none;
+      cursor: pointer;
+      color: #000;
+    }
+
+    &:hover {
+      filter: brightness(0.9);
+    }
+  }
+}

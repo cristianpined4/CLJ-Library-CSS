@@ -4,7 +4,6 @@
   padding: 1rem;
   opacity: 0.75;
   color: white;
-  transform: translateX(100%);
   @each $type, $bg in $style-type {
     &.alert-#{$type} {
       background-color: $bg;
@@ -24,9 +23,14 @@
     transform: translateX(0%);
   }
 
+  &.hide {
+    transform: translateX(120%);
+    display: none;
+  }
+
   @keyframes alertAnimate {
     from {
-      transform: translateX(100%);
+      transform: translateX(120%);
     }
     to {
       transform: translateX(0%);

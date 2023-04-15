@@ -15,6 +15,26 @@
     }
   }
 
+  @each $type, $bg in $style-type {
+    &.outline.#{$type} {
+      color: $bg;
+      border: 1.5px solid $bg;
+      background-color: transparent !important;
+      &:active,
+      &:focus,
+      &:hover {
+        box-shadow: #25252575 1px 5px 5px;
+        transform: scale(1.05);
+        background-color: $bg !important;
+        @if ($type == "warning") {
+          color: #252525;
+        } @else {
+          color: white;
+        }
+      }
+    }
+  }
+
   &:active,
   &:focus,
   &:hover {

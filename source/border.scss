@@ -1,3 +1,8 @@
+@each $type, $bg in $style-type {
+  .border-#{$type} {
+    border-color: #{$bg} !important;
+  }
+}
 @for $i from 1 through 5 {
   .border-#{$i} {
     @include border-x($i);

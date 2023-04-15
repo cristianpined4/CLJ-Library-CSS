@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="./clj.css">
+  <title>Documentacion CLJ CSS</title>
+  <style>
+    pre {
+      background-color: #323232;
+      color: #fff;
+      width: 100%;
+      height: auto;
+      margin-bottom: 2rem;
+      overflow: auto;
+      border-radius: 15px;
+    }
+
+    .menu .list li:has(a.active) {
+      background: #093d79 !important;
+    }
+
+    .error-message {
+      text-align: center;
+      font-size: 2.3rem;
+      margin-top: 3rem;
+    }
+  </style>
+</head>
+
+<body>
+  <header></header>
+  <main class="container">
+    <div class="row">
+      <aside class="menu col sm-12 md-3 mt-2">
+        <ul class="list"></ul>
+      </aside>
+      <section class="contenido col sm-12 md-9"></section>
+    </div>
+  </main>
+  <footer></footer>
+  <script src="./documentation/js/app.js" type="module"></script>
+</body>
+
+</html>
