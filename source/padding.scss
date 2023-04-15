@@ -1,4 +1,4 @@
-$i: 1;
+$i: 0;
 @each $p in $relleno {
   .pt-#{$i} {
     @include pt($p);
@@ -27,6 +27,7 @@ $i: 1;
 
 @each $type, $bp in $grid-breakpoints {
   @media only screen and (min-width: $bp) {
+    $i: 0;
     @each $p in $relleno {
       .pt-#{$type}-#{$i} {
         @include pt($p);

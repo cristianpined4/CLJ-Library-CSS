@@ -5,7 +5,10 @@
   & .list-item {
     @include py(0.5rem);
     @include px(1rem);
+    width: 100%;
+    display: block;
     border-bottom: 3px solid #888888;
+    text-decoration: none;
     & > * {
       text-decoration: none;
       cursor: pointer;
