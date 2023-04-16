@@ -55,7 +55,7 @@
       }
     }
 
-    @media screen and (max-width: 768px) {
+    @media screen and (max-width: map-get($grid-breakpoints, md)) {
       .col {
         width: 100%;
         padding-left: 0;
