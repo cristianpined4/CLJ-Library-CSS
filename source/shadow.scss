@@ -1,0 +1,29 @@
+.shadow {
+  box-shadow: 0 0.5rem 1rem rgba(#000, 0.15);
+  &-small {
+    box-shadow: 0 0.125rem 0.25rem rgba(#000, 0.075);
+  }
+  &-large {
+    box-shadow: 0 1rem 3rem rgba(#000, 0.175);
+  }
+  &-none {
+    box-shadow: none;
+  }
+}
+
+@each $type, $bp in $grid-breakpoints {
+  @media screen and (min-width: $bp) {
+    .shadow-#{$type} {
+      box-shadow: 0 0.5rem 1rem rgba(#000, 0.15);
+      &-small {
+        box-shadow: 0 0.125rem 0.25rem rgba(#000, 0.075);
+      }
+      &-large {
+        box-shadow: 0 1rem 3rem rgba(#000, 0.175);
+      }
+      &-none {
+        box-shadow: none;
+      }
+    }
+  }
+}

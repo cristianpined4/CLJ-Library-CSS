@@ -1,0 +1,99 @@
+.p-static {
+  position: static;
+}
+
+.p-relative {
+  position: relative;
+}
+
+.p-fixed {
+  position: fixed;
+}
+
+.p-absolute {
+  position: absolute;
+}
+
+.p-sticky {
+  position: sticky !important;
+}
+
+.p-absolute,
+.p-fixed,
+.p-sticky,
+.p-relative,
+.p-static {
+  @for $i from 0 through 10 {
+    &.top-#{$i},
+    & .top-#{$i} {
+      top: 10% * $i;
+    }
+    &.left-#{$i},
+    & .left-#{$i} {
+      left: 10% * $i;
+    }
+    &.right-#{$i},
+    & .right-#{$i} {
+      right: 10% * $i;
+    }
+    &.bottom-#{$i},
+    & .bottom-#{$i} {
+      bottom: 10% * $i;
+    }
+  }
+}
+
+@each $type, $bp in $grid-breakpoints {
+  @media screen and (min-width: $bp) {
+    .p-#{$type}-static {
+      position: static;
+    }
+
+    .p-#{$type}-relative {
+      position: relative;
+    }
+
+    .p-#{$type}-fixed {
+      position: fixed;
+    }
+
+    .p-#{$type}-absolute {
+      position: absolute;
+    }
+
+    .p-#{$type}-sticky {
+      position: sticky !important;
+    }
+
+    .p-#{$type}-absolute,
+    .p-#{$type}-fixed,
+    .p-#{$type}-sticky,
+    .p-#{$type}-relative,
+    .p-#{$type}-static {
+      @for $i from 0 through 10 {
+        &.top-#{$i},
+        & .top-#{$i} {
+          top: 10% * $i;
+        }
+        &.left-#{$i},
+        & .left-#{$i} {
+          left: 10% * $i;
+        }
+        &.right-#{$i},
+        & .right-#{$i} {
+          right: 10% * $i;
+        }
+        &.bottom-#{$i},
+        & .bottom-#{$i} {
+          bottom: 10% * $i;
+        }
+      }
+    }
+  }
+}
+
+@for $i from 0 through 5 {
+  .z-index-#{$i} {
+    z-index: $i * 50;
+  }
+}

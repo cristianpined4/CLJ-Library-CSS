@@ -5,7 +5,7 @@
   justify-content: space-around;
   align-items: center;
 
-  &-logo {
+  & &-logo {
     font-size: 1.5rem;
     font-weight: bold;
     text-decoration: none;
@@ -15,11 +15,11 @@
     padding: 0.5rem 1rem;
   }
 
-  .nav-links a {
+  & .nav-links a {
     color: #fff;
   }
 
-  &-nav {
+  & &-nav {
     display: flex;
     gap: 1em;
     font-size: 18px;
