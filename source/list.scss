@@ -4,11 +4,12 @@
   &.shadow {
     box-shadow: #16161675 1px 3px 6px;
   }
+
   & > li,
-  & > li > ul,
-  & > li > li {
-    padding-left: 2rem;
+  & > li > ul {
+    padding-left: 3rem;
   }
+
   &.list-style-ol {
     list-style: decimal;
     margin-left: 2rem;
@@ -41,9 +42,8 @@
     }
 
     & > li,
-    & > li > ul,
-    & > li > li {
-      padding-left: 2rem;
+    & > li > ul {
+      padding-left: 3rem;
     }
 
     &:hover {

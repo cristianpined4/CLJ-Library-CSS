@@ -6183,8 +6183,8 @@ mark {
 .list.shadow {
   box-shadow: rgba(22, 22, 22, 0.4588235294) 1px 3px 6px;
 }
-.list > li, .list > li > ul, .list > li > li {
-  padding-left: 2rem;
+.list > li, .list > li > ul {
+  padding-left: 3rem;
 }
 .list.list-style-ol {
   list-style: decimal;
@@ -6215,8 +6215,8 @@ mark {
   cursor: pointer;
   color: #000;
 }
-.list .list-item > li, .list .list-item > li > ul, .list .list-item > li > li {
-  padding-left: 2rem;
+.list .list-item > li, .list .list-item > li > ul {
+  padding-left: 3rem;
 }
 .list .list-item:hover {
   filter: brightness(0.9);
