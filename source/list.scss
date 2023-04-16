@@ -7,7 +7,7 @@
   & > li,
   & > li > ul,
   & > li > li {
-    padding-left: 3rem;
+    padding-left: 1rem;
   }
   &.list-style-ol {
     list-style: decimal;
@@ -43,7 +43,7 @@
     & > li,
     & > li > ul,
     & > li > li {
-      padding-left: 3rem;
+      padding-left: 1rem;
     }
 
     &:hover {
