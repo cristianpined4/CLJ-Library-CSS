@@ -17,7 +17,7 @@ String.prototype.toCapitalizerCase = function () {
   return this.charAt(0).toUpperCase() + this.slice(1);
 };
 
-const RouterHTML = async (
+const RouterHTML = (
   option = { navLink: "", container: "", path: "" }
 ) => {
   if (!(option instanceof Object))
@@ -70,7 +70,7 @@ const RouterHTML = async (
         "<h1 class='error-message'>Error 404: Page not found</h1>";
     });
 
-  document.addEventListener("click", async (e) => {
+  document.addEventListener("click", (e) => {
     if (e.target.matches(navLink)) {
       document
         .querySelectorAll(navLink)
