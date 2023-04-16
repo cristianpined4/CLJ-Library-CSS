@@ -1,0 +1,33 @@
+$display: flex;
+$direction: row;
+$justify: center;
+$align: center;
+$wrap: wrap;
+
+.flex {
+  @include flex($display, $direction, $justify, $align, $wrap);
+}
+
+.flex-column {
+  @include flex($display, $direction, $justify, $align, $wrap);
+}
+
+.flex-center {
+  @include flex($display, $direction, $justify, $align, $wrap);
+}
+
+@media only screen and (max-width: 768px) {
+  $direction: column;
+
+  .flex {
+    @include flex($display, $direction, $justify, $align, $wrap);
+  }
+
+  .flex-column {
+    @include flex(flex, column, center, center, wrap);
+  }
+
+  .flex-center {
+    @include flex(flex, column, center, center, no-wrap);
+  }
+}
