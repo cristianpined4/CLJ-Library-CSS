@@ -15,13 +15,13 @@
 }
 
 @each $jf in $justify {
-  .flex-#{$jf} {
+  .flex-justify-#{$jf} {
     justify-content: $jf;
   }
 }
 
 @each $al in $align {
-  .flex-#{$al} {
+  .flex-align-#{$al} {
     align-items: $al;
   }
 }
