@@ -3,8 +3,8 @@
   font-size: 15px;
   padding: 0.1rem 0.75rem;
   border-radius: 15px;
-  background-color: #fdbcef;
-  color: #eb1958;
+  background-color: #ffd8f6;
+  color: #c4003b;
   @each $type, $bg in $style-type {
     &.#{$type} {
       background-color: $bg !important;

@@ -9,7 +9,24 @@
   & > li > li {
     padding-left: 3rem;
   }
-
+  &.list-style-ol {
+    list-style: decimal;
+    margin-left: 2rem;
+    & > li,
+    & > li > ul,
+    & > li > li {
+      padding-left: 1rem;
+    }
+  }
+  &.list-style-ul {
+    list-style: initial;
+    margin-left: 2rem;
+    & > li,
+    & > li > ul,
+    & > li > li {
+      padding-left: 1rem;
+    }
+  }
   & .list-item {
     @include py(0.5rem);
     @include px(1rem);
