@@ -1,9 +1,3 @@
-$display: flex;
-$direction: row;
-$justify: center;
-$align: center;
-$wrap: wrap;
-
 .flex {
   @include flex($display, $direction, $justify, $align, $wrap);
 }
