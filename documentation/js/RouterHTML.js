@@ -17,9 +17,7 @@ String.prototype.toCapitalizerCase = function () {
   return this.charAt(0).toUpperCase() + this.slice(1);
 };
 
-const RouterHTML = (
-  option = { navLink: "", container: "", path: "" }
-) => {
+const RouterHTML = (option = { navLink: "", container: "", path: "" }) => {
   if (!(option instanceof Object))
     return console.error("> the option parameter must be an object");
   let { navLink, container, path } = option,
