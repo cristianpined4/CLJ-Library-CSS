@@ -43,8 +43,7 @@ $navbar-bg-color: #333;
 $navbar-text-color: #fff;
 $font-weight: 100, 200, 300, 400, 500, 600, 700, 800, 900, normal, bold, lighter,
   bolder;
-$display: flex;
-$direction: row;
-$justify: center;
-$align: center;
-$wrap: wrap;
+$direction: (row, row-reverse, column, column-reverse);
+$justify: (flex-start, flex-end, center, space-between, space-around);
+$align: (flex-start, flex-end, center, space-between, space-around, stretch);
+$wrap: (nowrap, wrap, wrap-reverse);
