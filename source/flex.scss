@@ -1,33 +1,83 @@
 .flex {
   @include flex(row, center, center, wrap);
-}
 
-@media only screen and (max-width: 768px) {
-  .flex {
-    @include flex(row, center, center, wrap);
+  @each $dt in $direction {
+    &.flex-#{$dt} {
+      flex-direction: $dt;
+    }
+  }
+
+  @each $jf in $justify {
+    &.flex-justify-#{$jf} {
+      justify-content: $jf;
+    }
+  }
+
+  @each $al in $align {
+    &.flex-align-#{$al} {
+      align-items: $al;
+    }
+  }
+
+  @each $wp in $wrap {
+    &.flex-#{$wp} {
+      flex-wrap: $wp;
+    }
+  }
+
+  @for $i from 0 through 5 {
+    &.flex-gap-#{$i} {
+      gap: #{$i}rem;
+    }
+    &.flex-gap-row-#{$i} {
+      row-gap: #{$i}rem;
+    }
+    &.flex-gap-column-#{$i} {
+      column-gap: #{$i}rem;
+    }
   }
 }
 
-@each $dt in $direction {
-  .flex-#{$dt} {
-    flex-direction: $dt;
-  }
-}
+@each $type, $bp in $grid-breakpoints {
+  @media screen and (min-width: $bp) {
+    .flex-#{$type} {
+      @include flex(row, center, center, wrap);
 
-@each $jf in $justify {
-  .flex-justify-#{$jf} {
-    justify-content: $jf;
-  }
-}
+      @each $dt in $direction {
+        &.flex-#{$type}-#{$dt} {
+          flex-direction: $dt;
+        }
+      }
 
-@each $al in $align {
-  .flex-align-#{$al} {
-    align-items: $al;
-  }
-}
+      @each $jf in $justify {
+        &.flex-#{$type}-justify-#{$jf} {
+          justify-content: $jf;
+        }
+      }
 
-@each $wp in $wrap {
-  .flex-#{$wp} {
-    flex-wrap: $wp;
+      @each $al in $align {
+        &.flex-#{$type}-align-#{$al} {
+          align-items: $al;
+        }
+      }
+
+      @each $wp in $wrap {
+        &.flex-#{$type}-#{$wp} {
+          flex-wrap: $wp;
+        }
+      }
+
+      @for $i from 0 through 5 {
+        &.flex-#{$type}-gap-#{$i} {
+          gap: #{$i}rem;
+        }
+        &.flex-#{$type}-gap-row-#{$i} {
+          row-gap: #{$i}rem;
+        }
+        &.flex-#{$type}-gap-column-#{$i} {
+          column-gap: #{$i}rem;
+        }
+      }
+    }
   }
 }

@@ -1,6 +1,14 @@
 import RouterHTML from "./RouterHTML.js";
 
-const menu = ["Alertas", "Bordes", "Botones", "Colores", "Texto", "Tipografia", "Flex"];
+const menu = [
+  "Alertas",
+  "Bordes",
+  "Botones",
+  "Colores",
+  "Flex",
+  "Texto",
+  "Tipografia",
+];
 
 document.addEventListener("DOMContentLoaded", (e) => {
   let frag = "";
