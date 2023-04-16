@@ -92,8 +92,8 @@
   left: calc((100% / $grid-columns) * $columns);
 }
 
-@mixin flex($display, $direction, $justify, $align, $wrap) {
-  display: $display;
+@mixin flex($direction, $justify, $align, $wrap) {
+  display: flex;
   flex-direction: $direction;
   justify-content: $justify;
   align-items: $align;
