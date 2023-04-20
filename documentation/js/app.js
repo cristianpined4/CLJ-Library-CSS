@@ -8,6 +8,8 @@ const menu = [
   "Colores",
   "Flex",
   "Listas",
+  "Margenes",
+  "Rellenos",
   "Tablas",
   "Tarjetas",
   "Texto",
