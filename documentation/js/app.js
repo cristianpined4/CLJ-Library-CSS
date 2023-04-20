@@ -6,6 +6,7 @@ const menu = [
   "Botones",
   "Colores",
   "Flex",
+  "Tablas",
   "Texto",
   "Tipografia",
 ];

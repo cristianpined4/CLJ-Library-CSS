@@ -12417,8 +12417,9 @@ mark {
     column-gap: 5rem;
   }
 }
-.table {
-  width: 50%;
+table,
+table.table {
+  width: 100%;
   margin-bottom: 0;
   background-color: #ffffff;
   color: #333333;
@@ -12426,50 +12427,181 @@ mark {
   line-height: 1.5;
   border-collapse: collapse;
   border-spacing: 0;
+  transition: all 300ms ease-in;
 }
-.table thead {
+table thead,
+table.table thead {
   background-color: #f5f5f5;
   color: #333333;
 }
-.table.primary thead {
+table.primary thead,
+table.table.primary thead {
   background-color: #3b56fb;
   color: white;
 }
-.table.secondary thead {
+table.secondary thead,
+table.table.secondary thead {
   background-color: #565759;
   color: white;
 }
-.table.success thead {
+table.success thead,
+table.table.success thead {
   background-color: #24a213;
   color: white;
 }
-.table.danger thead {
+table.danger thead,
+table.table.danger thead {
   background-color: #d70731;
   color: white;
 }
-.table.warning thead {
+table.warning thead,
+table.table.warning thead {
   background-color: #c8d707;
   color: #252525;
 }
-.table.info thead {
+table.info thead,
+table.table.info thead {
   background-color: #07d7d5;
   color: white;
 }
-.table td, .table th {
+table.primary-full thead,
+table.table.primary-full thead {
+  background-color: #3b56fb;
+  color: white;
+}
+table.primary-full tbody tr,
+table.table.primary-full tbody tr {
+  background-color: #3b56fb;
+  color: white;
+}
+table.primary-full tbody tr:nth-child(2n+1),
+table.table.primary-full tbody tr:nth-child(2n+1) {
+  background-color: #092bfa;
+  color: white;
+}
+table.secondary-full thead,
+table.table.secondary-full thead {
+  background-color: #565759;
+  color: white;
+}
+table.secondary-full tbody tr,
+table.table.secondary-full tbody tr {
+  background-color: #565759;
+  color: white;
+}
+table.secondary-full tbody tr:nth-child(2n+1),
+table.table.secondary-full tbody tr:nth-child(2n+1) {
+  background-color: #3d3e3f;
+  color: white;
+}
+table.success-full thead,
+table.table.success-full thead {
+  background-color: #24a213;
+  color: white;
+}
+table.success-full tbody tr,
+table.table.success-full tbody tr {
+  background-color: #24a213;
+  color: white;
+}
+table.success-full tbody tr:nth-child(2n+1),
+table.table.success-full tbody tr:nth-child(2n+1) {
+  background-color: #1a740e;
+  color: white;
+}
+table.danger-full thead,
+table.table.danger-full thead {
+  background-color: #d70731;
+  color: white;
+}
+table.danger-full tbody tr,
+table.table.danger-full tbody tr {
+  background-color: #d70731;
+  color: white;
+}
+table.danger-full tbody tr:nth-child(2n+1),
+table.table.danger-full tbody tr:nth-child(2n+1) {
+  background-color: #a60526;
+  color: white;
+}
+table.warning-full thead,
+table.table.warning-full thead {
+  background-color: #c8d707;
+  color: #252525;
+}
+table.warning-full tbody tr,
+table.table.warning-full tbody tr {
+  background-color: #c8d707;
+  color: #252525;
+}
+table.warning-full tbody tr:nth-child(2n+1),
+table.table.warning-full tbody tr:nth-child(2n+1) {
+  background-color: #9aa605;
+  color: #252525;
+}
+table.info-full thead,
+table.table.info-full thead {
+  background-color: #07d7d5;
+  color: white;
+}
+table.info-full tbody tr,
+table.table.info-full tbody tr {
+  background-color: #07d7d5;
+  color: white;
+}
+table.info-full tbody tr:nth-child(2n+1),
+table.table.info-full tbody tr:nth-child(2n+1) {
+  background-color: #05a6a4;
+  color: white;
+}
+table td, table th,
+table.table td,
+table.table th {
   padding: 8px;
   text-align: left;
   vertical-align: top;
   border-top: 1px solid #dee2e6;
 }
-.table .table-bordered {
+table tbody tr:hover,
+table.table tbody tr:hover {
+  box-shadow: rgba(37, 37, 37, 0.4588235294) 1px 5px 5px;
+  transform: scale(1.02);
+}
+table td.scope, table th.scope,
+table.table td.scope,
+table.table th.scope {
+  font-weight: 900 !important;
+  font-size: 15px;
+}
+table th,
+table.table th {
+  font-weight: 900 !important;
+}
+table.table-center td, table.table-center th,
+table.table.table-center td,
+table.table.table-center th {
+  text-align: center;
+}
+table.table-bordered,
+table.table.table-bordered {
   border: 1px solid #dee2e6;
   border-collapse: separate;
   border-left: 1px solid #dee2e6;
   text-align: left;
 }
-.table .table-bordered th, .table .table-bordered td {
+table.table-bordered th, table.table-bordered td,
+table.table.table-bordered th,
+table.table.table-bordered td {
   border: 1px solid #dee2e6;
   border-left: 1px solid #dee2e6;
+}
+
+.table-adaptive {
+  display: block;
+  width: 100%;
+  overflow: auto;
+  padding-top: 1rem;
+  padding-bottom: 1rem;
 }
 
 /*# sourceMappingURL=clj.css.map */

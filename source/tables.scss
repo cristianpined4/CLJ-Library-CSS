@@ -1,6 +1,7 @@
 // Tabla
-.table {
-  width: 50%;
+table,
+table.table {
+  width: 100%;
   margin-bottom: $table-cell-margin;
   background-color: $table-bg-color;
   color: $table-text-color;
@@ -8,6 +9,7 @@
   line-height: $table-line-height;
   border-collapse: collapse;
   border-spacing: 0;
+  transition: all 300ms ease-in;
 
   // Encabezado de la tabla
   & thead {
@@ -25,6 +27,33 @@
       }
     }
   }
+  @each $type, $bg in $style-type {
+    &.#{$type}-full thead {
+      background-color: $bg;
+      @if ($type == "warning") {
+        color: #252525;
+      } @else {
+        color: white;
+      }
+    }
+    &.#{$type}-full tbody tr {
+      background-color: $bg;
+      @if ($type == "warning") {
+        color: #252525;
+      } @else {
+        color: white;
+      }
+    }
+
+    &.#{$type}-full tbody tr:nth-child(2n + 1) {
+      background-color: darken($bg, 10%);
+      @if ($type == "warning") {
+        color: #252525;
+      } @else {
+        color: white;
+      }
+    }
+  }
 
   // Celdas
   & td,
@@ -35,17 +64,45 @@
     border-top: 1px solid #dee2e6;
   }
 
+  & tbody tr:hover {
+    box-shadow: #25252575 1px 5px 5px;
+    transform: scale(1.02);
+  }
+
+  & td.scope,
+  & th.scope {
+    font-weight: 900 !important;
+    font-size: 15px;
+  }
+
+  & th {
+    font-weight: 900 !important;
+  }
+
+  &.table-center td,
+  &.table-center th {
+    text-align: center;
+  }
+
   //Tabla con border
-  & .table-bordered {
+  &.table-bordered {
     border: 1px solid #dee2e6;
     border-collapse: separate;
     border-left: 1px solid #dee2e6;
     text-align: left;
   }
 
-  & .table-bordered th,
-  & .table-bordered td {
+  &.table-bordered th,
+  &.table-bordered td {
     border: 1px solid #dee2e6;
     border-left: 1px solid #dee2e6;
   }
+}
+
+.table-adaptive {
+  display: block;
+  width: 100%;
+  overflow: auto;
+  padding-top: 1rem;
+  padding-bottom: 1rem;
 }
