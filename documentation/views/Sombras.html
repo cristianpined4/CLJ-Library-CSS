@@ -1,0 +1,43 @@
+<div class="card my-2">
+  <div class="body">
+    <h3>Sombras</h3>
+    <p>Use las utilidades Sombras para agregar o eliminar la sombra de los elementos. Elija entre todas las sombra o
+      uno a la vez. y puede ampliar o reducir esa sombra usando las clases <span class="badge">.shadow-none</span> ,
+      <span class="badge">.shadow-small</span> y <span class="badge">.shadow-large</span>
+    </p>
+    <style>
+      div.el {
+        width: 170px;
+        height: 100px;
+        background-color: rgb(250, 192, 153);
+        color: aliceblue;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+
+      div.el.h {
+        width: 100px;
+        height: 50px;
+        background-color: rgb(219, 99, 20);
+        color: aliceblue;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+    </style>
+    <div class="el">
+      <div class="el h shadow">.shadow</div>
+    </div>
+
+    <div class="my-3">
+      <pre>
+        <code>
+          <div class="shadow"></div>
+          <div class="shadow shadow-none"></div>
+          <div class="shadow shadow-small"></div>
+          <div class="shadow shadow-large"></div>
+          </code>
+        </pre>
+    </div>
+  </div>

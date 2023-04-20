@@ -10,6 +10,7 @@ const menu = [
   "Listas",
   "Margenes",
   "Rellenos",
+  "Sombras",
   "Tablas",
   "Tarjetas",
   "Texto",
