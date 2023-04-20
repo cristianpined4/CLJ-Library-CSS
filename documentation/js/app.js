@@ -2,10 +2,12 @@ import RouterHTML from "./RouterHTML.js";
 
 const menu = [
   "Alertas",
+  "Badges",
   "Bordes",
   "Botones",
   "Colores",
   "Flex",
+  "Listas",
   "Tablas",
   "Tarjetas",
   "Texto",
