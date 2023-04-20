@@ -1,0 +1,50 @@
+// Tabla
+.table {
+  width: 50%;
+  margin-bottom: $table-cell-margin;
+  background-color: $table-bg-color;
+  color: $table-text-color;
+  font-size: $table-font-size;
+  line-height: $table-line-height;
+  border-collapse: collapse;
+  border-spacing: 0;
+
+  & thead {
+    background-color: $table-header-bg-color;
+    color: $table-header-text-color;
+  }
+
+  @each $type, $bg in $style-type {
+    &.#{$type} thead {
+      background-color: $bg;
+      @if ($type == "warning") {
+        color: #252525;
+      } @else {
+        color: white;
+      }
+    }
+  }
+
+  // Celdas
+  & td,
+  & th {
+    padding: $table-cell-padding;
+    text-align: left;
+    vertical-align: top;
+    border-top: 1px solid #dee2e6;
+  }
+
+  //Tabla con border
+  & .table-bordered {
+    border: 1px solid #dee2e6;
+    border-collapse: separate;
+    border-left: 1px solid #dee2e6;
+    text-align: left;
+  }
+
+  & .table-bordered th,
+  & .table-bordered td {
+    border: 1px solid #dee2e6;
+    border-left: 1px solid #dee2e6;
+  }
+}
