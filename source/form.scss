@@ -1,13 +1,61 @@
+form,
 .form {
-  .form-group {
+  & .form-group {
     margin-bottom: $form-group-margin-bottom;
 
     label {
       margin-bottom: $form-label-margin-bottom;
     }
+
+    & .input-group {
+      position: relative;
+      display: flex;
+      align-items: stretch;
+      & .prepend,
+      & .append {
+        width: calc(3rem + 2px);
+        height: calc(2.25rem + 2px);
+        border: 1px solid #ced4da;
+        border-radius: $form-input-border-radius;
+        margin-right: -1px;
+        color: #495057;
+        background-color: #e9ecef;
+        display: inherit;
+        justify-content: center;
+        vertical-align: middle;
+        align-items: center;
+        font-weight: 600;
+        &.sm {
+          height: calc(1.75rem + 2px);
+          font-size: 0.875rem;
+        }
+
+        &.lg {
+          height: calc(2.75rem + 2px);
+          font-size: 1.25rem;
+        }
+      }
+      & .append {
+        margin-left: -1px;
+      }
+    }
   }
 
-  .form-input {
+  &.inline,
+  & .inline {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+    -ms-flex-flow: row wrap;
+    flex-flow: row wrap;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+  }
+
+  & .form-input {
     display: block;
     width: 100%;
     height: calc(2.25rem + 2px);
@@ -20,10 +68,116 @@
     background-clip: padding-box;
     border: 1px solid #ced4da;
     border-radius: $form-input-border-radius;
+    margin-bottom: 0.75rem;
+
+    &.sm {
+      height: calc(1.75rem + 2px);
+      font-size: 0.875rem;
+    }
+
+    &.lg {
+      height: calc(2.75rem + 2px);
+      font-size: 1.25rem;
+    }
 
     &::placeholder {
       color: #6c757d;
       opacity: 1;
+    }
+
+    &:active,
+    &:focus {
+      color: #495057;
+      background-color: #fff;
+      border-color: #8f6fff;
+      outline: 0;
+      box-shadow: 0 0 0 0.2rem rgba(102, 13, 204, 0.25);
+    }
+
+    &-file {
+      color: #6c757d;
+      font-size: 1rem;
+      margin: 0 auto 0;
+      min-height: 15px;
+      overflow: hidden;
+      padding: 10px;
+      text-align: center;
+      width: 100%;
+      &::-webkit-file-upload-button {
+        padding: 0.75rem 1rem;
+        font-size: calc(1rem - 2px);
+        color: #fff;
+        background-color: #8f6fff;
+        border: none;
+        border-radius: 15px;
+        margin-right: 0.75rem;
+        cursor: pointer;
+        transition: all 300ms ease-in;
+        &:hover {
+          background-color: darken(#8f6fff, 10%);
+        }
+      }
+
+      &.outline::-webkit-file-upload-button {
+        padding: 0.75rem 1rem;
+        font-size: calc(1rem - 2px);
+        color: #8f6fff;
+        background-color: #fff;
+        border: 2px solid #8f6fff;
+        border-radius: 15px;
+        margin-right: 0.75rem;
+        cursor: pointer;
+        transition: all 300ms ease-in;
+        &:hover {
+          background-color: darken(#8f6fff, 10%);
+          color: #fff;
+        }
+      }
+    }
+  }
+
+  & select.form-input[multiple] {
+    height: auto;
+  }
+
+  & textarea.form-input {
+    height: 8rem;
+  }
+
+  & input[type="checkbox"].form-check-input,
+  & input[type="radio"].form-radio-input {
+    margin-bottom: 1.3rem;
+    opacity: 0;
+    & + label:before {
+      content: "";
+      background: #f4f5f8;
+      border: 1px solid #a6aec6;
+      display: inline-block;
+      width: 1em;
+      height: 1em;
+      position: relative;
+      margin-right: 0.5em;
+      cursor: pointer;
+      text-align: center;
+      -webkit-transition: all 250ms ease;
+      transition: all 250ms ease;
+      display: inline-block;
+      vertical-align: middle;
+    }
+    &:checked + label:before {
+      background-color: #8f6fff;
+      box-shadow: inset 0 0 0 4px #f4f5f8;
+    }
+    &:checked + label {
+      display: inline-block;
+      vertical-align: middle;
+      line-height: 32px;
+      color: #8f6fff;
+    }
+  }
+  & input[type="radio"].form-radio-input {
+    & + label:before {
+      border-radius: 100% !important;
     }
   }
 }

@@ -1,0 +1,210 @@
+<div class="card my-3">
+  <div class="body">
+    <h3>Formularios</h3>
+    <p>Ejemplos y pautas de uso para estilos de control de formularios, opciones de diseño y componentes personalizados
+      para
+      crear una amplia variedad de formularios.</p>
+    <h4 class="mt-3">Resumen</h4>
+    <p>Los controles de formulario de CLJ CSS se expanden en nuestros estilos de formulario reiniciados con clases. Use
+      estas
+      clases para optar por sus pantallas personalizadas para una representación más consistente en todos los
+      navegadores y
+      dispositivos.</p>
+    <p>Asegúrese de usar un apropiado type atributo en todas las entradas ( por ejemplo., email para dirección de correo
+      electrónico o number para obtener información numérica ) para aprovechar los controles de entrada más nuevos, como
+      la
+      verificación por correo electrónico, la selección de números y más.</p>
+    <p>Aquí hay un ejemplo rápido para demostrar los estilos de formulario. Siga leyendo para obtener documentación
+      sobre las clases requeridas, el diseño del formulario y más.</p>
+    <form class="my-3">
+      <div class="form-group">
+        <label for="email">Email</label>
+        <div class="input-group">
+          <div class="prepend">
+            @
+          </div>
+          <input type="email" class="form-input" id="email" placeholder="Ingrese email">
+        </div>
+        <small>Nunca compartiremos su correo electrónico con nadie más.</small>
+      </div>
+      <div class="form-group">
+        <label for="pass">Password</label>
+        <input type="password" class="form-input" id="pass" placeholder="Password">
+      </div>
+      <div class="form-check">
+        <input type="checkbox" class="form-check-input" id="Check1">
+        <label class="form-check-label" for="Check1">Acepto los terminos</label>
+      </div>
+      <button type="submit" class="btn primary">Enviar</button>
+    </form>
+    <pre class="my-3">
+      <code>
+        <form class="form">
+          <div class="form-group">
+            <label for="email">Email</label>
+            <div class="input-group">
+              <div class="prepend">
+                @
+              </div>
+              <input type="email" class="form-input" id="email" placeholder="Ingrese email">
+            </div>
+            <small>Nunca compartiremos su correo electrónico con nadie más.</small>
+          </div>
+          <div class="form-group">
+            <label for="pass">Password</label>
+            <input type="password" class="form-input" id="pass" placeholder="Password">
+          </div>
+          <div class="form-check">
+            <input type="checkbox" class="form-check-input" id="Check1">
+            <label class="form-check-label" for="Check1">Acepto los terminos</label>
+          </div>
+          <button type="submit" class="btn primary">Enviar</button>
+        </form>
+      </code>
+    </pre>
+    <h4 class="mt-3">Controles de formulario</h4>
+    <p>Controles de forma textual — &lt;input&gt;s, &lt;select&gt;s, y &lt;textarea&gt;s, están diseñados con la
+      clase
+      <span class="badge">.form-input</span>. Se incluyen estilos para apariencia general, estado de enfoque, tamaño y
+      más.
+    </p>
+    <form class="my-3">
+      <div class="form-group">
+        <label for="email">Email</label>
+        <input type="email" class="form-input" id="email" placeholder="name@example.com">
+      </div>
+      <div class="form-group">
+        <label for="Select1">Example select</label>
+        <select class="form-input" id="Select1">
+          <option>1</option>
+          <option>2</option>
+          <option>3</option>
+          <option>4</option>
+          <option>5</option>
+        </select>
+      </div>
+      <div class="form-group">
+        <label for="Select2">Example multiple select</label>
+        <select multiple class="form-input" id="Select2">
+          <option>1</option>
+          <option>2</option>
+          <option>3</option>
+          <option>4</option>
+          <option>5</option>
+        </select>
+      </div>
+      <div class="form-group">
+        <label for="Textarea1">Example textarea</label>
+        <textarea class="form-input" id="Textarea1" rows="3"></textarea>
+      </div>
+    </form>
+    <pre class="my-3">
+      <code>
+        <form class="form">
+          <div class="form-group">
+            <label for="email">Email</label>
+            <input type="email" class="form-input" id="email" placeholder="name@example.com">
+          </div>
+          <div class="form-group">
+            <label for="Select1">Example select</label>
+            <select class="form-input" id="Select1">
+              <option>1</option>
+              <option>2</option>
+              <option>3</option>
+              <option>4</option>
+              <option>5</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label for="Select2">Example multiple select</label>
+            <select multiple class="form-input" id="Select2">
+              <option>1</option>
+              <option>2</option>
+              <option>3</option>
+              <option>4</option>
+              <option>5</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label for="Textarea1">Example textarea</label>
+            <textarea class="form-input" id="Textarea1" rows="3"></textarea>
+          </div>
+        </form>
+      </code>
+    </pre>
+    <p class="my-3">Para entradas de archivo, intercambie el <span class="badge">.form-input</span> a <span
+        class="badge">.form-input-file</span>.</p>
+    <form class="my-3">
+      <div class="form-group">
+        <label for="ControlFile1">Example file input</label>
+        <input type="file" class="form-input-file" id="ControlFile1">
+      </div>
+    </form>
+    <pre class="my-3">
+      <code>
+        <form class="form">
+          <div class="form-group">
+            <label for="ControlFile1">Example file input</label>
+            <input type="file" class="form-input-file" id="ControlFile1">
+          </div>
+        </form>
+      </code>
+    </pre>
+    <p class="my-3">Y si se le agrega al input la clase <span class="badge">.outline</span> tomaria este estilo.</p>
+    <form class="my-3">
+      <div class="form-group">
+        <label for="ControlFile1">Example file input</label>
+        <input type="file" class="form-input-file outline" id="ControlFile1">
+      </div>
+    </form>
+    <pre class="my-3">
+      <code>
+        <form class="form">
+          <div class="form-group">
+            <label for="ControlFile1">Example file input</label>
+            <input type="file" class="form-input-file outline" id="ControlFile1">
+          </div>
+        </form>
+      </code>
+    </pre>
+    <h4 class="mt-3">Dimensionamiento</h4>
+    <p>Establecer alturas usando clases como <span class="badge">.form-input.lg</span> y <span
+        class="badge">.form-input.sm</span>.</p>
+    <form class="my-3">
+      <input class="form-input lg" type="text" placeholder=".form-input.lg">
+      <input class="form-input" type="text" placeholder="Input normal">
+      <input class="form-input sm" type="text" placeholder=".form-input.sm">
+    </form>
+    <pre class="my-3">
+      <code>
+        <input class="form-input lg" type="text" placeholder=".form-input.lg">
+        <input class="form-input" type="text" placeholder="Input normal">
+        <input class="form-input sm" type="text" placeholder=".form-input.sm">
+      </code>
+    </pre>
+    <form class="my-3">
+      <select class="form-input lg">
+        <option>Large select</option>
+      </select>
+      <select class="form-input">
+        <option>Default select</option>
+      </select>
+      <select class="form-input sm">
+        <option>Small select</option>
+      </select>
+    </form>
+    <pre class="my-3">
+      <code>
+        <select class="form-input lg">
+          <option>Large select</option>
+        </select>
+        <select class="form-input">
+          <option>Default select</option>
+        </select>
+        <select class="form-input sm">
+          <option>Small select</option>
+        </select>
+      </code>
+    </pre>
+  </div>
+</div>

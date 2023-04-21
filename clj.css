@@ -7383,12 +7383,67 @@ mark {
   }
 }
 
+form .form-group,
 .form .form-group {
   margin-bottom: 1rem;
 }
+form .form-group label,
 .form .form-group label {
-  margin-bottom: 0.5rem;
+  margin-bottom: 0.75rem;
 }
+form .form-group .input-group,
+.form .form-group .input-group {
+  position: relative;
+  display: flex;
+  align-items: stretch;
+}
+form .form-group .input-group .prepend, form .form-group .input-group .append,
+.form .form-group .input-group .prepend,
+.form .form-group .input-group .append {
+  width: calc(3rem + 2px);
+  height: calc(2.25rem + 2px);
+  border: 1px solid #ced4da;
+  border-radius: 0.25rem;
+  margin-right: -1px;
+  color: #495057;
+  background-color: #e9ecef;
+  display: inherit;
+  justify-content: center;
+  vertical-align: middle;
+  align-items: center;
+  font-weight: 600;
+}
+form .form-group .input-group .prepend.sm, form .form-group .input-group .append.sm,
+.form .form-group .input-group .prepend.sm,
+.form .form-group .input-group .append.sm {
+  height: calc(1.75rem + 2px);
+  font-size: 0.875rem;
+}
+form .form-group .input-group .prepend.lg, form .form-group .input-group .append.lg,
+.form .form-group .input-group .prepend.lg,
+.form .form-group .input-group .append.lg {
+  height: calc(2.75rem + 2px);
+  font-size: 1.25rem;
+}
+form .form-group .input-group .append,
+.form .form-group .input-group .append {
+  margin-left: -1px;
+}
+form.inline, form .inline,
+.form.inline,
+.form .inline {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+  -ms-flex-flow: row wrap;
+  flex-flow: row wrap;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+}
+form .form-input,
 .form .form-input {
   display: block;
   width: 100%;
@@ -7402,10 +7457,125 @@ mark {
   background-clip: padding-box;
   border: 1px solid #ced4da;
   border-radius: 0.25rem;
+  margin-bottom: 0.75rem;
 }
+form .form-input.sm,
+.form .form-input.sm {
+  height: calc(1.75rem + 2px);
+  font-size: 0.875rem;
+}
+form .form-input.lg,
+.form .form-input.lg {
+  height: calc(2.75rem + 2px);
+  font-size: 1.25rem;
+}
+form .form-input::placeholder,
 .form .form-input::placeholder {
   color: #6c757d;
   opacity: 1;
+}
+form .form-input:active, form .form-input:focus,
+.form .form-input:active,
+.form .form-input:focus {
+  color: #495057;
+  background-color: #fff;
+  border-color: #8f6fff;
+  outline: 0;
+  box-shadow: 0 0 0 0.2rem rgba(102, 13, 204, 0.25);
+}
+form .form-input-file,
+.form .form-input-file {
+  color: #6c757d;
+  font-size: 1rem;
+  margin: 0 auto 0;
+  min-height: 15px;
+  overflow: hidden;
+  padding: 10px;
+  text-align: center;
+  width: 100%;
+}
+form .form-input-file::-webkit-file-upload-button,
+.form .form-input-file::-webkit-file-upload-button {
+  padding: 0.75rem 1rem;
+  font-size: calc(1rem - 2px);
+  color: #fff;
+  background-color: #8f6fff;
+  border: none;
+  border-radius: 15px;
+  margin-right: 0.75rem;
+  cursor: pointer;
+  transition: all 300ms ease-in;
+}
+form .form-input-file::-webkit-file-upload-button:hover,
+.form .form-input-file::-webkit-file-upload-button:hover {
+  background-color: #673cff;
+}
+form .form-input-file.outline::-webkit-file-upload-button,
+.form .form-input-file.outline::-webkit-file-upload-button {
+  padding: 0.75rem 1rem;
+  font-size: calc(1rem - 2px);
+  color: #8f6fff;
+  background-color: #fff;
+  border: 2px solid #8f6fff;
+  border-radius: 15px;
+  margin-right: 0.75rem;
+  cursor: pointer;
+  transition: all 300ms ease-in;
+}
+form .form-input-file.outline::-webkit-file-upload-button:hover,
+.form .form-input-file.outline::-webkit-file-upload-button:hover {
+  background-color: #673cff;
+  color: #fff;
+}
+form select.form-input[multiple],
+.form select.form-input[multiple] {
+  height: auto;
+}
+form textarea.form-input,
+.form textarea.form-input {
+  height: 8rem;
+}
+form input[type=checkbox].form-check-input, form input[type=radio].form-radio-input,
+.form input[type=checkbox].form-check-input,
+.form input[type=radio].form-radio-input {
+  margin-bottom: 1.3rem;
+  opacity: 0;
+}
+form input[type=checkbox].form-check-input + label:before, form input[type=radio].form-radio-input + label:before,
+.form input[type=checkbox].form-check-input + label:before,
+.form input[type=radio].form-radio-input + label:before {
+  content: "";
+  background: #f4f5f8;
+  border: 1px solid #a6aec6;
+  display: inline-block;
+  width: 1em;
+  height: 1em;
+  position: relative;
+  margin-right: 0.5em;
+  cursor: pointer;
+  text-align: center;
+  -webkit-transition: all 250ms ease;
+  transition: all 250ms ease;
+  display: inline-block;
+  vertical-align: middle;
+}
+form input[type=checkbox].form-check-input:checked + label:before, form input[type=radio].form-radio-input:checked + label:before,
+.form input[type=checkbox].form-check-input:checked + label:before,
+.form input[type=radio].form-radio-input:checked + label:before {
+  background-color: #8f6fff;
+  box-shadow: inset 0 0 0 4px #f4f5f8;
+}
+form input[type=checkbox].form-check-input:checked + label, form input[type=radio].form-radio-input:checked + label,
+.form input[type=checkbox].form-check-input:checked + label,
+.form input[type=radio].form-radio-input:checked + label {
+  display: inline-block;
+  vertical-align: middle;
+  line-height: 32px;
+  color: #8f6fff;
+}
+form input[type=radio].form-radio-input + label:before,
+.form input[type=radio].form-radio-input + label:before {
+  border-radius: 100% !important;
 }
 
 .btn {
