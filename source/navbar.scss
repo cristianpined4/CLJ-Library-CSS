@@ -43,7 +43,9 @@
     &.dropdown {
       position: relative;
       &::after {
-        content: "\23F4";
+        content: "\f0d9";
+        font-family: var(--fa-style-family, "Font Awesome 6 Free");
+        font-weight: var(--fa-style, 900);
       }
       & .dropdown-menu {
         background-color: $navbar-bg-color;
@@ -74,7 +76,9 @@
         display: block;
       }
       &:hover::after {
-        content: "\23F7";
+        content: "\f0d7";
+        font-family: var(--fa-style-family, "Font Awesome 6 Free");
+        font-weight: var(--fa-style, 900);
       }
     }
   }
