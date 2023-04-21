@@ -1,0 +1,37 @@
+.w-25 {
+  width: 25%;
+}
+
+.w-50 {
+  width: 50%;
+}
+
+.w-75 {
+  width: 75%;
+}
+
+.w-100 {
+  width: 100%;
+}
+
+@each $type, $bp in $grid-breakpoints {
+  @if ($type != "xs") {
+    @media only screen and (min-width: $bp) {
+      .w-#{$type}-25 {
+        width: 25%;
+      }
+
+      .w-#{$type}-50 {
+        width: 50%;
+      }
+
+      .w-#{$type}-75 {
+        width: 75%;
+      }
+
+      .w-#{$type}-100 {
+        width: 100%;
+      }
+    }
+  }
+}

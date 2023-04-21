@@ -7,6 +7,7 @@ const menu = [
   "Botones",
   "Colores",
   "Flex",
+  "Grid",
   "Listas",
   "Margenes",
   "Rellenos",
