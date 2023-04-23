@@ -14,6 +14,8 @@ Es una librería de CSS (Cascading Style Sheets) que proporciona varios componen
 
 - Botones: la librería ofrece una variedad de estilos y tamaños de botones para personalizar la apariencia de los botones en el sitio web.
 
+- Carrusel: El componente Carrusel se utiliza para crear un carrusel de imágenes o elementos en la página web. Esto puede ser útil para mostrar varias imágenes o elementos de manera dinámica.
+
 - Colores: esta sección incluye una variedad de colores predeterminados que se pueden utilizar para personalizar la apariencia de diferentes elementos de la página web.
 
 - Flex: esta sección ofrece una guía sobre cómo usar el modelo de caja flexible de CSS para crear diseños más flexibles y responsivos.

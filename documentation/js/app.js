@@ -5,6 +5,7 @@ const menu = [
   "Badges",
   "Bordes",
   "Botones",
+  "Carrusel",
   "Colores",
   "Flex",
   "Formularios",
