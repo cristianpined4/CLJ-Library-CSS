@@ -1,6 +1,6 @@
 ![Logo de CLJ CSS](https://cristianpined4.github.io/CLJ-Library-CSS/documentation/svg/logo.png)
 
-# CLJ CSS - <a href="https://cristianpined4.github.io/CLJ-Library-CSS/" target="_blank">Documentacion oficial</a>
+# CLJ CSS - [Documentacion oficial](https://cristianpined4.github.io/CLJ-Library-CSS/?target=_blank)
 
 <h2>Version 1.0.0</h2>
 
