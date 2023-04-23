@@ -51,29 +51,29 @@
 }
 
 @mixin border-y($b) {
-  border-top: #{$b}px solid #505050 !important;
-  border-bottom: #{$b}px solid #505050 !important;
+  border-top: #{$b}px solid #505050;
+  border-bottom: #{$b}px solid #505050;
 }
 
 @mixin border-t($b) {
-  border-top: #{$b}px solid #505050 !important;
+  border-top: #{$b}px solid #505050;
 }
 
 @mixin border-b($b) {
-  border-bottom: #{$b}px solid #505050 !important;
+  border-bottom: #{$b}px solid #505050;
 }
 
 @mixin border-x($b) {
-  border-left: #{$b}px solid #505050 !important;
-  border-right: #{$b}px solid #505050 !important;
+  border-left: #{$b}px solid #505050;
+  border-right: #{$b}px solid #505050;
 }
 
 @mixin border-l($b) {
-  border-left: #{$b}px solid #505050 !important;
+  border-left: #{$b}px solid #505050;
 }
 
 @mixin border-r($b) {
-  border-right: #{$b}px solid #505050 !important;
+  border-right: #{$b}px solid #505050;
 }
 
 @mixin make-column($columns) {
@@ -93,7 +93,7 @@
 }
 
 @mixin flex($direction, $justify, $align, $wrap) {
-  display: flex;
+  display: flex !important;
   flex-direction: $direction;
   justify-content: $justify;
   align-items: $align;
