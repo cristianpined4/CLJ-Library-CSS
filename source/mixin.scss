@@ -1,79 +1,79 @@
 @mixin my($m) {
-  margin-top: $m;
-  margin-bottom: $m;
+  margin-top: $m !important;
+  margin-bottom: $m !important;
 }
 
 @mixin mt($m) {
-  margin-top: $m;
+  margin-top: $m !important;
 }
 
 @mixin mb($m) {
-  margin-bottom: $m;
+  margin-bottom: $m !important;
 }
 
 @mixin mx($m) {
-  margin-left: $m;
-  margin-right: $m;
+  margin-left: $m !important;
+  margin-right: $m !important;
 }
 
 @mixin ml($m) {
-  margin-left: $m;
+  margin-left: $m !important;
 }
 
 @mixin mr($m) {
-  margin-right: $m;
+  margin-right: $m !important;
 }
 
 @mixin py($p) {
-  padding-top: $p;
-  padding-bottom: $p;
+  padding-top: $p !important;
+  padding-bottom: $p !important;
 }
 
 @mixin pt($p) {
-  padding-top: $p;
+  padding-top: $p !important;
 }
 
 @mixin pb($p) {
-  padding-bottom: $p;
+  padding-bottom: $p !important;
 }
 
 @mixin px($p) {
-  padding-left: $p;
-  padding-right: $p;
+  padding-left: $p !important;
+  padding-right: $p !important;
 }
 
 @mixin pl($p) {
-  padding-left: $p;
+  padding-left: $p !important;
 }
 
 @mixin pr($p) {
-  padding-right: $p;
+  padding-right: $p !important;
 }
 
 @mixin border-y($b) {
-  border-top: #{$b}px solid #505050;
-  border-bottom: #{$b}px solid #505050;
+  border-top: #{$b}px solid #505050 !important;
+  border-bottom: #{$b}px solid #505050 !important;
 }
 
 @mixin border-t($b) {
-  border-top: #{$b}px solid #505050;
+  border-top: #{$b}px solid #505050 !important;
 }
 
 @mixin border-b($b) {
-  border-bottom: #{$b}px solid #505050;
+  border-bottom: #{$b}px solid #505050 !important;
 }
 
 @mixin border-x($b) {
-  border-left: #{$b}px solid #505050;
-  border-right: #{$b}px solid #505050;
+  border-left: #{$b}px solid #505050 !important;
+  border-right: #{$b}px solid #505050 !important;
 }
 
 @mixin border-l($b) {
-  border-left: #{$b}px solid #505050;
+  border-left: #{$b}px solid #505050 !important;
 }
 
 @mixin border-r($b) {
-  border-right: #{$b}px solid #505050;
+  border-right: #{$b}px solid #505050 !important;
 }
 
 @mixin make-column($columns) {

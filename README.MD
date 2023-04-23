@@ -2,7 +2,7 @@
 
 # CLJ CSS - [Documentacion oficial](https://cristianpined4.github.io/CLJ-Library-CSS/)
 
-<h2>Version 1.0.0</h2>
+## Version 1.0.0
 
 Es una librería de CSS (Cascading Style Sheets) que proporciona varios componentes predefinidos para mejorar la apariencia visual y la funcionalidad de un sitio web. A continuación, se describen brevemente los diferentes componentes disponibles en la librería:
 
