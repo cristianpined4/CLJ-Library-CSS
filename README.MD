@@ -1,8 +1,22 @@
-![Logo de CLJ CSS](https://cristianpined4.github.io/CLJ-Library-CSS/documentation/svg/logo-black.png)
+<style>
+  img{
+    max-width: 100%;
+    margin: 0 auto;
+    display: block;
+  }
+  h1,h2.version{
+    text-align:center;
+  }
+  h2.version{
+    margin-bottom:3rem;
+  }
+</style>
+
+![Logo de CLJ CSS](https://cristianpined4.github.io/CLJ-Library-CSS/documentation/svg/logo.png)
 
 # CLJ CSS - [Documentacion oficial](https://cristianpined4.github.io/CLJ-Library-CSS/)
 
-## Version 1.0.0
+<h2 class="version">Version 1.0.0</h2>
 
 Es una librería de CSS (Cascading Style Sheets) que proporciona varios componentes predefinidos para mejorar la apariencia visual y la funcionalidad de un sitio web. A continuación, se describen brevemente los diferentes componentes disponibles en la librería:
 
