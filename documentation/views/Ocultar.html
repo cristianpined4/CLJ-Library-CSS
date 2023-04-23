@@ -1,0 +1,40 @@
+<div class="card my-2">
+  <div class="body">
+    <h3>Ocultar/Mostrar</h3>
+    <p>Use las utilidades de visualizacion para mostrar o ocultar los elementos. puede mostrar los elementos usando la
+      clase
+      <span class="badge">.show</span> o ocultandolo con la clase <span class="badge">.hidden</span>
+    </p>
+    <style>
+      .el {
+        width: 300px;
+        height: 100px;
+        background-color: coral;
+        color: aliceblue;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+    </style>
+    <div class="hidden show-md">
+      <p class="el">.hidden .show-md</p>
+    </div>
+    <div class="show hidden-md">
+      <p class="el">.show .hidden-md</p>
+    </div>
+
+    <div class="my-3">
+      <pre>
+        <code>
+          <div class="hidden"></div>
+          <div class="hidden-sm"></div>
+          <div class="hidden-md"></div>
+          <div class="hidden-lg"></div>
+          <div class="show"></div>
+          <div class="show-sm"></div>
+          <div class="show-md"></div>
+          <div class="show-lg"></div>
+          </code>
+        </pre>
+    </div>
+  </div>

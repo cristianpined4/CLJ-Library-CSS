@@ -11,6 +11,7 @@ const menu = [
   "Grid",
   "Listas",
   "Margenes",
+  "Ocultar",
   "Rellenos",
   "Sombras",
   "Tablas",
