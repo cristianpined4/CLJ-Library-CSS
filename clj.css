@@ -8091,36 +8091,83 @@ form input[type=radio].form-radio-input + label:before,
 }
 
 .badge {
-  display: inline-block;
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
   font-size: 15px;
-  padding: 0.1rem 0.75rem;
+  padding: 0.2rem 1rem;
   border-radius: 15px;
   background-color: #ffd8f6;
   color: #c4003b;
+}
+.badge:hover {
+  background-color: #ffa5ea;
 }
 .badge.primary {
   background-color: #3b56fb !important;
   color: #fff !important;
 }
+.badge.primary:hover {
+  background-color: #092bfa !important;
+}
+.badge.primary span.count {
+  background-color: #fff !important;
+  color: #3b56fb;
+}
 .badge.secondary {
   background-color: #565759 !important;
   color: #fff !important;
+}
+.badge.secondary:hover {
+  background-color: #3d3e3f !important;
+}
+.badge.secondary span.count {
+  background-color: #fff !important;
+  color: #565759;
 }
 .badge.success {
   background-color: #24a213 !important;
   color: #fff !important;
 }
+.badge.success:hover {
+  background-color: #1a740e !important;
+}
+.badge.success span.count {
+  background-color: #fff !important;
+  color: #24a213;
+}
 .badge.danger {
   background-color: #d70731 !important;
   color: #fff !important;
+}
+.badge.danger:hover {
+  background-color: #a60526 !important;
+}
+.badge.danger span.count {
+  background-color: #fff !important;
+  color: #d70731;
 }
 .badge.warning {
   background-color: #c8d707 !important;
   color: #2c2b2b;
 }
+.badge.warning:hover {
+  background-color: #9aa605 !important;
+}
+.badge.warning span.count {
+  background-color: #2c2b2b;
+  color: #c8d707;
+}
 .badge.info {
   background-color: #07d7d5 !important;
   color: #fff !important;
+}
+.badge.info:hover {
+  background-color: #05a6a4 !important;
+}
+.badge.info span.count {
+  background-color: #fff !important;
+  color: #07d7d5;
 }
 .badge.sm {
   font-size: 0.75rem;
@@ -8133,6 +8180,29 @@ form input[type=radio].form-radio-input + label:before,
 }
 .badge.icon-right i {
   margin-left: 0.25rem;
+}
+.badge:has(span) {
+  margin-right: 1rem;
+}
+.badge:has(span.count) {
+  padding: 0.5rem 1rem;
+}
+.badge span {
+  position: sticky;
+  margin-top: -30px;
+  margin-right: -30px;
+  font-size: 12px;
+  line-height: 1;
+  padding: 5px;
+  background-color: #d70731;
+  color: #fff;
+  border-radius: 15px;
+}
+.badge span.count {
+  margin-top: 0;
+  margin-right: 0;
+  margin-left: 0.5rem;
+  border-radius: 5px;
 }
 
 .shadow {
