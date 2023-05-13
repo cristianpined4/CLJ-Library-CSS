@@ -1,17 +1,17 @@
 .p-static {
-  position: static;
+  position: static !important;
 }
 
 .p-relative {
-  position: relative;
+  position: relative !important;
 }
 
 .p-fixed {
-  position: fixed;
+  position: fixed !important;
 }
 
 .p-absolute {
-  position: absolute;
+  position: absolute !important;
 }
 
 .p-sticky {
@@ -19,26 +19,28 @@
 }
 
 .p-absolute,
-.p-fixed,
 .p-sticky,
 .p-relative,
-.p-static {
+.p-fixed {
   @for $i from 0 through 10 {
     &.top-#{$i},
     & .top-#{$i} {
       top: 10% * $i;
     }
+
+    &.bottom-#{$i},
+    & .bottom-#{$i} {
+      bottom: 10% * $i;
+    }
+
     &.left-#{$i},
     & .left-#{$i} {
       left: 10% * $i;
     }
+
     &.right-#{$i},
     & .right-#{$i} {
       right: 10% * $i;
-    }
-    &.bottom-#{$i},
-    & .bottom-#{$i} {
-      bottom: 10% * $i;
     }
   }
 }
@@ -46,19 +48,19 @@
 @each $type, $bp in $grid-breakpoints {
   @media screen and (min-width: $bp) {
     .p-#{$type}-static {
-      position: static;
+      position: static !important;
     }
 
     .p-#{$type}-relative {
-      position: relative;
+      position: relative !important;
     }
 
     .p-#{$type}-fixed {
-      position: fixed;
+      position: fixed !important;
     }
 
     .p-#{$type}-absolute {
-      position: absolute;
+      position: absolute !important;
     }
 
     .p-#{$type}-sticky {
@@ -66,26 +68,28 @@
     }
 
     .p-#{$type}-absolute,
-    .p-#{$type}-fixed,
     .p-#{$type}-sticky,
     .p-#{$type}-relative,
-    .p-#{$type}-static {
+    .p-#{$type}-fixed {
       @for $i from 0 through 10 {
-        &.top-#{$i},
-        & .top-#{$i} {
+        &.top-#{$type}-#{$i},
+        & .top-#{$type}-#{$i} {
           top: 10% * $i;
         }
-        &.left-#{$i},
-        & .left-#{$i} {
+
+        &.bottom-#{$type}-#{$i},
+        & .bottom-#{$type}-#{$i} {
+          bottom: 10% * $i;
+        }
+
+        &.left-#{$type}-#{$i},
+        & .left-#{$type}-#{$i} {
           left: 10% * $i;
         }
-        &.right-#{$i},
-        & .right-#{$i} {
+
+        &.right-#{$type}-#{$i},
+        & .right-#{$type}-#{$i} {
           right: 10% * $i;
-        }
-        &.bottom-#{$i},
-        & .bottom-#{$i} {
-          bottom: 10% * $i;
         }
       }
     }

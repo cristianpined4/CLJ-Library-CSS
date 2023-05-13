@@ -6491,10 +6491,20 @@ mark {
   display: table;
   clear: both;
 }
+.container .row:has(.col:not([class*=sm-]):not([class*=lg]):not([class*=md]):not([class*=xs]):not([class*=xxl]):not([class*=xl])) {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+}
 .container .row .col {
   float: left;
   padding-left: 15px;
   padding-right: 15px;
+}
+.container .row .col:not([class*=sm-]):not([class*=lg]):not([class*=md]):not([class*=xs]):not([class*=xxl]):not([class*=xl]) {
+  display: flex;
+  flex-direction: column;
+  flex: 1 1 auto;
 }
 .container .row .col[class*=push-], .container .row .col[class*=pull-] {
   position: relative;
@@ -7584,6 +7594,7 @@ form input[type=radio].form-radio-input + label:before,
   font-weight: 600;
   border: none;
   transition: all 300ms ease-in;
+  cursor: pointer;
   text-decoration: none !important;
 }
 .btn-group {
@@ -8099,6 +8110,7 @@ form input[type=radio].form-radio-input + label:before,
   border-radius: 15px;
   background-color: #ffd8f6;
   color: #c4003b;
+  cursor: pointer;
 }
 .badge:hover {
   background-color: #ffa5ea;
@@ -8303,19 +8315,19 @@ form input[type=radio].form-radio-input + label:before,
   }
 }
 .p-static {
-  position: static;
+  position: static !important;
 }
 
 .p-relative {
-  position: relative;
+  position: relative !important;
 }
 
 .p-fixed {
-  position: fixed;
+  position: fixed !important;
 }
 
 .p-absolute {
-  position: absolute;
+  position: absolute !important;
 }
 
 .p-sticky {
@@ -8323,3494 +8335,2878 @@ form input[type=radio].form-radio-input + label:before,
 }
 
 .p-absolute.top-0, .p-absolute .top-0,
-.p-fixed.top-0,
-.p-fixed .top-0,
 .p-sticky.top-0,
 .p-sticky .top-0,
 .p-relative.top-0,
 .p-relative .top-0,
-.p-static.top-0,
-.p-static .top-0 {
+.p-fixed.top-0,
+.p-fixed .top-0 {
   top: 0%;
 }
-.p-absolute.left-0, .p-absolute .left-0,
-.p-fixed.left-0,
-.p-fixed .left-0,
-.p-sticky.left-0,
-.p-sticky .left-0,
-.p-relative.left-0,
-.p-relative .left-0,
-.p-static.left-0,
-.p-static .left-0 {
-  left: 0%;
-}
-.p-absolute.right-0, .p-absolute .right-0,
-.p-fixed.right-0,
-.p-fixed .right-0,
-.p-sticky.right-0,
-.p-sticky .right-0,
-.p-relative.right-0,
-.p-relative .right-0,
-.p-static.right-0,
-.p-static .right-0 {
-  right: 0%;
-}
 .p-absolute.bottom-0, .p-absolute .bottom-0,
-.p-fixed.bottom-0,
-.p-fixed .bottom-0,
 .p-sticky.bottom-0,
 .p-sticky .bottom-0,
 .p-relative.bottom-0,
 .p-relative .bottom-0,
-.p-static.bottom-0,
-.p-static .bottom-0 {
+.p-fixed.bottom-0,
+.p-fixed .bottom-0 {
   bottom: 0%;
 }
+.p-absolute.left-0, .p-absolute .left-0,
+.p-sticky.left-0,
+.p-sticky .left-0,
+.p-relative.left-0,
+.p-relative .left-0,
+.p-fixed.left-0,
+.p-fixed .left-0 {
+  left: 0%;
+}
+.p-absolute.right-0, .p-absolute .right-0,
+.p-sticky.right-0,
+.p-sticky .right-0,
+.p-relative.right-0,
+.p-relative .right-0,
+.p-fixed.right-0,
+.p-fixed .right-0 {
+  right: 0%;
+}
 .p-absolute.top-1, .p-absolute .top-1,
-.p-fixed.top-1,
-.p-fixed .top-1,
 .p-sticky.top-1,
 .p-sticky .top-1,
 .p-relative.top-1,
 .p-relative .top-1,
-.p-static.top-1,
-.p-static .top-1 {
+.p-fixed.top-1,
+.p-fixed .top-1 {
   top: 10%;
 }
-.p-absolute.left-1, .p-absolute .left-1,
-.p-fixed.left-1,
-.p-fixed .left-1,
-.p-sticky.left-1,
-.p-sticky .left-1,
-.p-relative.left-1,
-.p-relative .left-1,
-.p-static.left-1,
-.p-static .left-1 {
-  left: 10%;
-}
-.p-absolute.right-1, .p-absolute .right-1,
-.p-fixed.right-1,
-.p-fixed .right-1,
-.p-sticky.right-1,
-.p-sticky .right-1,
-.p-relative.right-1,
-.p-relative .right-1,
-.p-static.right-1,
-.p-static .right-1 {
-  right: 10%;
-}
 .p-absolute.bottom-1, .p-absolute .bottom-1,
-.p-fixed.bottom-1,
-.p-fixed .bottom-1,
 .p-sticky.bottom-1,
 .p-sticky .bottom-1,
 .p-relative.bottom-1,
 .p-relative .bottom-1,
-.p-static.bottom-1,
-.p-static .bottom-1 {
+.p-fixed.bottom-1,
+.p-fixed .bottom-1 {
   bottom: 10%;
 }
+.p-absolute.left-1, .p-absolute .left-1,
+.p-sticky.left-1,
+.p-sticky .left-1,
+.p-relative.left-1,
+.p-relative .left-1,
+.p-fixed.left-1,
+.p-fixed .left-1 {
+  left: 10%;
+}
+.p-absolute.right-1, .p-absolute .right-1,
+.p-sticky.right-1,
+.p-sticky .right-1,
+.p-relative.right-1,
+.p-relative .right-1,
+.p-fixed.right-1,
+.p-fixed .right-1 {
+  right: 10%;
+}
 .p-absolute.top-2, .p-absolute .top-2,
-.p-fixed.top-2,
-.p-fixed .top-2,
 .p-sticky.top-2,
 .p-sticky .top-2,
 .p-relative.top-2,
 .p-relative .top-2,
-.p-static.top-2,
-.p-static .top-2 {
+.p-fixed.top-2,
+.p-fixed .top-2 {
   top: 20%;
 }
-.p-absolute.left-2, .p-absolute .left-2,
-.p-fixed.left-2,
-.p-fixed .left-2,
-.p-sticky.left-2,
-.p-sticky .left-2,
-.p-relative.left-2,
-.p-relative .left-2,
-.p-static.left-2,
-.p-static .left-2 {
-  left: 20%;
-}
-.p-absolute.right-2, .p-absolute .right-2,
-.p-fixed.right-2,
-.p-fixed .right-2,
-.p-sticky.right-2,
-.p-sticky .right-2,
-.p-relative.right-2,
-.p-relative .right-2,
-.p-static.right-2,
-.p-static .right-2 {
-  right: 20%;
-}
 .p-absolute.bottom-2, .p-absolute .bottom-2,
-.p-fixed.bottom-2,
-.p-fixed .bottom-2,
 .p-sticky.bottom-2,
 .p-sticky .bottom-2,
 .p-relative.bottom-2,
 .p-relative .bottom-2,
-.p-static.bottom-2,
-.p-static .bottom-2 {
+.p-fixed.bottom-2,
+.p-fixed .bottom-2 {
   bottom: 20%;
 }
+.p-absolute.left-2, .p-absolute .left-2,
+.p-sticky.left-2,
+.p-sticky .left-2,
+.p-relative.left-2,
+.p-relative .left-2,
+.p-fixed.left-2,
+.p-fixed .left-2 {
+  left: 20%;
+}
+.p-absolute.right-2, .p-absolute .right-2,
+.p-sticky.right-2,
+.p-sticky .right-2,
+.p-relative.right-2,
+.p-relative .right-2,
+.p-fixed.right-2,
+.p-fixed .right-2 {
+  right: 20%;
+}
 .p-absolute.top-3, .p-absolute .top-3,
-.p-fixed.top-3,
-.p-fixed .top-3,
 .p-sticky.top-3,
 .p-sticky .top-3,
 .p-relative.top-3,
 .p-relative .top-3,
-.p-static.top-3,
-.p-static .top-3 {
+.p-fixed.top-3,
+.p-fixed .top-3 {
   top: 30%;
 }
-.p-absolute.left-3, .p-absolute .left-3,
-.p-fixed.left-3,
-.p-fixed .left-3,
-.p-sticky.left-3,
-.p-sticky .left-3,
-.p-relative.left-3,
-.p-relative .left-3,
-.p-static.left-3,
-.p-static .left-3 {
-  left: 30%;
-}
-.p-absolute.right-3, .p-absolute .right-3,
-.p-fixed.right-3,
-.p-fixed .right-3,
-.p-sticky.right-3,
-.p-sticky .right-3,
-.p-relative.right-3,
-.p-relative .right-3,
-.p-static.right-3,
-.p-static .right-3 {
-  right: 30%;
-}
 .p-absolute.bottom-3, .p-absolute .bottom-3,
-.p-fixed.bottom-3,
-.p-fixed .bottom-3,
 .p-sticky.bottom-3,
 .p-sticky .bottom-3,
 .p-relative.bottom-3,
 .p-relative .bottom-3,
-.p-static.bottom-3,
-.p-static .bottom-3 {
+.p-fixed.bottom-3,
+.p-fixed .bottom-3 {
   bottom: 30%;
 }
+.p-absolute.left-3, .p-absolute .left-3,
+.p-sticky.left-3,
+.p-sticky .left-3,
+.p-relative.left-3,
+.p-relative .left-3,
+.p-fixed.left-3,
+.p-fixed .left-3 {
+  left: 30%;
+}
+.p-absolute.right-3, .p-absolute .right-3,
+.p-sticky.right-3,
+.p-sticky .right-3,
+.p-relative.right-3,
+.p-relative .right-3,
+.p-fixed.right-3,
+.p-fixed .right-3 {
+  right: 30%;
+}
 .p-absolute.top-4, .p-absolute .top-4,
-.p-fixed.top-4,
-.p-fixed .top-4,
 .p-sticky.top-4,
 .p-sticky .top-4,
 .p-relative.top-4,
 .p-relative .top-4,
-.p-static.top-4,
-.p-static .top-4 {
+.p-fixed.top-4,
+.p-fixed .top-4 {
   top: 40%;
 }
-.p-absolute.left-4, .p-absolute .left-4,
-.p-fixed.left-4,
-.p-fixed .left-4,
-.p-sticky.left-4,
-.p-sticky .left-4,
-.p-relative.left-4,
-.p-relative .left-4,
-.p-static.left-4,
-.p-static .left-4 {
-  left: 40%;
-}
-.p-absolute.right-4, .p-absolute .right-4,
-.p-fixed.right-4,
-.p-fixed .right-4,
-.p-sticky.right-4,
-.p-sticky .right-4,
-.p-relative.right-4,
-.p-relative .right-4,
-.p-static.right-4,
-.p-static .right-4 {
-  right: 40%;
-}
 .p-absolute.bottom-4, .p-absolute .bottom-4,
-.p-fixed.bottom-4,
-.p-fixed .bottom-4,
 .p-sticky.bottom-4,
 .p-sticky .bottom-4,
 .p-relative.bottom-4,
 .p-relative .bottom-4,
-.p-static.bottom-4,
-.p-static .bottom-4 {
+.p-fixed.bottom-4,
+.p-fixed .bottom-4 {
   bottom: 40%;
 }
+.p-absolute.left-4, .p-absolute .left-4,
+.p-sticky.left-4,
+.p-sticky .left-4,
+.p-relative.left-4,
+.p-relative .left-4,
+.p-fixed.left-4,
+.p-fixed .left-4 {
+  left: 40%;
+}
+.p-absolute.right-4, .p-absolute .right-4,
+.p-sticky.right-4,
+.p-sticky .right-4,
+.p-relative.right-4,
+.p-relative .right-4,
+.p-fixed.right-4,
+.p-fixed .right-4 {
+  right: 40%;
+}
 .p-absolute.top-5, .p-absolute .top-5,
-.p-fixed.top-5,
-.p-fixed .top-5,
 .p-sticky.top-5,
 .p-sticky .top-5,
 .p-relative.top-5,
 .p-relative .top-5,
-.p-static.top-5,
-.p-static .top-5 {
+.p-fixed.top-5,
+.p-fixed .top-5 {
   top: 50%;
 }
-.p-absolute.left-5, .p-absolute .left-5,
-.p-fixed.left-5,
-.p-fixed .left-5,
-.p-sticky.left-5,
-.p-sticky .left-5,
-.p-relative.left-5,
-.p-relative .left-5,
-.p-static.left-5,
-.p-static .left-5 {
-  left: 50%;
-}
-.p-absolute.right-5, .p-absolute .right-5,
-.p-fixed.right-5,
-.p-fixed .right-5,
-.p-sticky.right-5,
-.p-sticky .right-5,
-.p-relative.right-5,
-.p-relative .right-5,
-.p-static.right-5,
-.p-static .right-5 {
-  right: 50%;
-}
 .p-absolute.bottom-5, .p-absolute .bottom-5,
-.p-fixed.bottom-5,
-.p-fixed .bottom-5,
 .p-sticky.bottom-5,
 .p-sticky .bottom-5,
 .p-relative.bottom-5,
 .p-relative .bottom-5,
-.p-static.bottom-5,
-.p-static .bottom-5 {
+.p-fixed.bottom-5,
+.p-fixed .bottom-5 {
   bottom: 50%;
 }
+.p-absolute.left-5, .p-absolute .left-5,
+.p-sticky.left-5,
+.p-sticky .left-5,
+.p-relative.left-5,
+.p-relative .left-5,
+.p-fixed.left-5,
+.p-fixed .left-5 {
+  left: 50%;
+}
+.p-absolute.right-5, .p-absolute .right-5,
+.p-sticky.right-5,
+.p-sticky .right-5,
+.p-relative.right-5,
+.p-relative .right-5,
+.p-fixed.right-5,
+.p-fixed .right-5 {
+  right: 50%;
+}
 .p-absolute.top-6, .p-absolute .top-6,
-.p-fixed.top-6,
-.p-fixed .top-6,
 .p-sticky.top-6,
 .p-sticky .top-6,
 .p-relative.top-6,
 .p-relative .top-6,
-.p-static.top-6,
-.p-static .top-6 {
+.p-fixed.top-6,
+.p-fixed .top-6 {
   top: 60%;
 }
-.p-absolute.left-6, .p-absolute .left-6,
-.p-fixed.left-6,
-.p-fixed .left-6,
-.p-sticky.left-6,
-.p-sticky .left-6,
-.p-relative.left-6,
-.p-relative .left-6,
-.p-static.left-6,
-.p-static .left-6 {
-  left: 60%;
-}
-.p-absolute.right-6, .p-absolute .right-6,
-.p-fixed.right-6,
-.p-fixed .right-6,
-.p-sticky.right-6,
-.p-sticky .right-6,
-.p-relative.right-6,
-.p-relative .right-6,
-.p-static.right-6,
-.p-static .right-6 {
-  right: 60%;
-}
 .p-absolute.bottom-6, .p-absolute .bottom-6,
-.p-fixed.bottom-6,
-.p-fixed .bottom-6,
 .p-sticky.bottom-6,
 .p-sticky .bottom-6,
 .p-relative.bottom-6,
 .p-relative .bottom-6,
-.p-static.bottom-6,
-.p-static .bottom-6 {
+.p-fixed.bottom-6,
+.p-fixed .bottom-6 {
   bottom: 60%;
 }
+.p-absolute.left-6, .p-absolute .left-6,
+.p-sticky.left-6,
+.p-sticky .left-6,
+.p-relative.left-6,
+.p-relative .left-6,
+.p-fixed.left-6,
+.p-fixed .left-6 {
+  left: 60%;
+}
+.p-absolute.right-6, .p-absolute .right-6,
+.p-sticky.right-6,
+.p-sticky .right-6,
+.p-relative.right-6,
+.p-relative .right-6,
+.p-fixed.right-6,
+.p-fixed .right-6 {
+  right: 60%;
+}
 .p-absolute.top-7, .p-absolute .top-7,
-.p-fixed.top-7,
-.p-fixed .top-7,
 .p-sticky.top-7,
 .p-sticky .top-7,
 .p-relative.top-7,
 .p-relative .top-7,
-.p-static.top-7,
-.p-static .top-7 {
+.p-fixed.top-7,
+.p-fixed .top-7 {
   top: 70%;
 }
-.p-absolute.left-7, .p-absolute .left-7,
-.p-fixed.left-7,
-.p-fixed .left-7,
-.p-sticky.left-7,
-.p-sticky .left-7,
-.p-relative.left-7,
-.p-relative .left-7,
-.p-static.left-7,
-.p-static .left-7 {
-  left: 70%;
-}
-.p-absolute.right-7, .p-absolute .right-7,
-.p-fixed.right-7,
-.p-fixed .right-7,
-.p-sticky.right-7,
-.p-sticky .right-7,
-.p-relative.right-7,
-.p-relative .right-7,
-.p-static.right-7,
-.p-static .right-7 {
-  right: 70%;
-}
 .p-absolute.bottom-7, .p-absolute .bottom-7,
-.p-fixed.bottom-7,
-.p-fixed .bottom-7,
 .p-sticky.bottom-7,
 .p-sticky .bottom-7,
 .p-relative.bottom-7,
 .p-relative .bottom-7,
-.p-static.bottom-7,
-.p-static .bottom-7 {
+.p-fixed.bottom-7,
+.p-fixed .bottom-7 {
   bottom: 70%;
 }
+.p-absolute.left-7, .p-absolute .left-7,
+.p-sticky.left-7,
+.p-sticky .left-7,
+.p-relative.left-7,
+.p-relative .left-7,
+.p-fixed.left-7,
+.p-fixed .left-7 {
+  left: 70%;
+}
+.p-absolute.right-7, .p-absolute .right-7,
+.p-sticky.right-7,
+.p-sticky .right-7,
+.p-relative.right-7,
+.p-relative .right-7,
+.p-fixed.right-7,
+.p-fixed .right-7 {
+  right: 70%;
+}
 .p-absolute.top-8, .p-absolute .top-8,
-.p-fixed.top-8,
-.p-fixed .top-8,
 .p-sticky.top-8,
 .p-sticky .top-8,
 .p-relative.top-8,
 .p-relative .top-8,
-.p-static.top-8,
-.p-static .top-8 {
+.p-fixed.top-8,
+.p-fixed .top-8 {
   top: 80%;
 }
-.p-absolute.left-8, .p-absolute .left-8,
-.p-fixed.left-8,
-.p-fixed .left-8,
-.p-sticky.left-8,
-.p-sticky .left-8,
-.p-relative.left-8,
-.p-relative .left-8,
-.p-static.left-8,
-.p-static .left-8 {
-  left: 80%;
-}
-.p-absolute.right-8, .p-absolute .right-8,
-.p-fixed.right-8,
-.p-fixed .right-8,
-.p-sticky.right-8,
-.p-sticky .right-8,
-.p-relative.right-8,
-.p-relative .right-8,
-.p-static.right-8,
-.p-static .right-8 {
-  right: 80%;
-}
 .p-absolute.bottom-8, .p-absolute .bottom-8,
-.p-fixed.bottom-8,
-.p-fixed .bottom-8,
 .p-sticky.bottom-8,
 .p-sticky .bottom-8,
 .p-relative.bottom-8,
 .p-relative .bottom-8,
-.p-static.bottom-8,
-.p-static .bottom-8 {
+.p-fixed.bottom-8,
+.p-fixed .bottom-8 {
   bottom: 80%;
 }
+.p-absolute.left-8, .p-absolute .left-8,
+.p-sticky.left-8,
+.p-sticky .left-8,
+.p-relative.left-8,
+.p-relative .left-8,
+.p-fixed.left-8,
+.p-fixed .left-8 {
+  left: 80%;
+}
+.p-absolute.right-8, .p-absolute .right-8,
+.p-sticky.right-8,
+.p-sticky .right-8,
+.p-relative.right-8,
+.p-relative .right-8,
+.p-fixed.right-8,
+.p-fixed .right-8 {
+  right: 80%;
+}
 .p-absolute.top-9, .p-absolute .top-9,
-.p-fixed.top-9,
-.p-fixed .top-9,
 .p-sticky.top-9,
 .p-sticky .top-9,
 .p-relative.top-9,
 .p-relative .top-9,
-.p-static.top-9,
-.p-static .top-9 {
+.p-fixed.top-9,
+.p-fixed .top-9 {
   top: 90%;
 }
-.p-absolute.left-9, .p-absolute .left-9,
-.p-fixed.left-9,
-.p-fixed .left-9,
-.p-sticky.left-9,
-.p-sticky .left-9,
-.p-relative.left-9,
-.p-relative .left-9,
-.p-static.left-9,
-.p-static .left-9 {
-  left: 90%;
-}
-.p-absolute.right-9, .p-absolute .right-9,
-.p-fixed.right-9,
-.p-fixed .right-9,
-.p-sticky.right-9,
-.p-sticky .right-9,
-.p-relative.right-9,
-.p-relative .right-9,
-.p-static.right-9,
-.p-static .right-9 {
-  right: 90%;
-}
 .p-absolute.bottom-9, .p-absolute .bottom-9,
-.p-fixed.bottom-9,
-.p-fixed .bottom-9,
 .p-sticky.bottom-9,
 .p-sticky .bottom-9,
 .p-relative.bottom-9,
 .p-relative .bottom-9,
-.p-static.bottom-9,
-.p-static .bottom-9 {
+.p-fixed.bottom-9,
+.p-fixed .bottom-9 {
   bottom: 90%;
 }
+.p-absolute.left-9, .p-absolute .left-9,
+.p-sticky.left-9,
+.p-sticky .left-9,
+.p-relative.left-9,
+.p-relative .left-9,
+.p-fixed.left-9,
+.p-fixed .left-9 {
+  left: 90%;
+}
+.p-absolute.right-9, .p-absolute .right-9,
+.p-sticky.right-9,
+.p-sticky .right-9,
+.p-relative.right-9,
+.p-relative .right-9,
+.p-fixed.right-9,
+.p-fixed .right-9 {
+  right: 90%;
+}
 .p-absolute.top-10, .p-absolute .top-10,
-.p-fixed.top-10,
-.p-fixed .top-10,
 .p-sticky.top-10,
 .p-sticky .top-10,
 .p-relative.top-10,
 .p-relative .top-10,
-.p-static.top-10,
-.p-static .top-10 {
+.p-fixed.top-10,
+.p-fixed .top-10 {
   top: 100%;
 }
-.p-absolute.left-10, .p-absolute .left-10,
-.p-fixed.left-10,
-.p-fixed .left-10,
-.p-sticky.left-10,
-.p-sticky .left-10,
-.p-relative.left-10,
-.p-relative .left-10,
-.p-static.left-10,
-.p-static .left-10 {
-  left: 100%;
-}
-.p-absolute.right-10, .p-absolute .right-10,
-.p-fixed.right-10,
-.p-fixed .right-10,
-.p-sticky.right-10,
-.p-sticky .right-10,
-.p-relative.right-10,
-.p-relative .right-10,
-.p-static.right-10,
-.p-static .right-10 {
-  right: 100%;
-}
 .p-absolute.bottom-10, .p-absolute .bottom-10,
-.p-fixed.bottom-10,
-.p-fixed .bottom-10,
 .p-sticky.bottom-10,
 .p-sticky .bottom-10,
 .p-relative.bottom-10,
 .p-relative .bottom-10,
-.p-static.bottom-10,
-.p-static .bottom-10 {
+.p-fixed.bottom-10,
+.p-fixed .bottom-10 {
   bottom: 100%;
+}
+.p-absolute.left-10, .p-absolute .left-10,
+.p-sticky.left-10,
+.p-sticky .left-10,
+.p-relative.left-10,
+.p-relative .left-10,
+.p-fixed.left-10,
+.p-fixed .left-10 {
+  left: 100%;
+}
+.p-absolute.right-10, .p-absolute .right-10,
+.p-sticky.right-10,
+.p-sticky .right-10,
+.p-relative.right-10,
+.p-relative .right-10,
+.p-fixed.right-10,
+.p-fixed .right-10 {
+  right: 100%;
 }
 
 @media screen and (min-width: 0px) {
   .p-xs-static {
-    position: static;
+    position: static !important;
   }
   .p-xs-relative {
-    position: relative;
+    position: relative !important;
   }
   .p-xs-fixed {
-    position: fixed;
+    position: fixed !important;
   }
   .p-xs-absolute {
-    position: absolute;
+    position: absolute !important;
   }
   .p-xs-sticky {
     position: sticky !important;
   }
-  .p-xs-absolute.top-0, .p-xs-absolute .top-0,
-  .p-xs-fixed.top-0,
-  .p-xs-fixed .top-0,
-  .p-xs-sticky.top-0,
-  .p-xs-sticky .top-0,
-  .p-xs-relative.top-0,
-  .p-xs-relative .top-0,
-  .p-xs-static.top-0,
-  .p-xs-static .top-0 {
+  .p-xs-absolute.top-xs-0, .p-xs-absolute .top-xs-0,
+  .p-xs-sticky.top-xs-0,
+  .p-xs-sticky .top-xs-0,
+  .p-xs-relative.top-xs-0,
+  .p-xs-relative .top-xs-0,
+  .p-xs-fixed.top-xs-0,
+  .p-xs-fixed .top-xs-0 {
     top: 0%;
   }
-  .p-xs-absolute.left-0, .p-xs-absolute .left-0,
-  .p-xs-fixed.left-0,
-  .p-xs-fixed .left-0,
-  .p-xs-sticky.left-0,
-  .p-xs-sticky .left-0,
-  .p-xs-relative.left-0,
-  .p-xs-relative .left-0,
-  .p-xs-static.left-0,
-  .p-xs-static .left-0 {
-    left: 0%;
-  }
-  .p-xs-absolute.right-0, .p-xs-absolute .right-0,
-  .p-xs-fixed.right-0,
-  .p-xs-fixed .right-0,
-  .p-xs-sticky.right-0,
-  .p-xs-sticky .right-0,
-  .p-xs-relative.right-0,
-  .p-xs-relative .right-0,
-  .p-xs-static.right-0,
-  .p-xs-static .right-0 {
-    right: 0%;
-  }
-  .p-xs-absolute.bottom-0, .p-xs-absolute .bottom-0,
-  .p-xs-fixed.bottom-0,
-  .p-xs-fixed .bottom-0,
-  .p-xs-sticky.bottom-0,
-  .p-xs-sticky .bottom-0,
-  .p-xs-relative.bottom-0,
-  .p-xs-relative .bottom-0,
-  .p-xs-static.bottom-0,
-  .p-xs-static .bottom-0 {
+  .p-xs-absolute.bottom-xs-0, .p-xs-absolute .bottom-xs-0,
+  .p-xs-sticky.bottom-xs-0,
+  .p-xs-sticky .bottom-xs-0,
+  .p-xs-relative.bottom-xs-0,
+  .p-xs-relative .bottom-xs-0,
+  .p-xs-fixed.bottom-xs-0,
+  .p-xs-fixed .bottom-xs-0 {
     bottom: 0%;
   }
-  .p-xs-absolute.top-1, .p-xs-absolute .top-1,
-  .p-xs-fixed.top-1,
-  .p-xs-fixed .top-1,
-  .p-xs-sticky.top-1,
-  .p-xs-sticky .top-1,
-  .p-xs-relative.top-1,
-  .p-xs-relative .top-1,
-  .p-xs-static.top-1,
-  .p-xs-static .top-1 {
+  .p-xs-absolute.left-xs-0, .p-xs-absolute .left-xs-0,
+  .p-xs-sticky.left-xs-0,
+  .p-xs-sticky .left-xs-0,
+  .p-xs-relative.left-xs-0,
+  .p-xs-relative .left-xs-0,
+  .p-xs-fixed.left-xs-0,
+  .p-xs-fixed .left-xs-0 {
+    left: 0%;
+  }
+  .p-xs-absolute.right-xs-0, .p-xs-absolute .right-xs-0,
+  .p-xs-sticky.right-xs-0,
+  .p-xs-sticky .right-xs-0,
+  .p-xs-relative.right-xs-0,
+  .p-xs-relative .right-xs-0,
+  .p-xs-fixed.right-xs-0,
+  .p-xs-fixed .right-xs-0 {
+    right: 0%;
+  }
+  .p-xs-absolute.top-xs-1, .p-xs-absolute .top-xs-1,
+  .p-xs-sticky.top-xs-1,
+  .p-xs-sticky .top-xs-1,
+  .p-xs-relative.top-xs-1,
+  .p-xs-relative .top-xs-1,
+  .p-xs-fixed.top-xs-1,
+  .p-xs-fixed .top-xs-1 {
     top: 10%;
   }
-  .p-xs-absolute.left-1, .p-xs-absolute .left-1,
-  .p-xs-fixed.left-1,
-  .p-xs-fixed .left-1,
-  .p-xs-sticky.left-1,
-  .p-xs-sticky .left-1,
-  .p-xs-relative.left-1,
-  .p-xs-relative .left-1,
-  .p-xs-static.left-1,
-  .p-xs-static .left-1 {
-    left: 10%;
-  }
-  .p-xs-absolute.right-1, .p-xs-absolute .right-1,
-  .p-xs-fixed.right-1,
-  .p-xs-fixed .right-1,
-  .p-xs-sticky.right-1,
-  .p-xs-sticky .right-1,
-  .p-xs-relative.right-1,
-  .p-xs-relative .right-1,
-  .p-xs-static.right-1,
-  .p-xs-static .right-1 {
-    right: 10%;
-  }
-  .p-xs-absolute.bottom-1, .p-xs-absolute .bottom-1,
-  .p-xs-fixed.bottom-1,
-  .p-xs-fixed .bottom-1,
-  .p-xs-sticky.bottom-1,
-  .p-xs-sticky .bottom-1,
-  .p-xs-relative.bottom-1,
-  .p-xs-relative .bottom-1,
-  .p-xs-static.bottom-1,
-  .p-xs-static .bottom-1 {
+  .p-xs-absolute.bottom-xs-1, .p-xs-absolute .bottom-xs-1,
+  .p-xs-sticky.bottom-xs-1,
+  .p-xs-sticky .bottom-xs-1,
+  .p-xs-relative.bottom-xs-1,
+  .p-xs-relative .bottom-xs-1,
+  .p-xs-fixed.bottom-xs-1,
+  .p-xs-fixed .bottom-xs-1 {
     bottom: 10%;
   }
-  .p-xs-absolute.top-2, .p-xs-absolute .top-2,
-  .p-xs-fixed.top-2,
-  .p-xs-fixed .top-2,
-  .p-xs-sticky.top-2,
-  .p-xs-sticky .top-2,
-  .p-xs-relative.top-2,
-  .p-xs-relative .top-2,
-  .p-xs-static.top-2,
-  .p-xs-static .top-2 {
+  .p-xs-absolute.left-xs-1, .p-xs-absolute .left-xs-1,
+  .p-xs-sticky.left-xs-1,
+  .p-xs-sticky .left-xs-1,
+  .p-xs-relative.left-xs-1,
+  .p-xs-relative .left-xs-1,
+  .p-xs-fixed.left-xs-1,
+  .p-xs-fixed .left-xs-1 {
+    left: 10%;
+  }
+  .p-xs-absolute.right-xs-1, .p-xs-absolute .right-xs-1,
+  .p-xs-sticky.right-xs-1,
+  .p-xs-sticky .right-xs-1,
+  .p-xs-relative.right-xs-1,
+  .p-xs-relative .right-xs-1,
+  .p-xs-fixed.right-xs-1,
+  .p-xs-fixed .right-xs-1 {
+    right: 10%;
+  }
+  .p-xs-absolute.top-xs-2, .p-xs-absolute .top-xs-2,
+  .p-xs-sticky.top-xs-2,
+  .p-xs-sticky .top-xs-2,
+  .p-xs-relative.top-xs-2,
+  .p-xs-relative .top-xs-2,
+  .p-xs-fixed.top-xs-2,
+  .p-xs-fixed .top-xs-2 {
     top: 20%;
   }
-  .p-xs-absolute.left-2, .p-xs-absolute .left-2,
-  .p-xs-fixed.left-2,
-  .p-xs-fixed .left-2,
-  .p-xs-sticky.left-2,
-  .p-xs-sticky .left-2,
-  .p-xs-relative.left-2,
-  .p-xs-relative .left-2,
-  .p-xs-static.left-2,
-  .p-xs-static .left-2 {
-    left: 20%;
-  }
-  .p-xs-absolute.right-2, .p-xs-absolute .right-2,
-  .p-xs-fixed.right-2,
-  .p-xs-fixed .right-2,
-  .p-xs-sticky.right-2,
-  .p-xs-sticky .right-2,
-  .p-xs-relative.right-2,
-  .p-xs-relative .right-2,
-  .p-xs-static.right-2,
-  .p-xs-static .right-2 {
-    right: 20%;
-  }
-  .p-xs-absolute.bottom-2, .p-xs-absolute .bottom-2,
-  .p-xs-fixed.bottom-2,
-  .p-xs-fixed .bottom-2,
-  .p-xs-sticky.bottom-2,
-  .p-xs-sticky .bottom-2,
-  .p-xs-relative.bottom-2,
-  .p-xs-relative .bottom-2,
-  .p-xs-static.bottom-2,
-  .p-xs-static .bottom-2 {
+  .p-xs-absolute.bottom-xs-2, .p-xs-absolute .bottom-xs-2,
+  .p-xs-sticky.bottom-xs-2,
+  .p-xs-sticky .bottom-xs-2,
+  .p-xs-relative.bottom-xs-2,
+  .p-xs-relative .bottom-xs-2,
+  .p-xs-fixed.bottom-xs-2,
+  .p-xs-fixed .bottom-xs-2 {
     bottom: 20%;
   }
-  .p-xs-absolute.top-3, .p-xs-absolute .top-3,
-  .p-xs-fixed.top-3,
-  .p-xs-fixed .top-3,
-  .p-xs-sticky.top-3,
-  .p-xs-sticky .top-3,
-  .p-xs-relative.top-3,
-  .p-xs-relative .top-3,
-  .p-xs-static.top-3,
-  .p-xs-static .top-3 {
+  .p-xs-absolute.left-xs-2, .p-xs-absolute .left-xs-2,
+  .p-xs-sticky.left-xs-2,
+  .p-xs-sticky .left-xs-2,
+  .p-xs-relative.left-xs-2,
+  .p-xs-relative .left-xs-2,
+  .p-xs-fixed.left-xs-2,
+  .p-xs-fixed .left-xs-2 {
+    left: 20%;
+  }
+  .p-xs-absolute.right-xs-2, .p-xs-absolute .right-xs-2,
+  .p-xs-sticky.right-xs-2,
+  .p-xs-sticky .right-xs-2,
+  .p-xs-relative.right-xs-2,
+  .p-xs-relative .right-xs-2,
+  .p-xs-fixed.right-xs-2,
+  .p-xs-fixed .right-xs-2 {
+    right: 20%;
+  }
+  .p-xs-absolute.top-xs-3, .p-xs-absolute .top-xs-3,
+  .p-xs-sticky.top-xs-3,
+  .p-xs-sticky .top-xs-3,
+  .p-xs-relative.top-xs-3,
+  .p-xs-relative .top-xs-3,
+  .p-xs-fixed.top-xs-3,
+  .p-xs-fixed .top-xs-3 {
     top: 30%;
   }
-  .p-xs-absolute.left-3, .p-xs-absolute .left-3,
-  .p-xs-fixed.left-3,
-  .p-xs-fixed .left-3,
-  .p-xs-sticky.left-3,
-  .p-xs-sticky .left-3,
-  .p-xs-relative.left-3,
-  .p-xs-relative .left-3,
-  .p-xs-static.left-3,
-  .p-xs-static .left-3 {
-    left: 30%;
-  }
-  .p-xs-absolute.right-3, .p-xs-absolute .right-3,
-  .p-xs-fixed.right-3,
-  .p-xs-fixed .right-3,
-  .p-xs-sticky.right-3,
-  .p-xs-sticky .right-3,
-  .p-xs-relative.right-3,
-  .p-xs-relative .right-3,
-  .p-xs-static.right-3,
-  .p-xs-static .right-3 {
-    right: 30%;
-  }
-  .p-xs-absolute.bottom-3, .p-xs-absolute .bottom-3,
-  .p-xs-fixed.bottom-3,
-  .p-xs-fixed .bottom-3,
-  .p-xs-sticky.bottom-3,
-  .p-xs-sticky .bottom-3,
-  .p-xs-relative.bottom-3,
-  .p-xs-relative .bottom-3,
-  .p-xs-static.bottom-3,
-  .p-xs-static .bottom-3 {
+  .p-xs-absolute.bottom-xs-3, .p-xs-absolute .bottom-xs-3,
+  .p-xs-sticky.bottom-xs-3,
+  .p-xs-sticky .bottom-xs-3,
+  .p-xs-relative.bottom-xs-3,
+  .p-xs-relative .bottom-xs-3,
+  .p-xs-fixed.bottom-xs-3,
+  .p-xs-fixed .bottom-xs-3 {
     bottom: 30%;
   }
-  .p-xs-absolute.top-4, .p-xs-absolute .top-4,
-  .p-xs-fixed.top-4,
-  .p-xs-fixed .top-4,
-  .p-xs-sticky.top-4,
-  .p-xs-sticky .top-4,
-  .p-xs-relative.top-4,
-  .p-xs-relative .top-4,
-  .p-xs-static.top-4,
-  .p-xs-static .top-4 {
+  .p-xs-absolute.left-xs-3, .p-xs-absolute .left-xs-3,
+  .p-xs-sticky.left-xs-3,
+  .p-xs-sticky .left-xs-3,
+  .p-xs-relative.left-xs-3,
+  .p-xs-relative .left-xs-3,
+  .p-xs-fixed.left-xs-3,
+  .p-xs-fixed .left-xs-3 {
+    left: 30%;
+  }
+  .p-xs-absolute.right-xs-3, .p-xs-absolute .right-xs-3,
+  .p-xs-sticky.right-xs-3,
+  .p-xs-sticky .right-xs-3,
+  .p-xs-relative.right-xs-3,
+  .p-xs-relative .right-xs-3,
+  .p-xs-fixed.right-xs-3,
+  .p-xs-fixed .right-xs-3 {
+    right: 30%;
+  }
+  .p-xs-absolute.top-xs-4, .p-xs-absolute .top-xs-4,
+  .p-xs-sticky.top-xs-4,
+  .p-xs-sticky .top-xs-4,
+  .p-xs-relative.top-xs-4,
+  .p-xs-relative .top-xs-4,
+  .p-xs-fixed.top-xs-4,
+  .p-xs-fixed .top-xs-4 {
     top: 40%;
   }
-  .p-xs-absolute.left-4, .p-xs-absolute .left-4,
-  .p-xs-fixed.left-4,
-  .p-xs-fixed .left-4,
-  .p-xs-sticky.left-4,
-  .p-xs-sticky .left-4,
-  .p-xs-relative.left-4,
-  .p-xs-relative .left-4,
-  .p-xs-static.left-4,
-  .p-xs-static .left-4 {
-    left: 40%;
-  }
-  .p-xs-absolute.right-4, .p-xs-absolute .right-4,
-  .p-xs-fixed.right-4,
-  .p-xs-fixed .right-4,
-  .p-xs-sticky.right-4,
-  .p-xs-sticky .right-4,
-  .p-xs-relative.right-4,
-  .p-xs-relative .right-4,
-  .p-xs-static.right-4,
-  .p-xs-static .right-4 {
-    right: 40%;
-  }
-  .p-xs-absolute.bottom-4, .p-xs-absolute .bottom-4,
-  .p-xs-fixed.bottom-4,
-  .p-xs-fixed .bottom-4,
-  .p-xs-sticky.bottom-4,
-  .p-xs-sticky .bottom-4,
-  .p-xs-relative.bottom-4,
-  .p-xs-relative .bottom-4,
-  .p-xs-static.bottom-4,
-  .p-xs-static .bottom-4 {
+  .p-xs-absolute.bottom-xs-4, .p-xs-absolute .bottom-xs-4,
+  .p-xs-sticky.bottom-xs-4,
+  .p-xs-sticky .bottom-xs-4,
+  .p-xs-relative.bottom-xs-4,
+  .p-xs-relative .bottom-xs-4,
+  .p-xs-fixed.bottom-xs-4,
+  .p-xs-fixed .bottom-xs-4 {
     bottom: 40%;
   }
-  .p-xs-absolute.top-5, .p-xs-absolute .top-5,
-  .p-xs-fixed.top-5,
-  .p-xs-fixed .top-5,
-  .p-xs-sticky.top-5,
-  .p-xs-sticky .top-5,
-  .p-xs-relative.top-5,
-  .p-xs-relative .top-5,
-  .p-xs-static.top-5,
-  .p-xs-static .top-5 {
+  .p-xs-absolute.left-xs-4, .p-xs-absolute .left-xs-4,
+  .p-xs-sticky.left-xs-4,
+  .p-xs-sticky .left-xs-4,
+  .p-xs-relative.left-xs-4,
+  .p-xs-relative .left-xs-4,
+  .p-xs-fixed.left-xs-4,
+  .p-xs-fixed .left-xs-4 {
+    left: 40%;
+  }
+  .p-xs-absolute.right-xs-4, .p-xs-absolute .right-xs-4,
+  .p-xs-sticky.right-xs-4,
+  .p-xs-sticky .right-xs-4,
+  .p-xs-relative.right-xs-4,
+  .p-xs-relative .right-xs-4,
+  .p-xs-fixed.right-xs-4,
+  .p-xs-fixed .right-xs-4 {
+    right: 40%;
+  }
+  .p-xs-absolute.top-xs-5, .p-xs-absolute .top-xs-5,
+  .p-xs-sticky.top-xs-5,
+  .p-xs-sticky .top-xs-5,
+  .p-xs-relative.top-xs-5,
+  .p-xs-relative .top-xs-5,
+  .p-xs-fixed.top-xs-5,
+  .p-xs-fixed .top-xs-5 {
     top: 50%;
   }
-  .p-xs-absolute.left-5, .p-xs-absolute .left-5,
-  .p-xs-fixed.left-5,
-  .p-xs-fixed .left-5,
-  .p-xs-sticky.left-5,
-  .p-xs-sticky .left-5,
-  .p-xs-relative.left-5,
-  .p-xs-relative .left-5,
-  .p-xs-static.left-5,
-  .p-xs-static .left-5 {
-    left: 50%;
-  }
-  .p-xs-absolute.right-5, .p-xs-absolute .right-5,
-  .p-xs-fixed.right-5,
-  .p-xs-fixed .right-5,
-  .p-xs-sticky.right-5,
-  .p-xs-sticky .right-5,
-  .p-xs-relative.right-5,
-  .p-xs-relative .right-5,
-  .p-xs-static.right-5,
-  .p-xs-static .right-5 {
-    right: 50%;
-  }
-  .p-xs-absolute.bottom-5, .p-xs-absolute .bottom-5,
-  .p-xs-fixed.bottom-5,
-  .p-xs-fixed .bottom-5,
-  .p-xs-sticky.bottom-5,
-  .p-xs-sticky .bottom-5,
-  .p-xs-relative.bottom-5,
-  .p-xs-relative .bottom-5,
-  .p-xs-static.bottom-5,
-  .p-xs-static .bottom-5 {
+  .p-xs-absolute.bottom-xs-5, .p-xs-absolute .bottom-xs-5,
+  .p-xs-sticky.bottom-xs-5,
+  .p-xs-sticky .bottom-xs-5,
+  .p-xs-relative.bottom-xs-5,
+  .p-xs-relative .bottom-xs-5,
+  .p-xs-fixed.bottom-xs-5,
+  .p-xs-fixed .bottom-xs-5 {
     bottom: 50%;
   }
-  .p-xs-absolute.top-6, .p-xs-absolute .top-6,
-  .p-xs-fixed.top-6,
-  .p-xs-fixed .top-6,
-  .p-xs-sticky.top-6,
-  .p-xs-sticky .top-6,
-  .p-xs-relative.top-6,
-  .p-xs-relative .top-6,
-  .p-xs-static.top-6,
-  .p-xs-static .top-6 {
+  .p-xs-absolute.left-xs-5, .p-xs-absolute .left-xs-5,
+  .p-xs-sticky.left-xs-5,
+  .p-xs-sticky .left-xs-5,
+  .p-xs-relative.left-xs-5,
+  .p-xs-relative .left-xs-5,
+  .p-xs-fixed.left-xs-5,
+  .p-xs-fixed .left-xs-5 {
+    left: 50%;
+  }
+  .p-xs-absolute.right-xs-5, .p-xs-absolute .right-xs-5,
+  .p-xs-sticky.right-xs-5,
+  .p-xs-sticky .right-xs-5,
+  .p-xs-relative.right-xs-5,
+  .p-xs-relative .right-xs-5,
+  .p-xs-fixed.right-xs-5,
+  .p-xs-fixed .right-xs-5 {
+    right: 50%;
+  }
+  .p-xs-absolute.top-xs-6, .p-xs-absolute .top-xs-6,
+  .p-xs-sticky.top-xs-6,
+  .p-xs-sticky .top-xs-6,
+  .p-xs-relative.top-xs-6,
+  .p-xs-relative .top-xs-6,
+  .p-xs-fixed.top-xs-6,
+  .p-xs-fixed .top-xs-6 {
     top: 60%;
   }
-  .p-xs-absolute.left-6, .p-xs-absolute .left-6,
-  .p-xs-fixed.left-6,
-  .p-xs-fixed .left-6,
-  .p-xs-sticky.left-6,
-  .p-xs-sticky .left-6,
-  .p-xs-relative.left-6,
-  .p-xs-relative .left-6,
-  .p-xs-static.left-6,
-  .p-xs-static .left-6 {
-    left: 60%;
-  }
-  .p-xs-absolute.right-6, .p-xs-absolute .right-6,
-  .p-xs-fixed.right-6,
-  .p-xs-fixed .right-6,
-  .p-xs-sticky.right-6,
-  .p-xs-sticky .right-6,
-  .p-xs-relative.right-6,
-  .p-xs-relative .right-6,
-  .p-xs-static.right-6,
-  .p-xs-static .right-6 {
-    right: 60%;
-  }
-  .p-xs-absolute.bottom-6, .p-xs-absolute .bottom-6,
-  .p-xs-fixed.bottom-6,
-  .p-xs-fixed .bottom-6,
-  .p-xs-sticky.bottom-6,
-  .p-xs-sticky .bottom-6,
-  .p-xs-relative.bottom-6,
-  .p-xs-relative .bottom-6,
-  .p-xs-static.bottom-6,
-  .p-xs-static .bottom-6 {
+  .p-xs-absolute.bottom-xs-6, .p-xs-absolute .bottom-xs-6,
+  .p-xs-sticky.bottom-xs-6,
+  .p-xs-sticky .bottom-xs-6,
+  .p-xs-relative.bottom-xs-6,
+  .p-xs-relative .bottom-xs-6,
+  .p-xs-fixed.bottom-xs-6,
+  .p-xs-fixed .bottom-xs-6 {
     bottom: 60%;
   }
-  .p-xs-absolute.top-7, .p-xs-absolute .top-7,
-  .p-xs-fixed.top-7,
-  .p-xs-fixed .top-7,
-  .p-xs-sticky.top-7,
-  .p-xs-sticky .top-7,
-  .p-xs-relative.top-7,
-  .p-xs-relative .top-7,
-  .p-xs-static.top-7,
-  .p-xs-static .top-7 {
+  .p-xs-absolute.left-xs-6, .p-xs-absolute .left-xs-6,
+  .p-xs-sticky.left-xs-6,
+  .p-xs-sticky .left-xs-6,
+  .p-xs-relative.left-xs-6,
+  .p-xs-relative .left-xs-6,
+  .p-xs-fixed.left-xs-6,
+  .p-xs-fixed .left-xs-6 {
+    left: 60%;
+  }
+  .p-xs-absolute.right-xs-6, .p-xs-absolute .right-xs-6,
+  .p-xs-sticky.right-xs-6,
+  .p-xs-sticky .right-xs-6,
+  .p-xs-relative.right-xs-6,
+  .p-xs-relative .right-xs-6,
+  .p-xs-fixed.right-xs-6,
+  .p-xs-fixed .right-xs-6 {
+    right: 60%;
+  }
+  .p-xs-absolute.top-xs-7, .p-xs-absolute .top-xs-7,
+  .p-xs-sticky.top-xs-7,
+  .p-xs-sticky .top-xs-7,
+  .p-xs-relative.top-xs-7,
+  .p-xs-relative .top-xs-7,
+  .p-xs-fixed.top-xs-7,
+  .p-xs-fixed .top-xs-7 {
     top: 70%;
   }
-  .p-xs-absolute.left-7, .p-xs-absolute .left-7,
-  .p-xs-fixed.left-7,
-  .p-xs-fixed .left-7,
-  .p-xs-sticky.left-7,
-  .p-xs-sticky .left-7,
-  .p-xs-relative.left-7,
-  .p-xs-relative .left-7,
-  .p-xs-static.left-7,
-  .p-xs-static .left-7 {
-    left: 70%;
-  }
-  .p-xs-absolute.right-7, .p-xs-absolute .right-7,
-  .p-xs-fixed.right-7,
-  .p-xs-fixed .right-7,
-  .p-xs-sticky.right-7,
-  .p-xs-sticky .right-7,
-  .p-xs-relative.right-7,
-  .p-xs-relative .right-7,
-  .p-xs-static.right-7,
-  .p-xs-static .right-7 {
-    right: 70%;
-  }
-  .p-xs-absolute.bottom-7, .p-xs-absolute .bottom-7,
-  .p-xs-fixed.bottom-7,
-  .p-xs-fixed .bottom-7,
-  .p-xs-sticky.bottom-7,
-  .p-xs-sticky .bottom-7,
-  .p-xs-relative.bottom-7,
-  .p-xs-relative .bottom-7,
-  .p-xs-static.bottom-7,
-  .p-xs-static .bottom-7 {
+  .p-xs-absolute.bottom-xs-7, .p-xs-absolute .bottom-xs-7,
+  .p-xs-sticky.bottom-xs-7,
+  .p-xs-sticky .bottom-xs-7,
+  .p-xs-relative.bottom-xs-7,
+  .p-xs-relative .bottom-xs-7,
+  .p-xs-fixed.bottom-xs-7,
+  .p-xs-fixed .bottom-xs-7 {
     bottom: 70%;
   }
-  .p-xs-absolute.top-8, .p-xs-absolute .top-8,
-  .p-xs-fixed.top-8,
-  .p-xs-fixed .top-8,
-  .p-xs-sticky.top-8,
-  .p-xs-sticky .top-8,
-  .p-xs-relative.top-8,
-  .p-xs-relative .top-8,
-  .p-xs-static.top-8,
-  .p-xs-static .top-8 {
+  .p-xs-absolute.left-xs-7, .p-xs-absolute .left-xs-7,
+  .p-xs-sticky.left-xs-7,
+  .p-xs-sticky .left-xs-7,
+  .p-xs-relative.left-xs-7,
+  .p-xs-relative .left-xs-7,
+  .p-xs-fixed.left-xs-7,
+  .p-xs-fixed .left-xs-7 {
+    left: 70%;
+  }
+  .p-xs-absolute.right-xs-7, .p-xs-absolute .right-xs-7,
+  .p-xs-sticky.right-xs-7,
+  .p-xs-sticky .right-xs-7,
+  .p-xs-relative.right-xs-7,
+  .p-xs-relative .right-xs-7,
+  .p-xs-fixed.right-xs-7,
+  .p-xs-fixed .right-xs-7 {
+    right: 70%;
+  }
+  .p-xs-absolute.top-xs-8, .p-xs-absolute .top-xs-8,
+  .p-xs-sticky.top-xs-8,
+  .p-xs-sticky .top-xs-8,
+  .p-xs-relative.top-xs-8,
+  .p-xs-relative .top-xs-8,
+  .p-xs-fixed.top-xs-8,
+  .p-xs-fixed .top-xs-8 {
     top: 80%;
   }
-  .p-xs-absolute.left-8, .p-xs-absolute .left-8,
-  .p-xs-fixed.left-8,
-  .p-xs-fixed .left-8,
-  .p-xs-sticky.left-8,
-  .p-xs-sticky .left-8,
-  .p-xs-relative.left-8,
-  .p-xs-relative .left-8,
-  .p-xs-static.left-8,
-  .p-xs-static .left-8 {
-    left: 80%;
-  }
-  .p-xs-absolute.right-8, .p-xs-absolute .right-8,
-  .p-xs-fixed.right-8,
-  .p-xs-fixed .right-8,
-  .p-xs-sticky.right-8,
-  .p-xs-sticky .right-8,
-  .p-xs-relative.right-8,
-  .p-xs-relative .right-8,
-  .p-xs-static.right-8,
-  .p-xs-static .right-8 {
-    right: 80%;
-  }
-  .p-xs-absolute.bottom-8, .p-xs-absolute .bottom-8,
-  .p-xs-fixed.bottom-8,
-  .p-xs-fixed .bottom-8,
-  .p-xs-sticky.bottom-8,
-  .p-xs-sticky .bottom-8,
-  .p-xs-relative.bottom-8,
-  .p-xs-relative .bottom-8,
-  .p-xs-static.bottom-8,
-  .p-xs-static .bottom-8 {
+  .p-xs-absolute.bottom-xs-8, .p-xs-absolute .bottom-xs-8,
+  .p-xs-sticky.bottom-xs-8,
+  .p-xs-sticky .bottom-xs-8,
+  .p-xs-relative.bottom-xs-8,
+  .p-xs-relative .bottom-xs-8,
+  .p-xs-fixed.bottom-xs-8,
+  .p-xs-fixed .bottom-xs-8 {
     bottom: 80%;
   }
-  .p-xs-absolute.top-9, .p-xs-absolute .top-9,
-  .p-xs-fixed.top-9,
-  .p-xs-fixed .top-9,
-  .p-xs-sticky.top-9,
-  .p-xs-sticky .top-9,
-  .p-xs-relative.top-9,
-  .p-xs-relative .top-9,
-  .p-xs-static.top-9,
-  .p-xs-static .top-9 {
+  .p-xs-absolute.left-xs-8, .p-xs-absolute .left-xs-8,
+  .p-xs-sticky.left-xs-8,
+  .p-xs-sticky .left-xs-8,
+  .p-xs-relative.left-xs-8,
+  .p-xs-relative .left-xs-8,
+  .p-xs-fixed.left-xs-8,
+  .p-xs-fixed .left-xs-8 {
+    left: 80%;
+  }
+  .p-xs-absolute.right-xs-8, .p-xs-absolute .right-xs-8,
+  .p-xs-sticky.right-xs-8,
+  .p-xs-sticky .right-xs-8,
+  .p-xs-relative.right-xs-8,
+  .p-xs-relative .right-xs-8,
+  .p-xs-fixed.right-xs-8,
+  .p-xs-fixed .right-xs-8 {
+    right: 80%;
+  }
+  .p-xs-absolute.top-xs-9, .p-xs-absolute .top-xs-9,
+  .p-xs-sticky.top-xs-9,
+  .p-xs-sticky .top-xs-9,
+  .p-xs-relative.top-xs-9,
+  .p-xs-relative .top-xs-9,
+  .p-xs-fixed.top-xs-9,
+  .p-xs-fixed .top-xs-9 {
     top: 90%;
   }
-  .p-xs-absolute.left-9, .p-xs-absolute .left-9,
-  .p-xs-fixed.left-9,
-  .p-xs-fixed .left-9,
-  .p-xs-sticky.left-9,
-  .p-xs-sticky .left-9,
-  .p-xs-relative.left-9,
-  .p-xs-relative .left-9,
-  .p-xs-static.left-9,
-  .p-xs-static .left-9 {
-    left: 90%;
-  }
-  .p-xs-absolute.right-9, .p-xs-absolute .right-9,
-  .p-xs-fixed.right-9,
-  .p-xs-fixed .right-9,
-  .p-xs-sticky.right-9,
-  .p-xs-sticky .right-9,
-  .p-xs-relative.right-9,
-  .p-xs-relative .right-9,
-  .p-xs-static.right-9,
-  .p-xs-static .right-9 {
-    right: 90%;
-  }
-  .p-xs-absolute.bottom-9, .p-xs-absolute .bottom-9,
-  .p-xs-fixed.bottom-9,
-  .p-xs-fixed .bottom-9,
-  .p-xs-sticky.bottom-9,
-  .p-xs-sticky .bottom-9,
-  .p-xs-relative.bottom-9,
-  .p-xs-relative .bottom-9,
-  .p-xs-static.bottom-9,
-  .p-xs-static .bottom-9 {
+  .p-xs-absolute.bottom-xs-9, .p-xs-absolute .bottom-xs-9,
+  .p-xs-sticky.bottom-xs-9,
+  .p-xs-sticky .bottom-xs-9,
+  .p-xs-relative.bottom-xs-9,
+  .p-xs-relative .bottom-xs-9,
+  .p-xs-fixed.bottom-xs-9,
+  .p-xs-fixed .bottom-xs-9 {
     bottom: 90%;
   }
-  .p-xs-absolute.top-10, .p-xs-absolute .top-10,
-  .p-xs-fixed.top-10,
-  .p-xs-fixed .top-10,
-  .p-xs-sticky.top-10,
-  .p-xs-sticky .top-10,
-  .p-xs-relative.top-10,
-  .p-xs-relative .top-10,
-  .p-xs-static.top-10,
-  .p-xs-static .top-10 {
+  .p-xs-absolute.left-xs-9, .p-xs-absolute .left-xs-9,
+  .p-xs-sticky.left-xs-9,
+  .p-xs-sticky .left-xs-9,
+  .p-xs-relative.left-xs-9,
+  .p-xs-relative .left-xs-9,
+  .p-xs-fixed.left-xs-9,
+  .p-xs-fixed .left-xs-9 {
+    left: 90%;
+  }
+  .p-xs-absolute.right-xs-9, .p-xs-absolute .right-xs-9,
+  .p-xs-sticky.right-xs-9,
+  .p-xs-sticky .right-xs-9,
+  .p-xs-relative.right-xs-9,
+  .p-xs-relative .right-xs-9,
+  .p-xs-fixed.right-xs-9,
+  .p-xs-fixed .right-xs-9 {
+    right: 90%;
+  }
+  .p-xs-absolute.top-xs-10, .p-xs-absolute .top-xs-10,
+  .p-xs-sticky.top-xs-10,
+  .p-xs-sticky .top-xs-10,
+  .p-xs-relative.top-xs-10,
+  .p-xs-relative .top-xs-10,
+  .p-xs-fixed.top-xs-10,
+  .p-xs-fixed .top-xs-10 {
     top: 100%;
   }
-  .p-xs-absolute.left-10, .p-xs-absolute .left-10,
-  .p-xs-fixed.left-10,
-  .p-xs-fixed .left-10,
-  .p-xs-sticky.left-10,
-  .p-xs-sticky .left-10,
-  .p-xs-relative.left-10,
-  .p-xs-relative .left-10,
-  .p-xs-static.left-10,
-  .p-xs-static .left-10 {
+  .p-xs-absolute.bottom-xs-10, .p-xs-absolute .bottom-xs-10,
+  .p-xs-sticky.bottom-xs-10,
+  .p-xs-sticky .bottom-xs-10,
+  .p-xs-relative.bottom-xs-10,
+  .p-xs-relative .bottom-xs-10,
+  .p-xs-fixed.bottom-xs-10,
+  .p-xs-fixed .bottom-xs-10 {
+    bottom: 100%;
+  }
+  .p-xs-absolute.left-xs-10, .p-xs-absolute .left-xs-10,
+  .p-xs-sticky.left-xs-10,
+  .p-xs-sticky .left-xs-10,
+  .p-xs-relative.left-xs-10,
+  .p-xs-relative .left-xs-10,
+  .p-xs-fixed.left-xs-10,
+  .p-xs-fixed .left-xs-10 {
     left: 100%;
   }
-  .p-xs-absolute.right-10, .p-xs-absolute .right-10,
-  .p-xs-fixed.right-10,
-  .p-xs-fixed .right-10,
-  .p-xs-sticky.right-10,
-  .p-xs-sticky .right-10,
-  .p-xs-relative.right-10,
-  .p-xs-relative .right-10,
-  .p-xs-static.right-10,
-  .p-xs-static .right-10 {
+  .p-xs-absolute.right-xs-10, .p-xs-absolute .right-xs-10,
+  .p-xs-sticky.right-xs-10,
+  .p-xs-sticky .right-xs-10,
+  .p-xs-relative.right-xs-10,
+  .p-xs-relative .right-xs-10,
+  .p-xs-fixed.right-xs-10,
+  .p-xs-fixed .right-xs-10 {
     right: 100%;
-  }
-  .p-xs-absolute.bottom-10, .p-xs-absolute .bottom-10,
-  .p-xs-fixed.bottom-10,
-  .p-xs-fixed .bottom-10,
-  .p-xs-sticky.bottom-10,
-  .p-xs-sticky .bottom-10,
-  .p-xs-relative.bottom-10,
-  .p-xs-relative .bottom-10,
-  .p-xs-static.bottom-10,
-  .p-xs-static .bottom-10 {
-    bottom: 100%;
   }
 }
 @media screen and (min-width: 576px) {
   .p-sm-static {
-    position: static;
+    position: static !important;
   }
   .p-sm-relative {
-    position: relative;
+    position: relative !important;
   }
   .p-sm-fixed {
-    position: fixed;
+    position: fixed !important;
   }
   .p-sm-absolute {
-    position: absolute;
+    position: absolute !important;
   }
   .p-sm-sticky {
     position: sticky !important;
   }
-  .p-sm-absolute.top-0, .p-sm-absolute .top-0,
-  .p-sm-fixed.top-0,
-  .p-sm-fixed .top-0,
-  .p-sm-sticky.top-0,
-  .p-sm-sticky .top-0,
-  .p-sm-relative.top-0,
-  .p-sm-relative .top-0,
-  .p-sm-static.top-0,
-  .p-sm-static .top-0 {
+  .p-sm-absolute.top-sm-0, .p-sm-absolute .top-sm-0,
+  .p-sm-sticky.top-sm-0,
+  .p-sm-sticky .top-sm-0,
+  .p-sm-relative.top-sm-0,
+  .p-sm-relative .top-sm-0,
+  .p-sm-fixed.top-sm-0,
+  .p-sm-fixed .top-sm-0 {
     top: 0%;
   }
-  .p-sm-absolute.left-0, .p-sm-absolute .left-0,
-  .p-sm-fixed.left-0,
-  .p-sm-fixed .left-0,
-  .p-sm-sticky.left-0,
-  .p-sm-sticky .left-0,
-  .p-sm-relative.left-0,
-  .p-sm-relative .left-0,
-  .p-sm-static.left-0,
-  .p-sm-static .left-0 {
-    left: 0%;
-  }
-  .p-sm-absolute.right-0, .p-sm-absolute .right-0,
-  .p-sm-fixed.right-0,
-  .p-sm-fixed .right-0,
-  .p-sm-sticky.right-0,
-  .p-sm-sticky .right-0,
-  .p-sm-relative.right-0,
-  .p-sm-relative .right-0,
-  .p-sm-static.right-0,
-  .p-sm-static .right-0 {
-    right: 0%;
-  }
-  .p-sm-absolute.bottom-0, .p-sm-absolute .bottom-0,
-  .p-sm-fixed.bottom-0,
-  .p-sm-fixed .bottom-0,
-  .p-sm-sticky.bottom-0,
-  .p-sm-sticky .bottom-0,
-  .p-sm-relative.bottom-0,
-  .p-sm-relative .bottom-0,
-  .p-sm-static.bottom-0,
-  .p-sm-static .bottom-0 {
+  .p-sm-absolute.bottom-sm-0, .p-sm-absolute .bottom-sm-0,
+  .p-sm-sticky.bottom-sm-0,
+  .p-sm-sticky .bottom-sm-0,
+  .p-sm-relative.bottom-sm-0,
+  .p-sm-relative .bottom-sm-0,
+  .p-sm-fixed.bottom-sm-0,
+  .p-sm-fixed .bottom-sm-0 {
     bottom: 0%;
   }
-  .p-sm-absolute.top-1, .p-sm-absolute .top-1,
-  .p-sm-fixed.top-1,
-  .p-sm-fixed .top-1,
-  .p-sm-sticky.top-1,
-  .p-sm-sticky .top-1,
-  .p-sm-relative.top-1,
-  .p-sm-relative .top-1,
-  .p-sm-static.top-1,
-  .p-sm-static .top-1 {
+  .p-sm-absolute.left-sm-0, .p-sm-absolute .left-sm-0,
+  .p-sm-sticky.left-sm-0,
+  .p-sm-sticky .left-sm-0,
+  .p-sm-relative.left-sm-0,
+  .p-sm-relative .left-sm-0,
+  .p-sm-fixed.left-sm-0,
+  .p-sm-fixed .left-sm-0 {
+    left: 0%;
+  }
+  .p-sm-absolute.right-sm-0, .p-sm-absolute .right-sm-0,
+  .p-sm-sticky.right-sm-0,
+  .p-sm-sticky .right-sm-0,
+  .p-sm-relative.right-sm-0,
+  .p-sm-relative .right-sm-0,
+  .p-sm-fixed.right-sm-0,
+  .p-sm-fixed .right-sm-0 {
+    right: 0%;
+  }
+  .p-sm-absolute.top-sm-1, .p-sm-absolute .top-sm-1,
+  .p-sm-sticky.top-sm-1,
+  .p-sm-sticky .top-sm-1,
+  .p-sm-relative.top-sm-1,
+  .p-sm-relative .top-sm-1,
+  .p-sm-fixed.top-sm-1,
+  .p-sm-fixed .top-sm-1 {
     top: 10%;
   }
-  .p-sm-absolute.left-1, .p-sm-absolute .left-1,
-  .p-sm-fixed.left-1,
-  .p-sm-fixed .left-1,
-  .p-sm-sticky.left-1,
-  .p-sm-sticky .left-1,
-  .p-sm-relative.left-1,
-  .p-sm-relative .left-1,
-  .p-sm-static.left-1,
-  .p-sm-static .left-1 {
-    left: 10%;
-  }
-  .p-sm-absolute.right-1, .p-sm-absolute .right-1,
-  .p-sm-fixed.right-1,
-  .p-sm-fixed .right-1,
-  .p-sm-sticky.right-1,
-  .p-sm-sticky .right-1,
-  .p-sm-relative.right-1,
-  .p-sm-relative .right-1,
-  .p-sm-static.right-1,
-  .p-sm-static .right-1 {
-    right: 10%;
-  }
-  .p-sm-absolute.bottom-1, .p-sm-absolute .bottom-1,
-  .p-sm-fixed.bottom-1,
-  .p-sm-fixed .bottom-1,
-  .p-sm-sticky.bottom-1,
-  .p-sm-sticky .bottom-1,
-  .p-sm-relative.bottom-1,
-  .p-sm-relative .bottom-1,
-  .p-sm-static.bottom-1,
-  .p-sm-static .bottom-1 {
+  .p-sm-absolute.bottom-sm-1, .p-sm-absolute .bottom-sm-1,
+  .p-sm-sticky.bottom-sm-1,
+  .p-sm-sticky .bottom-sm-1,
+  .p-sm-relative.bottom-sm-1,
+  .p-sm-relative .bottom-sm-1,
+  .p-sm-fixed.bottom-sm-1,
+  .p-sm-fixed .bottom-sm-1 {
     bottom: 10%;
   }
-  .p-sm-absolute.top-2, .p-sm-absolute .top-2,
-  .p-sm-fixed.top-2,
-  .p-sm-fixed .top-2,
-  .p-sm-sticky.top-2,
-  .p-sm-sticky .top-2,
-  .p-sm-relative.top-2,
-  .p-sm-relative .top-2,
-  .p-sm-static.top-2,
-  .p-sm-static .top-2 {
+  .p-sm-absolute.left-sm-1, .p-sm-absolute .left-sm-1,
+  .p-sm-sticky.left-sm-1,
+  .p-sm-sticky .left-sm-1,
+  .p-sm-relative.left-sm-1,
+  .p-sm-relative .left-sm-1,
+  .p-sm-fixed.left-sm-1,
+  .p-sm-fixed .left-sm-1 {
+    left: 10%;
+  }
+  .p-sm-absolute.right-sm-1, .p-sm-absolute .right-sm-1,
+  .p-sm-sticky.right-sm-1,
+  .p-sm-sticky .right-sm-1,
+  .p-sm-relative.right-sm-1,
+  .p-sm-relative .right-sm-1,
+  .p-sm-fixed.right-sm-1,
+  .p-sm-fixed .right-sm-1 {
+    right: 10%;
+  }
+  .p-sm-absolute.top-sm-2, .p-sm-absolute .top-sm-2,
+  .p-sm-sticky.top-sm-2,
+  .p-sm-sticky .top-sm-2,
+  .p-sm-relative.top-sm-2,
+  .p-sm-relative .top-sm-2,
+  .p-sm-fixed.top-sm-2,
+  .p-sm-fixed .top-sm-2 {
     top: 20%;
   }
-  .p-sm-absolute.left-2, .p-sm-absolute .left-2,
-  .p-sm-fixed.left-2,
-  .p-sm-fixed .left-2,
-  .p-sm-sticky.left-2,
-  .p-sm-sticky .left-2,
-  .p-sm-relative.left-2,
-  .p-sm-relative .left-2,
-  .p-sm-static.left-2,
-  .p-sm-static .left-2 {
-    left: 20%;
-  }
-  .p-sm-absolute.right-2, .p-sm-absolute .right-2,
-  .p-sm-fixed.right-2,
-  .p-sm-fixed .right-2,
-  .p-sm-sticky.right-2,
-  .p-sm-sticky .right-2,
-  .p-sm-relative.right-2,
-  .p-sm-relative .right-2,
-  .p-sm-static.right-2,
-  .p-sm-static .right-2 {
-    right: 20%;
-  }
-  .p-sm-absolute.bottom-2, .p-sm-absolute .bottom-2,
-  .p-sm-fixed.bottom-2,
-  .p-sm-fixed .bottom-2,
-  .p-sm-sticky.bottom-2,
-  .p-sm-sticky .bottom-2,
-  .p-sm-relative.bottom-2,
-  .p-sm-relative .bottom-2,
-  .p-sm-static.bottom-2,
-  .p-sm-static .bottom-2 {
+  .p-sm-absolute.bottom-sm-2, .p-sm-absolute .bottom-sm-2,
+  .p-sm-sticky.bottom-sm-2,
+  .p-sm-sticky .bottom-sm-2,
+  .p-sm-relative.bottom-sm-2,
+  .p-sm-relative .bottom-sm-2,
+  .p-sm-fixed.bottom-sm-2,
+  .p-sm-fixed .bottom-sm-2 {
     bottom: 20%;
   }
-  .p-sm-absolute.top-3, .p-sm-absolute .top-3,
-  .p-sm-fixed.top-3,
-  .p-sm-fixed .top-3,
-  .p-sm-sticky.top-3,
-  .p-sm-sticky .top-3,
-  .p-sm-relative.top-3,
-  .p-sm-relative .top-3,
-  .p-sm-static.top-3,
-  .p-sm-static .top-3 {
+  .p-sm-absolute.left-sm-2, .p-sm-absolute .left-sm-2,
+  .p-sm-sticky.left-sm-2,
+  .p-sm-sticky .left-sm-2,
+  .p-sm-relative.left-sm-2,
+  .p-sm-relative .left-sm-2,
+  .p-sm-fixed.left-sm-2,
+  .p-sm-fixed .left-sm-2 {
+    left: 20%;
+  }
+  .p-sm-absolute.right-sm-2, .p-sm-absolute .right-sm-2,
+  .p-sm-sticky.right-sm-2,
+  .p-sm-sticky .right-sm-2,
+  .p-sm-relative.right-sm-2,
+  .p-sm-relative .right-sm-2,
+  .p-sm-fixed.right-sm-2,
+  .p-sm-fixed .right-sm-2 {
+    right: 20%;
+  }
+  .p-sm-absolute.top-sm-3, .p-sm-absolute .top-sm-3,
+  .p-sm-sticky.top-sm-3,
+  .p-sm-sticky .top-sm-3,
+  .p-sm-relative.top-sm-3,
+  .p-sm-relative .top-sm-3,
+  .p-sm-fixed.top-sm-3,
+  .p-sm-fixed .top-sm-3 {
     top: 30%;
   }
-  .p-sm-absolute.left-3, .p-sm-absolute .left-3,
-  .p-sm-fixed.left-3,
-  .p-sm-fixed .left-3,
-  .p-sm-sticky.left-3,
-  .p-sm-sticky .left-3,
-  .p-sm-relative.left-3,
-  .p-sm-relative .left-3,
-  .p-sm-static.left-3,
-  .p-sm-static .left-3 {
-    left: 30%;
-  }
-  .p-sm-absolute.right-3, .p-sm-absolute .right-3,
-  .p-sm-fixed.right-3,
-  .p-sm-fixed .right-3,
-  .p-sm-sticky.right-3,
-  .p-sm-sticky .right-3,
-  .p-sm-relative.right-3,
-  .p-sm-relative .right-3,
-  .p-sm-static.right-3,
-  .p-sm-static .right-3 {
-    right: 30%;
-  }
-  .p-sm-absolute.bottom-3, .p-sm-absolute .bottom-3,
-  .p-sm-fixed.bottom-3,
-  .p-sm-fixed .bottom-3,
-  .p-sm-sticky.bottom-3,
-  .p-sm-sticky .bottom-3,
-  .p-sm-relative.bottom-3,
-  .p-sm-relative .bottom-3,
-  .p-sm-static.bottom-3,
-  .p-sm-static .bottom-3 {
+  .p-sm-absolute.bottom-sm-3, .p-sm-absolute .bottom-sm-3,
+  .p-sm-sticky.bottom-sm-3,
+  .p-sm-sticky .bottom-sm-3,
+  .p-sm-relative.bottom-sm-3,
+  .p-sm-relative .bottom-sm-3,
+  .p-sm-fixed.bottom-sm-3,
+  .p-sm-fixed .bottom-sm-3 {
     bottom: 30%;
   }
-  .p-sm-absolute.top-4, .p-sm-absolute .top-4,
-  .p-sm-fixed.top-4,
-  .p-sm-fixed .top-4,
-  .p-sm-sticky.top-4,
-  .p-sm-sticky .top-4,
-  .p-sm-relative.top-4,
-  .p-sm-relative .top-4,
-  .p-sm-static.top-4,
-  .p-sm-static .top-4 {
+  .p-sm-absolute.left-sm-3, .p-sm-absolute .left-sm-3,
+  .p-sm-sticky.left-sm-3,
+  .p-sm-sticky .left-sm-3,
+  .p-sm-relative.left-sm-3,
+  .p-sm-relative .left-sm-3,
+  .p-sm-fixed.left-sm-3,
+  .p-sm-fixed .left-sm-3 {
+    left: 30%;
+  }
+  .p-sm-absolute.right-sm-3, .p-sm-absolute .right-sm-3,
+  .p-sm-sticky.right-sm-3,
+  .p-sm-sticky .right-sm-3,
+  .p-sm-relative.right-sm-3,
+  .p-sm-relative .right-sm-3,
+  .p-sm-fixed.right-sm-3,
+  .p-sm-fixed .right-sm-3 {
+    right: 30%;
+  }
+  .p-sm-absolute.top-sm-4, .p-sm-absolute .top-sm-4,
+  .p-sm-sticky.top-sm-4,
+  .p-sm-sticky .top-sm-4,
+  .p-sm-relative.top-sm-4,
+  .p-sm-relative .top-sm-4,
+  .p-sm-fixed.top-sm-4,
+  .p-sm-fixed .top-sm-4 {
     top: 40%;
   }
-  .p-sm-absolute.left-4, .p-sm-absolute .left-4,
-  .p-sm-fixed.left-4,
-  .p-sm-fixed .left-4,
-  .p-sm-sticky.left-4,
-  .p-sm-sticky .left-4,
-  .p-sm-relative.left-4,
-  .p-sm-relative .left-4,
-  .p-sm-static.left-4,
-  .p-sm-static .left-4 {
-    left: 40%;
-  }
-  .p-sm-absolute.right-4, .p-sm-absolute .right-4,
-  .p-sm-fixed.right-4,
-  .p-sm-fixed .right-4,
-  .p-sm-sticky.right-4,
-  .p-sm-sticky .right-4,
-  .p-sm-relative.right-4,
-  .p-sm-relative .right-4,
-  .p-sm-static.right-4,
-  .p-sm-static .right-4 {
-    right: 40%;
-  }
-  .p-sm-absolute.bottom-4, .p-sm-absolute .bottom-4,
-  .p-sm-fixed.bottom-4,
-  .p-sm-fixed .bottom-4,
-  .p-sm-sticky.bottom-4,
-  .p-sm-sticky .bottom-4,
-  .p-sm-relative.bottom-4,
-  .p-sm-relative .bottom-4,
-  .p-sm-static.bottom-4,
-  .p-sm-static .bottom-4 {
+  .p-sm-absolute.bottom-sm-4, .p-sm-absolute .bottom-sm-4,
+  .p-sm-sticky.bottom-sm-4,
+  .p-sm-sticky .bottom-sm-4,
+  .p-sm-relative.bottom-sm-4,
+  .p-sm-relative .bottom-sm-4,
+  .p-sm-fixed.bottom-sm-4,
+  .p-sm-fixed .bottom-sm-4 {
     bottom: 40%;
   }
-  .p-sm-absolute.top-5, .p-sm-absolute .top-5,
-  .p-sm-fixed.top-5,
-  .p-sm-fixed .top-5,
-  .p-sm-sticky.top-5,
-  .p-sm-sticky .top-5,
-  .p-sm-relative.top-5,
-  .p-sm-relative .top-5,
-  .p-sm-static.top-5,
-  .p-sm-static .top-5 {
+  .p-sm-absolute.left-sm-4, .p-sm-absolute .left-sm-4,
+  .p-sm-sticky.left-sm-4,
+  .p-sm-sticky .left-sm-4,
+  .p-sm-relative.left-sm-4,
+  .p-sm-relative .left-sm-4,
+  .p-sm-fixed.left-sm-4,
+  .p-sm-fixed .left-sm-4 {
+    left: 40%;
+  }
+  .p-sm-absolute.right-sm-4, .p-sm-absolute .right-sm-4,
+  .p-sm-sticky.right-sm-4,
+  .p-sm-sticky .right-sm-4,
+  .p-sm-relative.right-sm-4,
+  .p-sm-relative .right-sm-4,
+  .p-sm-fixed.right-sm-4,
+  .p-sm-fixed .right-sm-4 {
+    right: 40%;
+  }
+  .p-sm-absolute.top-sm-5, .p-sm-absolute .top-sm-5,
+  .p-sm-sticky.top-sm-5,
+  .p-sm-sticky .top-sm-5,
+  .p-sm-relative.top-sm-5,
+  .p-sm-relative .top-sm-5,
+  .p-sm-fixed.top-sm-5,
+  .p-sm-fixed .top-sm-5 {
     top: 50%;
   }
-  .p-sm-absolute.left-5, .p-sm-absolute .left-5,
-  .p-sm-fixed.left-5,
-  .p-sm-fixed .left-5,
-  .p-sm-sticky.left-5,
-  .p-sm-sticky .left-5,
-  .p-sm-relative.left-5,
-  .p-sm-relative .left-5,
-  .p-sm-static.left-5,
-  .p-sm-static .left-5 {
-    left: 50%;
-  }
-  .p-sm-absolute.right-5, .p-sm-absolute .right-5,
-  .p-sm-fixed.right-5,
-  .p-sm-fixed .right-5,
-  .p-sm-sticky.right-5,
-  .p-sm-sticky .right-5,
-  .p-sm-relative.right-5,
-  .p-sm-relative .right-5,
-  .p-sm-static.right-5,
-  .p-sm-static .right-5 {
-    right: 50%;
-  }
-  .p-sm-absolute.bottom-5, .p-sm-absolute .bottom-5,
-  .p-sm-fixed.bottom-5,
-  .p-sm-fixed .bottom-5,
-  .p-sm-sticky.bottom-5,
-  .p-sm-sticky .bottom-5,
-  .p-sm-relative.bottom-5,
-  .p-sm-relative .bottom-5,
-  .p-sm-static.bottom-5,
-  .p-sm-static .bottom-5 {
+  .p-sm-absolute.bottom-sm-5, .p-sm-absolute .bottom-sm-5,
+  .p-sm-sticky.bottom-sm-5,
+  .p-sm-sticky .bottom-sm-5,
+  .p-sm-relative.bottom-sm-5,
+  .p-sm-relative .bottom-sm-5,
+  .p-sm-fixed.bottom-sm-5,
+  .p-sm-fixed .bottom-sm-5 {
     bottom: 50%;
   }
-  .p-sm-absolute.top-6, .p-sm-absolute .top-6,
-  .p-sm-fixed.top-6,
-  .p-sm-fixed .top-6,
-  .p-sm-sticky.top-6,
-  .p-sm-sticky .top-6,
-  .p-sm-relative.top-6,
-  .p-sm-relative .top-6,
-  .p-sm-static.top-6,
-  .p-sm-static .top-6 {
+  .p-sm-absolute.left-sm-5, .p-sm-absolute .left-sm-5,
+  .p-sm-sticky.left-sm-5,
+  .p-sm-sticky .left-sm-5,
+  .p-sm-relative.left-sm-5,
+  .p-sm-relative .left-sm-5,
+  .p-sm-fixed.left-sm-5,
+  .p-sm-fixed .left-sm-5 {
+    left: 50%;
+  }
+  .p-sm-absolute.right-sm-5, .p-sm-absolute .right-sm-5,
+  .p-sm-sticky.right-sm-5,
+  .p-sm-sticky .right-sm-5,
+  .p-sm-relative.right-sm-5,
+  .p-sm-relative .right-sm-5,
+  .p-sm-fixed.right-sm-5,
+  .p-sm-fixed .right-sm-5 {
+    right: 50%;
+  }
+  .p-sm-absolute.top-sm-6, .p-sm-absolute .top-sm-6,
+  .p-sm-sticky.top-sm-6,
+  .p-sm-sticky .top-sm-6,
+  .p-sm-relative.top-sm-6,
+  .p-sm-relative .top-sm-6,
+  .p-sm-fixed.top-sm-6,
+  .p-sm-fixed .top-sm-6 {
     top: 60%;
   }
-  .p-sm-absolute.left-6, .p-sm-absolute .left-6,
-  .p-sm-fixed.left-6,
-  .p-sm-fixed .left-6,
-  .p-sm-sticky.left-6,
-  .p-sm-sticky .left-6,
-  .p-sm-relative.left-6,
-  .p-sm-relative .left-6,
-  .p-sm-static.left-6,
-  .p-sm-static .left-6 {
-    left: 60%;
-  }
-  .p-sm-absolute.right-6, .p-sm-absolute .right-6,
-  .p-sm-fixed.right-6,
-  .p-sm-fixed .right-6,
-  .p-sm-sticky.right-6,
-  .p-sm-sticky .right-6,
-  .p-sm-relative.right-6,
-  .p-sm-relative .right-6,
-  .p-sm-static.right-6,
-  .p-sm-static .right-6 {
-    right: 60%;
-  }
-  .p-sm-absolute.bottom-6, .p-sm-absolute .bottom-6,
-  .p-sm-fixed.bottom-6,
-  .p-sm-fixed .bottom-6,
-  .p-sm-sticky.bottom-6,
-  .p-sm-sticky .bottom-6,
-  .p-sm-relative.bottom-6,
-  .p-sm-relative .bottom-6,
-  .p-sm-static.bottom-6,
-  .p-sm-static .bottom-6 {
+  .p-sm-absolute.bottom-sm-6, .p-sm-absolute .bottom-sm-6,
+  .p-sm-sticky.bottom-sm-6,
+  .p-sm-sticky .bottom-sm-6,
+  .p-sm-relative.bottom-sm-6,
+  .p-sm-relative .bottom-sm-6,
+  .p-sm-fixed.bottom-sm-6,
+  .p-sm-fixed .bottom-sm-6 {
     bottom: 60%;
   }
-  .p-sm-absolute.top-7, .p-sm-absolute .top-7,
-  .p-sm-fixed.top-7,
-  .p-sm-fixed .top-7,
-  .p-sm-sticky.top-7,
-  .p-sm-sticky .top-7,
-  .p-sm-relative.top-7,
-  .p-sm-relative .top-7,
-  .p-sm-static.top-7,
-  .p-sm-static .top-7 {
+  .p-sm-absolute.left-sm-6, .p-sm-absolute .left-sm-6,
+  .p-sm-sticky.left-sm-6,
+  .p-sm-sticky .left-sm-6,
+  .p-sm-relative.left-sm-6,
+  .p-sm-relative .left-sm-6,
+  .p-sm-fixed.left-sm-6,
+  .p-sm-fixed .left-sm-6 {
+    left: 60%;
+  }
+  .p-sm-absolute.right-sm-6, .p-sm-absolute .right-sm-6,
+  .p-sm-sticky.right-sm-6,
+  .p-sm-sticky .right-sm-6,
+  .p-sm-relative.right-sm-6,
+  .p-sm-relative .right-sm-6,
+  .p-sm-fixed.right-sm-6,
+  .p-sm-fixed .right-sm-6 {
+    right: 60%;
+  }
+  .p-sm-absolute.top-sm-7, .p-sm-absolute .top-sm-7,
+  .p-sm-sticky.top-sm-7,
+  .p-sm-sticky .top-sm-7,
+  .p-sm-relative.top-sm-7,
+  .p-sm-relative .top-sm-7,
+  .p-sm-fixed.top-sm-7,
+  .p-sm-fixed .top-sm-7 {
     top: 70%;
   }
-  .p-sm-absolute.left-7, .p-sm-absolute .left-7,
-  .p-sm-fixed.left-7,
-  .p-sm-fixed .left-7,
-  .p-sm-sticky.left-7,
-  .p-sm-sticky .left-7,
-  .p-sm-relative.left-7,
-  .p-sm-relative .left-7,
-  .p-sm-static.left-7,
-  .p-sm-static .left-7 {
-    left: 70%;
-  }
-  .p-sm-absolute.right-7, .p-sm-absolute .right-7,
-  .p-sm-fixed.right-7,
-  .p-sm-fixed .right-7,
-  .p-sm-sticky.right-7,
-  .p-sm-sticky .right-7,
-  .p-sm-relative.right-7,
-  .p-sm-relative .right-7,
-  .p-sm-static.right-7,
-  .p-sm-static .right-7 {
-    right: 70%;
-  }
-  .p-sm-absolute.bottom-7, .p-sm-absolute .bottom-7,
-  .p-sm-fixed.bottom-7,
-  .p-sm-fixed .bottom-7,
-  .p-sm-sticky.bottom-7,
-  .p-sm-sticky .bottom-7,
-  .p-sm-relative.bottom-7,
-  .p-sm-relative .bottom-7,
-  .p-sm-static.bottom-7,
-  .p-sm-static .bottom-7 {
+  .p-sm-absolute.bottom-sm-7, .p-sm-absolute .bottom-sm-7,
+  .p-sm-sticky.bottom-sm-7,
+  .p-sm-sticky .bottom-sm-7,
+  .p-sm-relative.bottom-sm-7,
+  .p-sm-relative .bottom-sm-7,
+  .p-sm-fixed.bottom-sm-7,
+  .p-sm-fixed .bottom-sm-7 {
     bottom: 70%;
   }
-  .p-sm-absolute.top-8, .p-sm-absolute .top-8,
-  .p-sm-fixed.top-8,
-  .p-sm-fixed .top-8,
-  .p-sm-sticky.top-8,
-  .p-sm-sticky .top-8,
-  .p-sm-relative.top-8,
-  .p-sm-relative .top-8,
-  .p-sm-static.top-8,
-  .p-sm-static .top-8 {
+  .p-sm-absolute.left-sm-7, .p-sm-absolute .left-sm-7,
+  .p-sm-sticky.left-sm-7,
+  .p-sm-sticky .left-sm-7,
+  .p-sm-relative.left-sm-7,
+  .p-sm-relative .left-sm-7,
+  .p-sm-fixed.left-sm-7,
+  .p-sm-fixed .left-sm-7 {
+    left: 70%;
+  }
+  .p-sm-absolute.right-sm-7, .p-sm-absolute .right-sm-7,
+  .p-sm-sticky.right-sm-7,
+  .p-sm-sticky .right-sm-7,
+  .p-sm-relative.right-sm-7,
+  .p-sm-relative .right-sm-7,
+  .p-sm-fixed.right-sm-7,
+  .p-sm-fixed .right-sm-7 {
+    right: 70%;
+  }
+  .p-sm-absolute.top-sm-8, .p-sm-absolute .top-sm-8,
+  .p-sm-sticky.top-sm-8,
+  .p-sm-sticky .top-sm-8,
+  .p-sm-relative.top-sm-8,
+  .p-sm-relative .top-sm-8,
+  .p-sm-fixed.top-sm-8,
+  .p-sm-fixed .top-sm-8 {
     top: 80%;
   }
-  .p-sm-absolute.left-8, .p-sm-absolute .left-8,
-  .p-sm-fixed.left-8,
-  .p-sm-fixed .left-8,
-  .p-sm-sticky.left-8,
-  .p-sm-sticky .left-8,
-  .p-sm-relative.left-8,
-  .p-sm-relative .left-8,
-  .p-sm-static.left-8,
-  .p-sm-static .left-8 {
-    left: 80%;
-  }
-  .p-sm-absolute.right-8, .p-sm-absolute .right-8,
-  .p-sm-fixed.right-8,
-  .p-sm-fixed .right-8,
-  .p-sm-sticky.right-8,
-  .p-sm-sticky .right-8,
-  .p-sm-relative.right-8,
-  .p-sm-relative .right-8,
-  .p-sm-static.right-8,
-  .p-sm-static .right-8 {
-    right: 80%;
-  }
-  .p-sm-absolute.bottom-8, .p-sm-absolute .bottom-8,
-  .p-sm-fixed.bottom-8,
-  .p-sm-fixed .bottom-8,
-  .p-sm-sticky.bottom-8,
-  .p-sm-sticky .bottom-8,
-  .p-sm-relative.bottom-8,
-  .p-sm-relative .bottom-8,
-  .p-sm-static.bottom-8,
-  .p-sm-static .bottom-8 {
+  .p-sm-absolute.bottom-sm-8, .p-sm-absolute .bottom-sm-8,
+  .p-sm-sticky.bottom-sm-8,
+  .p-sm-sticky .bottom-sm-8,
+  .p-sm-relative.bottom-sm-8,
+  .p-sm-relative .bottom-sm-8,
+  .p-sm-fixed.bottom-sm-8,
+  .p-sm-fixed .bottom-sm-8 {
     bottom: 80%;
   }
-  .p-sm-absolute.top-9, .p-sm-absolute .top-9,
-  .p-sm-fixed.top-9,
-  .p-sm-fixed .top-9,
-  .p-sm-sticky.top-9,
-  .p-sm-sticky .top-9,
-  .p-sm-relative.top-9,
-  .p-sm-relative .top-9,
-  .p-sm-static.top-9,
-  .p-sm-static .top-9 {
+  .p-sm-absolute.left-sm-8, .p-sm-absolute .left-sm-8,
+  .p-sm-sticky.left-sm-8,
+  .p-sm-sticky .left-sm-8,
+  .p-sm-relative.left-sm-8,
+  .p-sm-relative .left-sm-8,
+  .p-sm-fixed.left-sm-8,
+  .p-sm-fixed .left-sm-8 {
+    left: 80%;
+  }
+  .p-sm-absolute.right-sm-8, .p-sm-absolute .right-sm-8,
+  .p-sm-sticky.right-sm-8,
+  .p-sm-sticky .right-sm-8,
+  .p-sm-relative.right-sm-8,
+  .p-sm-relative .right-sm-8,
+  .p-sm-fixed.right-sm-8,
+  .p-sm-fixed .right-sm-8 {
+    right: 80%;
+  }
+  .p-sm-absolute.top-sm-9, .p-sm-absolute .top-sm-9,
+  .p-sm-sticky.top-sm-9,
+  .p-sm-sticky .top-sm-9,
+  .p-sm-relative.top-sm-9,
+  .p-sm-relative .top-sm-9,
+  .p-sm-fixed.top-sm-9,
+  .p-sm-fixed .top-sm-9 {
     top: 90%;
   }
-  .p-sm-absolute.left-9, .p-sm-absolute .left-9,
-  .p-sm-fixed.left-9,
-  .p-sm-fixed .left-9,
-  .p-sm-sticky.left-9,
-  .p-sm-sticky .left-9,
-  .p-sm-relative.left-9,
-  .p-sm-relative .left-9,
-  .p-sm-static.left-9,
-  .p-sm-static .left-9 {
-    left: 90%;
-  }
-  .p-sm-absolute.right-9, .p-sm-absolute .right-9,
-  .p-sm-fixed.right-9,
-  .p-sm-fixed .right-9,
-  .p-sm-sticky.right-9,
-  .p-sm-sticky .right-9,
-  .p-sm-relative.right-9,
-  .p-sm-relative .right-9,
-  .p-sm-static.right-9,
-  .p-sm-static .right-9 {
-    right: 90%;
-  }
-  .p-sm-absolute.bottom-9, .p-sm-absolute .bottom-9,
-  .p-sm-fixed.bottom-9,
-  .p-sm-fixed .bottom-9,
-  .p-sm-sticky.bottom-9,
-  .p-sm-sticky .bottom-9,
-  .p-sm-relative.bottom-9,
-  .p-sm-relative .bottom-9,
-  .p-sm-static.bottom-9,
-  .p-sm-static .bottom-9 {
+  .p-sm-absolute.bottom-sm-9, .p-sm-absolute .bottom-sm-9,
+  .p-sm-sticky.bottom-sm-9,
+  .p-sm-sticky .bottom-sm-9,
+  .p-sm-relative.bottom-sm-9,
+  .p-sm-relative .bottom-sm-9,
+  .p-sm-fixed.bottom-sm-9,
+  .p-sm-fixed .bottom-sm-9 {
     bottom: 90%;
   }
-  .p-sm-absolute.top-10, .p-sm-absolute .top-10,
-  .p-sm-fixed.top-10,
-  .p-sm-fixed .top-10,
-  .p-sm-sticky.top-10,
-  .p-sm-sticky .top-10,
-  .p-sm-relative.top-10,
-  .p-sm-relative .top-10,
-  .p-sm-static.top-10,
-  .p-sm-static .top-10 {
+  .p-sm-absolute.left-sm-9, .p-sm-absolute .left-sm-9,
+  .p-sm-sticky.left-sm-9,
+  .p-sm-sticky .left-sm-9,
+  .p-sm-relative.left-sm-9,
+  .p-sm-relative .left-sm-9,
+  .p-sm-fixed.left-sm-9,
+  .p-sm-fixed .left-sm-9 {
+    left: 90%;
+  }
+  .p-sm-absolute.right-sm-9, .p-sm-absolute .right-sm-9,
+  .p-sm-sticky.right-sm-9,
+  .p-sm-sticky .right-sm-9,
+  .p-sm-relative.right-sm-9,
+  .p-sm-relative .right-sm-9,
+  .p-sm-fixed.right-sm-9,
+  .p-sm-fixed .right-sm-9 {
+    right: 90%;
+  }
+  .p-sm-absolute.top-sm-10, .p-sm-absolute .top-sm-10,
+  .p-sm-sticky.top-sm-10,
+  .p-sm-sticky .top-sm-10,
+  .p-sm-relative.top-sm-10,
+  .p-sm-relative .top-sm-10,
+  .p-sm-fixed.top-sm-10,
+  .p-sm-fixed .top-sm-10 {
     top: 100%;
   }
-  .p-sm-absolute.left-10, .p-sm-absolute .left-10,
-  .p-sm-fixed.left-10,
-  .p-sm-fixed .left-10,
-  .p-sm-sticky.left-10,
-  .p-sm-sticky .left-10,
-  .p-sm-relative.left-10,
-  .p-sm-relative .left-10,
-  .p-sm-static.left-10,
-  .p-sm-static .left-10 {
+  .p-sm-absolute.bottom-sm-10, .p-sm-absolute .bottom-sm-10,
+  .p-sm-sticky.bottom-sm-10,
+  .p-sm-sticky .bottom-sm-10,
+  .p-sm-relative.bottom-sm-10,
+  .p-sm-relative .bottom-sm-10,
+  .p-sm-fixed.bottom-sm-10,
+  .p-sm-fixed .bottom-sm-10 {
+    bottom: 100%;
+  }
+  .p-sm-absolute.left-sm-10, .p-sm-absolute .left-sm-10,
+  .p-sm-sticky.left-sm-10,
+  .p-sm-sticky .left-sm-10,
+  .p-sm-relative.left-sm-10,
+  .p-sm-relative .left-sm-10,
+  .p-sm-fixed.left-sm-10,
+  .p-sm-fixed .left-sm-10 {
     left: 100%;
   }
-  .p-sm-absolute.right-10, .p-sm-absolute .right-10,
-  .p-sm-fixed.right-10,
-  .p-sm-fixed .right-10,
-  .p-sm-sticky.right-10,
-  .p-sm-sticky .right-10,
-  .p-sm-relative.right-10,
-  .p-sm-relative .right-10,
-  .p-sm-static.right-10,
-  .p-sm-static .right-10 {
+  .p-sm-absolute.right-sm-10, .p-sm-absolute .right-sm-10,
+  .p-sm-sticky.right-sm-10,
+  .p-sm-sticky .right-sm-10,
+  .p-sm-relative.right-sm-10,
+  .p-sm-relative .right-sm-10,
+  .p-sm-fixed.right-sm-10,
+  .p-sm-fixed .right-sm-10 {
     right: 100%;
-  }
-  .p-sm-absolute.bottom-10, .p-sm-absolute .bottom-10,
-  .p-sm-fixed.bottom-10,
-  .p-sm-fixed .bottom-10,
-  .p-sm-sticky.bottom-10,
-  .p-sm-sticky .bottom-10,
-  .p-sm-relative.bottom-10,
-  .p-sm-relative .bottom-10,
-  .p-sm-static.bottom-10,
-  .p-sm-static .bottom-10 {
-    bottom: 100%;
   }
 }
 @media screen and (min-width: 768px) {
   .p-md-static {
-    position: static;
+    position: static !important;
   }
   .p-md-relative {
-    position: relative;
+    position: relative !important;
   }
   .p-md-fixed {
-    position: fixed;
+    position: fixed !important;
   }
   .p-md-absolute {
-    position: absolute;
+    position: absolute !important;
   }
   .p-md-sticky {
     position: sticky !important;
   }
-  .p-md-absolute.top-0, .p-md-absolute .top-0,
-  .p-md-fixed.top-0,
-  .p-md-fixed .top-0,
-  .p-md-sticky.top-0,
-  .p-md-sticky .top-0,
-  .p-md-relative.top-0,
-  .p-md-relative .top-0,
-  .p-md-static.top-0,
-  .p-md-static .top-0 {
+  .p-md-absolute.top-md-0, .p-md-absolute .top-md-0,
+  .p-md-sticky.top-md-0,
+  .p-md-sticky .top-md-0,
+  .p-md-relative.top-md-0,
+  .p-md-relative .top-md-0,
+  .p-md-fixed.top-md-0,
+  .p-md-fixed .top-md-0 {
     top: 0%;
   }
-  .p-md-absolute.left-0, .p-md-absolute .left-0,
-  .p-md-fixed.left-0,
-  .p-md-fixed .left-0,
-  .p-md-sticky.left-0,
-  .p-md-sticky .left-0,
-  .p-md-relative.left-0,
-  .p-md-relative .left-0,
-  .p-md-static.left-0,
-  .p-md-static .left-0 {
-    left: 0%;
-  }
-  .p-md-absolute.right-0, .p-md-absolute .right-0,
-  .p-md-fixed.right-0,
-  .p-md-fixed .right-0,
-  .p-md-sticky.right-0,
-  .p-md-sticky .right-0,
-  .p-md-relative.right-0,
-  .p-md-relative .right-0,
-  .p-md-static.right-0,
-  .p-md-static .right-0 {
-    right: 0%;
-  }
-  .p-md-absolute.bottom-0, .p-md-absolute .bottom-0,
-  .p-md-fixed.bottom-0,
-  .p-md-fixed .bottom-0,
-  .p-md-sticky.bottom-0,
-  .p-md-sticky .bottom-0,
-  .p-md-relative.bottom-0,
-  .p-md-relative .bottom-0,
-  .p-md-static.bottom-0,
-  .p-md-static .bottom-0 {
+  .p-md-absolute.bottom-md-0, .p-md-absolute .bottom-md-0,
+  .p-md-sticky.bottom-md-0,
+  .p-md-sticky .bottom-md-0,
+  .p-md-relative.bottom-md-0,
+  .p-md-relative .bottom-md-0,
+  .p-md-fixed.bottom-md-0,
+  .p-md-fixed .bottom-md-0 {
     bottom: 0%;
   }
-  .p-md-absolute.top-1, .p-md-absolute .top-1,
-  .p-md-fixed.top-1,
-  .p-md-fixed .top-1,
-  .p-md-sticky.top-1,
-  .p-md-sticky .top-1,
-  .p-md-relative.top-1,
-  .p-md-relative .top-1,
-  .p-md-static.top-1,
-  .p-md-static .top-1 {
+  .p-md-absolute.left-md-0, .p-md-absolute .left-md-0,
+  .p-md-sticky.left-md-0,
+  .p-md-sticky .left-md-0,
+  .p-md-relative.left-md-0,
+  .p-md-relative .left-md-0,
+  .p-md-fixed.left-md-0,
+  .p-md-fixed .left-md-0 {
+    left: 0%;
+  }
+  .p-md-absolute.right-md-0, .p-md-absolute .right-md-0,
+  .p-md-sticky.right-md-0,
+  .p-md-sticky .right-md-0,
+  .p-md-relative.right-md-0,
+  .p-md-relative .right-md-0,
+  .p-md-fixed.right-md-0,
+  .p-md-fixed .right-md-0 {
+    right: 0%;
+  }
+  .p-md-absolute.top-md-1, .p-md-absolute .top-md-1,
+  .p-md-sticky.top-md-1,
+  .p-md-sticky .top-md-1,
+  .p-md-relative.top-md-1,
+  .p-md-relative .top-md-1,
+  .p-md-fixed.top-md-1,
+  .p-md-fixed .top-md-1 {
     top: 10%;
   }
-  .p-md-absolute.left-1, .p-md-absolute .left-1,
-  .p-md-fixed.left-1,
-  .p-md-fixed .left-1,
-  .p-md-sticky.left-1,
-  .p-md-sticky .left-1,
-  .p-md-relative.left-1,
-  .p-md-relative .left-1,
-  .p-md-static.left-1,
-  .p-md-static .left-1 {
-    left: 10%;
-  }
-  .p-md-absolute.right-1, .p-md-absolute .right-1,
-  .p-md-fixed.right-1,
-  .p-md-fixed .right-1,
-  .p-md-sticky.right-1,
-  .p-md-sticky .right-1,
-  .p-md-relative.right-1,
-  .p-md-relative .right-1,
-  .p-md-static.right-1,
-  .p-md-static .right-1 {
-    right: 10%;
-  }
-  .p-md-absolute.bottom-1, .p-md-absolute .bottom-1,
-  .p-md-fixed.bottom-1,
-  .p-md-fixed .bottom-1,
-  .p-md-sticky.bottom-1,
-  .p-md-sticky .bottom-1,
-  .p-md-relative.bottom-1,
-  .p-md-relative .bottom-1,
-  .p-md-static.bottom-1,
-  .p-md-static .bottom-1 {
+  .p-md-absolute.bottom-md-1, .p-md-absolute .bottom-md-1,
+  .p-md-sticky.bottom-md-1,
+  .p-md-sticky .bottom-md-1,
+  .p-md-relative.bottom-md-1,
+  .p-md-relative .bottom-md-1,
+  .p-md-fixed.bottom-md-1,
+  .p-md-fixed .bottom-md-1 {
     bottom: 10%;
   }
-  .p-md-absolute.top-2, .p-md-absolute .top-2,
-  .p-md-fixed.top-2,
-  .p-md-fixed .top-2,
-  .p-md-sticky.top-2,
-  .p-md-sticky .top-2,
-  .p-md-relative.top-2,
-  .p-md-relative .top-2,
-  .p-md-static.top-2,
-  .p-md-static .top-2 {
+  .p-md-absolute.left-md-1, .p-md-absolute .left-md-1,
+  .p-md-sticky.left-md-1,
+  .p-md-sticky .left-md-1,
+  .p-md-relative.left-md-1,
+  .p-md-relative .left-md-1,
+  .p-md-fixed.left-md-1,
+  .p-md-fixed .left-md-1 {
+    left: 10%;
+  }
+  .p-md-absolute.right-md-1, .p-md-absolute .right-md-1,
+  .p-md-sticky.right-md-1,
+  .p-md-sticky .right-md-1,
+  .p-md-relative.right-md-1,
+  .p-md-relative .right-md-1,
+  .p-md-fixed.right-md-1,
+  .p-md-fixed .right-md-1 {
+    right: 10%;
+  }
+  .p-md-absolute.top-md-2, .p-md-absolute .top-md-2,
+  .p-md-sticky.top-md-2,
+  .p-md-sticky .top-md-2,
+  .p-md-relative.top-md-2,
+  .p-md-relative .top-md-2,
+  .p-md-fixed.top-md-2,
+  .p-md-fixed .top-md-2 {
     top: 20%;
   }
-  .p-md-absolute.left-2, .p-md-absolute .left-2,
-  .p-md-fixed.left-2,
-  .p-md-fixed .left-2,
-  .p-md-sticky.left-2,
-  .p-md-sticky .left-2,
-  .p-md-relative.left-2,
-  .p-md-relative .left-2,
-  .p-md-static.left-2,
-  .p-md-static .left-2 {
-    left: 20%;
-  }
-  .p-md-absolute.right-2, .p-md-absolute .right-2,
-  .p-md-fixed.right-2,
-  .p-md-fixed .right-2,
-  .p-md-sticky.right-2,
-  .p-md-sticky .right-2,
-  .p-md-relative.right-2,
-  .p-md-relative .right-2,
-  .p-md-static.right-2,
-  .p-md-static .right-2 {
-    right: 20%;
-  }
-  .p-md-absolute.bottom-2, .p-md-absolute .bottom-2,
-  .p-md-fixed.bottom-2,
-  .p-md-fixed .bottom-2,
-  .p-md-sticky.bottom-2,
-  .p-md-sticky .bottom-2,
-  .p-md-relative.bottom-2,
-  .p-md-relative .bottom-2,
-  .p-md-static.bottom-2,
-  .p-md-static .bottom-2 {
+  .p-md-absolute.bottom-md-2, .p-md-absolute .bottom-md-2,
+  .p-md-sticky.bottom-md-2,
+  .p-md-sticky .bottom-md-2,
+  .p-md-relative.bottom-md-2,
+  .p-md-relative .bottom-md-2,
+  .p-md-fixed.bottom-md-2,
+  .p-md-fixed .bottom-md-2 {
     bottom: 20%;
   }
-  .p-md-absolute.top-3, .p-md-absolute .top-3,
-  .p-md-fixed.top-3,
-  .p-md-fixed .top-3,
-  .p-md-sticky.top-3,
-  .p-md-sticky .top-3,
-  .p-md-relative.top-3,
-  .p-md-relative .top-3,
-  .p-md-static.top-3,
-  .p-md-static .top-3 {
+  .p-md-absolute.left-md-2, .p-md-absolute .left-md-2,
+  .p-md-sticky.left-md-2,
+  .p-md-sticky .left-md-2,
+  .p-md-relative.left-md-2,
+  .p-md-relative .left-md-2,
+  .p-md-fixed.left-md-2,
+  .p-md-fixed .left-md-2 {
+    left: 20%;
+  }
+  .p-md-absolute.right-md-2, .p-md-absolute .right-md-2,
+  .p-md-sticky.right-md-2,
+  .p-md-sticky .right-md-2,
+  .p-md-relative.right-md-2,
+  .p-md-relative .right-md-2,
+  .p-md-fixed.right-md-2,
+  .p-md-fixed .right-md-2 {
+    right: 20%;
+  }
+  .p-md-absolute.top-md-3, .p-md-absolute .top-md-3,
+  .p-md-sticky.top-md-3,
+  .p-md-sticky .top-md-3,
+  .p-md-relative.top-md-3,
+  .p-md-relative .top-md-3,
+  .p-md-fixed.top-md-3,
+  .p-md-fixed .top-md-3 {
     top: 30%;
   }
-  .p-md-absolute.left-3, .p-md-absolute .left-3,
-  .p-md-fixed.left-3,
-  .p-md-fixed .left-3,
-  .p-md-sticky.left-3,
-  .p-md-sticky .left-3,
-  .p-md-relative.left-3,
-  .p-md-relative .left-3,
-  .p-md-static.left-3,
-  .p-md-static .left-3 {
-    left: 30%;
-  }
-  .p-md-absolute.right-3, .p-md-absolute .right-3,
-  .p-md-fixed.right-3,
-  .p-md-fixed .right-3,
-  .p-md-sticky.right-3,
-  .p-md-sticky .right-3,
-  .p-md-relative.right-3,
-  .p-md-relative .right-3,
-  .p-md-static.right-3,
-  .p-md-static .right-3 {
-    right: 30%;
-  }
-  .p-md-absolute.bottom-3, .p-md-absolute .bottom-3,
-  .p-md-fixed.bottom-3,
-  .p-md-fixed .bottom-3,
-  .p-md-sticky.bottom-3,
-  .p-md-sticky .bottom-3,
-  .p-md-relative.bottom-3,
-  .p-md-relative .bottom-3,
-  .p-md-static.bottom-3,
-  .p-md-static .bottom-3 {
+  .p-md-absolute.bottom-md-3, .p-md-absolute .bottom-md-3,
+  .p-md-sticky.bottom-md-3,
+  .p-md-sticky .bottom-md-3,
+  .p-md-relative.bottom-md-3,
+  .p-md-relative .bottom-md-3,
+  .p-md-fixed.bottom-md-3,
+  .p-md-fixed .bottom-md-3 {
     bottom: 30%;
   }
-  .p-md-absolute.top-4, .p-md-absolute .top-4,
-  .p-md-fixed.top-4,
-  .p-md-fixed .top-4,
-  .p-md-sticky.top-4,
-  .p-md-sticky .top-4,
-  .p-md-relative.top-4,
-  .p-md-relative .top-4,
-  .p-md-static.top-4,
-  .p-md-static .top-4 {
+  .p-md-absolute.left-md-3, .p-md-absolute .left-md-3,
+  .p-md-sticky.left-md-3,
+  .p-md-sticky .left-md-3,
+  .p-md-relative.left-md-3,
+  .p-md-relative .left-md-3,
+  .p-md-fixed.left-md-3,
+  .p-md-fixed .left-md-3 {
+    left: 30%;
+  }
+  .p-md-absolute.right-md-3, .p-md-absolute .right-md-3,
+  .p-md-sticky.right-md-3,
+  .p-md-sticky .right-md-3,
+  .p-md-relative.right-md-3,
+  .p-md-relative .right-md-3,
+  .p-md-fixed.right-md-3,
+  .p-md-fixed .right-md-3 {
+    right: 30%;
+  }
+  .p-md-absolute.top-md-4, .p-md-absolute .top-md-4,
+  .p-md-sticky.top-md-4,
+  .p-md-sticky .top-md-4,
+  .p-md-relative.top-md-4,
+  .p-md-relative .top-md-4,
+  .p-md-fixed.top-md-4,
+  .p-md-fixed .top-md-4 {
     top: 40%;
   }
-  .p-md-absolute.left-4, .p-md-absolute .left-4,
-  .p-md-fixed.left-4,
-  .p-md-fixed .left-4,
-  .p-md-sticky.left-4,
-  .p-md-sticky .left-4,
-  .p-md-relative.left-4,
-  .p-md-relative .left-4,
-  .p-md-static.left-4,
-  .p-md-static .left-4 {
-    left: 40%;
-  }
-  .p-md-absolute.right-4, .p-md-absolute .right-4,
-  .p-md-fixed.right-4,
-  .p-md-fixed .right-4,
-  .p-md-sticky.right-4,
-  .p-md-sticky .right-4,
-  .p-md-relative.right-4,
-  .p-md-relative .right-4,
-  .p-md-static.right-4,
-  .p-md-static .right-4 {
-    right: 40%;
-  }
-  .p-md-absolute.bottom-4, .p-md-absolute .bottom-4,
-  .p-md-fixed.bottom-4,
-  .p-md-fixed .bottom-4,
-  .p-md-sticky.bottom-4,
-  .p-md-sticky .bottom-4,
-  .p-md-relative.bottom-4,
-  .p-md-relative .bottom-4,
-  .p-md-static.bottom-4,
-  .p-md-static .bottom-4 {
+  .p-md-absolute.bottom-md-4, .p-md-absolute .bottom-md-4,
+  .p-md-sticky.bottom-md-4,
+  .p-md-sticky .bottom-md-4,
+  .p-md-relative.bottom-md-4,
+  .p-md-relative .bottom-md-4,
+  .p-md-fixed.bottom-md-4,
+  .p-md-fixed .bottom-md-4 {
     bottom: 40%;
   }
-  .p-md-absolute.top-5, .p-md-absolute .top-5,
-  .p-md-fixed.top-5,
-  .p-md-fixed .top-5,
-  .p-md-sticky.top-5,
-  .p-md-sticky .top-5,
-  .p-md-relative.top-5,
-  .p-md-relative .top-5,
-  .p-md-static.top-5,
-  .p-md-static .top-5 {
+  .p-md-absolute.left-md-4, .p-md-absolute .left-md-4,
+  .p-md-sticky.left-md-4,
+  .p-md-sticky .left-md-4,
+  .p-md-relative.left-md-4,
+  .p-md-relative .left-md-4,
+  .p-md-fixed.left-md-4,
+  .p-md-fixed .left-md-4 {
+    left: 40%;
+  }
+  .p-md-absolute.right-md-4, .p-md-absolute .right-md-4,
+  .p-md-sticky.right-md-4,
+  .p-md-sticky .right-md-4,
+  .p-md-relative.right-md-4,
+  .p-md-relative .right-md-4,
+  .p-md-fixed.right-md-4,
+  .p-md-fixed .right-md-4 {
+    right: 40%;
+  }
+  .p-md-absolute.top-md-5, .p-md-absolute .top-md-5,
+  .p-md-sticky.top-md-5,
+  .p-md-sticky .top-md-5,
+  .p-md-relative.top-md-5,
+  .p-md-relative .top-md-5,
+  .p-md-fixed.top-md-5,
+  .p-md-fixed .top-md-5 {
     top: 50%;
   }
-  .p-md-absolute.left-5, .p-md-absolute .left-5,
-  .p-md-fixed.left-5,
-  .p-md-fixed .left-5,
-  .p-md-sticky.left-5,
-  .p-md-sticky .left-5,
-  .p-md-relative.left-5,
-  .p-md-relative .left-5,
-  .p-md-static.left-5,
-  .p-md-static .left-5 {
-    left: 50%;
-  }
-  .p-md-absolute.right-5, .p-md-absolute .right-5,
-  .p-md-fixed.right-5,
-  .p-md-fixed .right-5,
-  .p-md-sticky.right-5,
-  .p-md-sticky .right-5,
-  .p-md-relative.right-5,
-  .p-md-relative .right-5,
-  .p-md-static.right-5,
-  .p-md-static .right-5 {
-    right: 50%;
-  }
-  .p-md-absolute.bottom-5, .p-md-absolute .bottom-5,
-  .p-md-fixed.bottom-5,
-  .p-md-fixed .bottom-5,
-  .p-md-sticky.bottom-5,
-  .p-md-sticky .bottom-5,
-  .p-md-relative.bottom-5,
-  .p-md-relative .bottom-5,
-  .p-md-static.bottom-5,
-  .p-md-static .bottom-5 {
+  .p-md-absolute.bottom-md-5, .p-md-absolute .bottom-md-5,
+  .p-md-sticky.bottom-md-5,
+  .p-md-sticky .bottom-md-5,
+  .p-md-relative.bottom-md-5,
+  .p-md-relative .bottom-md-5,
+  .p-md-fixed.bottom-md-5,
+  .p-md-fixed .bottom-md-5 {
     bottom: 50%;
   }
-  .p-md-absolute.top-6, .p-md-absolute .top-6,
-  .p-md-fixed.top-6,
-  .p-md-fixed .top-6,
-  .p-md-sticky.top-6,
-  .p-md-sticky .top-6,
-  .p-md-relative.top-6,
-  .p-md-relative .top-6,
-  .p-md-static.top-6,
-  .p-md-static .top-6 {
+  .p-md-absolute.left-md-5, .p-md-absolute .left-md-5,
+  .p-md-sticky.left-md-5,
+  .p-md-sticky .left-md-5,
+  .p-md-relative.left-md-5,
+  .p-md-relative .left-md-5,
+  .p-md-fixed.left-md-5,
+  .p-md-fixed .left-md-5 {
+    left: 50%;
+  }
+  .p-md-absolute.right-md-5, .p-md-absolute .right-md-5,
+  .p-md-sticky.right-md-5,
+  .p-md-sticky .right-md-5,
+  .p-md-relative.right-md-5,
+  .p-md-relative .right-md-5,
+  .p-md-fixed.right-md-5,
+  .p-md-fixed .right-md-5 {
+    right: 50%;
+  }
+  .p-md-absolute.top-md-6, .p-md-absolute .top-md-6,
+  .p-md-sticky.top-md-6,
+  .p-md-sticky .top-md-6,
+  .p-md-relative.top-md-6,
+  .p-md-relative .top-md-6,
+  .p-md-fixed.top-md-6,
+  .p-md-fixed .top-md-6 {
     top: 60%;
   }
-  .p-md-absolute.left-6, .p-md-absolute .left-6,
-  .p-md-fixed.left-6,
-  .p-md-fixed .left-6,
-  .p-md-sticky.left-6,
-  .p-md-sticky .left-6,
-  .p-md-relative.left-6,
-  .p-md-relative .left-6,
-  .p-md-static.left-6,
-  .p-md-static .left-6 {
-    left: 60%;
-  }
-  .p-md-absolute.right-6, .p-md-absolute .right-6,
-  .p-md-fixed.right-6,
-  .p-md-fixed .right-6,
-  .p-md-sticky.right-6,
-  .p-md-sticky .right-6,
-  .p-md-relative.right-6,
-  .p-md-relative .right-6,
-  .p-md-static.right-6,
-  .p-md-static .right-6 {
-    right: 60%;
-  }
-  .p-md-absolute.bottom-6, .p-md-absolute .bottom-6,
-  .p-md-fixed.bottom-6,
-  .p-md-fixed .bottom-6,
-  .p-md-sticky.bottom-6,
-  .p-md-sticky .bottom-6,
-  .p-md-relative.bottom-6,
-  .p-md-relative .bottom-6,
-  .p-md-static.bottom-6,
-  .p-md-static .bottom-6 {
+  .p-md-absolute.bottom-md-6, .p-md-absolute .bottom-md-6,
+  .p-md-sticky.bottom-md-6,
+  .p-md-sticky .bottom-md-6,
+  .p-md-relative.bottom-md-6,
+  .p-md-relative .bottom-md-6,
+  .p-md-fixed.bottom-md-6,
+  .p-md-fixed .bottom-md-6 {
     bottom: 60%;
   }
-  .p-md-absolute.top-7, .p-md-absolute .top-7,
-  .p-md-fixed.top-7,
-  .p-md-fixed .top-7,
-  .p-md-sticky.top-7,
-  .p-md-sticky .top-7,
-  .p-md-relative.top-7,
-  .p-md-relative .top-7,
-  .p-md-static.top-7,
-  .p-md-static .top-7 {
+  .p-md-absolute.left-md-6, .p-md-absolute .left-md-6,
+  .p-md-sticky.left-md-6,
+  .p-md-sticky .left-md-6,
+  .p-md-relative.left-md-6,
+  .p-md-relative .left-md-6,
+  .p-md-fixed.left-md-6,
+  .p-md-fixed .left-md-6 {
+    left: 60%;
+  }
+  .p-md-absolute.right-md-6, .p-md-absolute .right-md-6,
+  .p-md-sticky.right-md-6,
+  .p-md-sticky .right-md-6,
+  .p-md-relative.right-md-6,
+  .p-md-relative .right-md-6,
+  .p-md-fixed.right-md-6,
+  .p-md-fixed .right-md-6 {
+    right: 60%;
+  }
+  .p-md-absolute.top-md-7, .p-md-absolute .top-md-7,
+  .p-md-sticky.top-md-7,
+  .p-md-sticky .top-md-7,
+  .p-md-relative.top-md-7,
+  .p-md-relative .top-md-7,
+  .p-md-fixed.top-md-7,
+  .p-md-fixed .top-md-7 {
     top: 70%;
   }
-  .p-md-absolute.left-7, .p-md-absolute .left-7,
-  .p-md-fixed.left-7,
-  .p-md-fixed .left-7,
-  .p-md-sticky.left-7,
-  .p-md-sticky .left-7,
-  .p-md-relative.left-7,
-  .p-md-relative .left-7,
-  .p-md-static.left-7,
-  .p-md-static .left-7 {
-    left: 70%;
-  }
-  .p-md-absolute.right-7, .p-md-absolute .right-7,
-  .p-md-fixed.right-7,
-  .p-md-fixed .right-7,
-  .p-md-sticky.right-7,
-  .p-md-sticky .right-7,
-  .p-md-relative.right-7,
-  .p-md-relative .right-7,
-  .p-md-static.right-7,
-  .p-md-static .right-7 {
-    right: 70%;
-  }
-  .p-md-absolute.bottom-7, .p-md-absolute .bottom-7,
-  .p-md-fixed.bottom-7,
-  .p-md-fixed .bottom-7,
-  .p-md-sticky.bottom-7,
-  .p-md-sticky .bottom-7,
-  .p-md-relative.bottom-7,
-  .p-md-relative .bottom-7,
-  .p-md-static.bottom-7,
-  .p-md-static .bottom-7 {
+  .p-md-absolute.bottom-md-7, .p-md-absolute .bottom-md-7,
+  .p-md-sticky.bottom-md-7,
+  .p-md-sticky .bottom-md-7,
+  .p-md-relative.bottom-md-7,
+  .p-md-relative .bottom-md-7,
+  .p-md-fixed.bottom-md-7,
+  .p-md-fixed .bottom-md-7 {
     bottom: 70%;
   }
-  .p-md-absolute.top-8, .p-md-absolute .top-8,
-  .p-md-fixed.top-8,
-  .p-md-fixed .top-8,
-  .p-md-sticky.top-8,
-  .p-md-sticky .top-8,
-  .p-md-relative.top-8,
-  .p-md-relative .top-8,
-  .p-md-static.top-8,
-  .p-md-static .top-8 {
+  .p-md-absolute.left-md-7, .p-md-absolute .left-md-7,
+  .p-md-sticky.left-md-7,
+  .p-md-sticky .left-md-7,
+  .p-md-relative.left-md-7,
+  .p-md-relative .left-md-7,
+  .p-md-fixed.left-md-7,
+  .p-md-fixed .left-md-7 {
+    left: 70%;
+  }
+  .p-md-absolute.right-md-7, .p-md-absolute .right-md-7,
+  .p-md-sticky.right-md-7,
+  .p-md-sticky .right-md-7,
+  .p-md-relative.right-md-7,
+  .p-md-relative .right-md-7,
+  .p-md-fixed.right-md-7,
+  .p-md-fixed .right-md-7 {
+    right: 70%;
+  }
+  .p-md-absolute.top-md-8, .p-md-absolute .top-md-8,
+  .p-md-sticky.top-md-8,
+  .p-md-sticky .top-md-8,
+  .p-md-relative.top-md-8,
+  .p-md-relative .top-md-8,
+  .p-md-fixed.top-md-8,
+  .p-md-fixed .top-md-8 {
     top: 80%;
   }
-  .p-md-absolute.left-8, .p-md-absolute .left-8,
-  .p-md-fixed.left-8,
-  .p-md-fixed .left-8,
-  .p-md-sticky.left-8,
-  .p-md-sticky .left-8,
-  .p-md-relative.left-8,
-  .p-md-relative .left-8,
-  .p-md-static.left-8,
-  .p-md-static .left-8 {
-    left: 80%;
-  }
-  .p-md-absolute.right-8, .p-md-absolute .right-8,
-  .p-md-fixed.right-8,
-  .p-md-fixed .right-8,
-  .p-md-sticky.right-8,
-  .p-md-sticky .right-8,
-  .p-md-relative.right-8,
-  .p-md-relative .right-8,
-  .p-md-static.right-8,
-  .p-md-static .right-8 {
-    right: 80%;
-  }
-  .p-md-absolute.bottom-8, .p-md-absolute .bottom-8,
-  .p-md-fixed.bottom-8,
-  .p-md-fixed .bottom-8,
-  .p-md-sticky.bottom-8,
-  .p-md-sticky .bottom-8,
-  .p-md-relative.bottom-8,
-  .p-md-relative .bottom-8,
-  .p-md-static.bottom-8,
-  .p-md-static .bottom-8 {
+  .p-md-absolute.bottom-md-8, .p-md-absolute .bottom-md-8,
+  .p-md-sticky.bottom-md-8,
+  .p-md-sticky .bottom-md-8,
+  .p-md-relative.bottom-md-8,
+  .p-md-relative .bottom-md-8,
+  .p-md-fixed.bottom-md-8,
+  .p-md-fixed .bottom-md-8 {
     bottom: 80%;
   }
-  .p-md-absolute.top-9, .p-md-absolute .top-9,
-  .p-md-fixed.top-9,
-  .p-md-fixed .top-9,
-  .p-md-sticky.top-9,
-  .p-md-sticky .top-9,
-  .p-md-relative.top-9,
-  .p-md-relative .top-9,
-  .p-md-static.top-9,
-  .p-md-static .top-9 {
+  .p-md-absolute.left-md-8, .p-md-absolute .left-md-8,
+  .p-md-sticky.left-md-8,
+  .p-md-sticky .left-md-8,
+  .p-md-relative.left-md-8,
+  .p-md-relative .left-md-8,
+  .p-md-fixed.left-md-8,
+  .p-md-fixed .left-md-8 {
+    left: 80%;
+  }
+  .p-md-absolute.right-md-8, .p-md-absolute .right-md-8,
+  .p-md-sticky.right-md-8,
+  .p-md-sticky .right-md-8,
+  .p-md-relative.right-md-8,
+  .p-md-relative .right-md-8,
+  .p-md-fixed.right-md-8,
+  .p-md-fixed .right-md-8 {
+    right: 80%;
+  }
+  .p-md-absolute.top-md-9, .p-md-absolute .top-md-9,
+  .p-md-sticky.top-md-9,
+  .p-md-sticky .top-md-9,
+  .p-md-relative.top-md-9,
+  .p-md-relative .top-md-9,
+  .p-md-fixed.top-md-9,
+  .p-md-fixed .top-md-9 {
     top: 90%;
   }
-  .p-md-absolute.left-9, .p-md-absolute .left-9,
-  .p-md-fixed.left-9,
-  .p-md-fixed .left-9,
-  .p-md-sticky.left-9,
-  .p-md-sticky .left-9,
-  .p-md-relative.left-9,
-  .p-md-relative .left-9,
-  .p-md-static.left-9,
-  .p-md-static .left-9 {
-    left: 90%;
-  }
-  .p-md-absolute.right-9, .p-md-absolute .right-9,
-  .p-md-fixed.right-9,
-  .p-md-fixed .right-9,
-  .p-md-sticky.right-9,
-  .p-md-sticky .right-9,
-  .p-md-relative.right-9,
-  .p-md-relative .right-9,
-  .p-md-static.right-9,
-  .p-md-static .right-9 {
-    right: 90%;
-  }
-  .p-md-absolute.bottom-9, .p-md-absolute .bottom-9,
-  .p-md-fixed.bottom-9,
-  .p-md-fixed .bottom-9,
-  .p-md-sticky.bottom-9,
-  .p-md-sticky .bottom-9,
-  .p-md-relative.bottom-9,
-  .p-md-relative .bottom-9,
-  .p-md-static.bottom-9,
-  .p-md-static .bottom-9 {
+  .p-md-absolute.bottom-md-9, .p-md-absolute .bottom-md-9,
+  .p-md-sticky.bottom-md-9,
+  .p-md-sticky .bottom-md-9,
+  .p-md-relative.bottom-md-9,
+  .p-md-relative .bottom-md-9,
+  .p-md-fixed.bottom-md-9,
+  .p-md-fixed .bottom-md-9 {
     bottom: 90%;
   }
-  .p-md-absolute.top-10, .p-md-absolute .top-10,
-  .p-md-fixed.top-10,
-  .p-md-fixed .top-10,
-  .p-md-sticky.top-10,
-  .p-md-sticky .top-10,
-  .p-md-relative.top-10,
-  .p-md-relative .top-10,
-  .p-md-static.top-10,
-  .p-md-static .top-10 {
+  .p-md-absolute.left-md-9, .p-md-absolute .left-md-9,
+  .p-md-sticky.left-md-9,
+  .p-md-sticky .left-md-9,
+  .p-md-relative.left-md-9,
+  .p-md-relative .left-md-9,
+  .p-md-fixed.left-md-9,
+  .p-md-fixed .left-md-9 {
+    left: 90%;
+  }
+  .p-md-absolute.right-md-9, .p-md-absolute .right-md-9,
+  .p-md-sticky.right-md-9,
+  .p-md-sticky .right-md-9,
+  .p-md-relative.right-md-9,
+  .p-md-relative .right-md-9,
+  .p-md-fixed.right-md-9,
+  .p-md-fixed .right-md-9 {
+    right: 90%;
+  }
+  .p-md-absolute.top-md-10, .p-md-absolute .top-md-10,
+  .p-md-sticky.top-md-10,
+  .p-md-sticky .top-md-10,
+  .p-md-relative.top-md-10,
+  .p-md-relative .top-md-10,
+  .p-md-fixed.top-md-10,
+  .p-md-fixed .top-md-10 {
     top: 100%;
   }
-  .p-md-absolute.left-10, .p-md-absolute .left-10,
-  .p-md-fixed.left-10,
-  .p-md-fixed .left-10,
-  .p-md-sticky.left-10,
-  .p-md-sticky .left-10,
-  .p-md-relative.left-10,
-  .p-md-relative .left-10,
-  .p-md-static.left-10,
-  .p-md-static .left-10 {
+  .p-md-absolute.bottom-md-10, .p-md-absolute .bottom-md-10,
+  .p-md-sticky.bottom-md-10,
+  .p-md-sticky .bottom-md-10,
+  .p-md-relative.bottom-md-10,
+  .p-md-relative .bottom-md-10,
+  .p-md-fixed.bottom-md-10,
+  .p-md-fixed .bottom-md-10 {
+    bottom: 100%;
+  }
+  .p-md-absolute.left-md-10, .p-md-absolute .left-md-10,
+  .p-md-sticky.left-md-10,
+  .p-md-sticky .left-md-10,
+  .p-md-relative.left-md-10,
+  .p-md-relative .left-md-10,
+  .p-md-fixed.left-md-10,
+  .p-md-fixed .left-md-10 {
     left: 100%;
   }
-  .p-md-absolute.right-10, .p-md-absolute .right-10,
-  .p-md-fixed.right-10,
-  .p-md-fixed .right-10,
-  .p-md-sticky.right-10,
-  .p-md-sticky .right-10,
-  .p-md-relative.right-10,
-  .p-md-relative .right-10,
-  .p-md-static.right-10,
-  .p-md-static .right-10 {
+  .p-md-absolute.right-md-10, .p-md-absolute .right-md-10,
+  .p-md-sticky.right-md-10,
+  .p-md-sticky .right-md-10,
+  .p-md-relative.right-md-10,
+  .p-md-relative .right-md-10,
+  .p-md-fixed.right-md-10,
+  .p-md-fixed .right-md-10 {
     right: 100%;
-  }
-  .p-md-absolute.bottom-10, .p-md-absolute .bottom-10,
-  .p-md-fixed.bottom-10,
-  .p-md-fixed .bottom-10,
-  .p-md-sticky.bottom-10,
-  .p-md-sticky .bottom-10,
-  .p-md-relative.bottom-10,
-  .p-md-relative .bottom-10,
-  .p-md-static.bottom-10,
-  .p-md-static .bottom-10 {
-    bottom: 100%;
   }
 }
 @media screen and (min-width: 992px) {
   .p-lg-static {
-    position: static;
+    position: static !important;
   }
   .p-lg-relative {
-    position: relative;
+    position: relative !important;
   }
   .p-lg-fixed {
-    position: fixed;
+    position: fixed !important;
   }
   .p-lg-absolute {
-    position: absolute;
+    position: absolute !important;
   }
   .p-lg-sticky {
     position: sticky !important;
   }
-  .p-lg-absolute.top-0, .p-lg-absolute .top-0,
-  .p-lg-fixed.top-0,
-  .p-lg-fixed .top-0,
-  .p-lg-sticky.top-0,
-  .p-lg-sticky .top-0,
-  .p-lg-relative.top-0,
-  .p-lg-relative .top-0,
-  .p-lg-static.top-0,
-  .p-lg-static .top-0 {
+  .p-lg-absolute.top-lg-0, .p-lg-absolute .top-lg-0,
+  .p-lg-sticky.top-lg-0,
+  .p-lg-sticky .top-lg-0,
+  .p-lg-relative.top-lg-0,
+  .p-lg-relative .top-lg-0,
+  .p-lg-fixed.top-lg-0,
+  .p-lg-fixed .top-lg-0 {
     top: 0%;
   }
-  .p-lg-absolute.left-0, .p-lg-absolute .left-0,
-  .p-lg-fixed.left-0,
-  .p-lg-fixed .left-0,
-  .p-lg-sticky.left-0,
-  .p-lg-sticky .left-0,
-  .p-lg-relative.left-0,
-  .p-lg-relative .left-0,
-  .p-lg-static.left-0,
-  .p-lg-static .left-0 {
-    left: 0%;
-  }
-  .p-lg-absolute.right-0, .p-lg-absolute .right-0,
-  .p-lg-fixed.right-0,
-  .p-lg-fixed .right-0,
-  .p-lg-sticky.right-0,
-  .p-lg-sticky .right-0,
-  .p-lg-relative.right-0,
-  .p-lg-relative .right-0,
-  .p-lg-static.right-0,
-  .p-lg-static .right-0 {
-    right: 0%;
-  }
-  .p-lg-absolute.bottom-0, .p-lg-absolute .bottom-0,
-  .p-lg-fixed.bottom-0,
-  .p-lg-fixed .bottom-0,
-  .p-lg-sticky.bottom-0,
-  .p-lg-sticky .bottom-0,
-  .p-lg-relative.bottom-0,
-  .p-lg-relative .bottom-0,
-  .p-lg-static.bottom-0,
-  .p-lg-static .bottom-0 {
+  .p-lg-absolute.bottom-lg-0, .p-lg-absolute .bottom-lg-0,
+  .p-lg-sticky.bottom-lg-0,
+  .p-lg-sticky .bottom-lg-0,
+  .p-lg-relative.bottom-lg-0,
+  .p-lg-relative .bottom-lg-0,
+  .p-lg-fixed.bottom-lg-0,
+  .p-lg-fixed .bottom-lg-0 {
     bottom: 0%;
   }
-  .p-lg-absolute.top-1, .p-lg-absolute .top-1,
-  .p-lg-fixed.top-1,
-  .p-lg-fixed .top-1,
-  .p-lg-sticky.top-1,
-  .p-lg-sticky .top-1,
-  .p-lg-relative.top-1,
-  .p-lg-relative .top-1,
-  .p-lg-static.top-1,
-  .p-lg-static .top-1 {
+  .p-lg-absolute.left-lg-0, .p-lg-absolute .left-lg-0,
+  .p-lg-sticky.left-lg-0,
+  .p-lg-sticky .left-lg-0,
+  .p-lg-relative.left-lg-0,
+  .p-lg-relative .left-lg-0,
+  .p-lg-fixed.left-lg-0,
+  .p-lg-fixed .left-lg-0 {
+    left: 0%;
+  }
+  .p-lg-absolute.right-lg-0, .p-lg-absolute .right-lg-0,
+  .p-lg-sticky.right-lg-0,
+  .p-lg-sticky .right-lg-0,
+  .p-lg-relative.right-lg-0,
+  .p-lg-relative .right-lg-0,
+  .p-lg-fixed.right-lg-0,
+  .p-lg-fixed .right-lg-0 {
+    right: 0%;
+  }
+  .p-lg-absolute.top-lg-1, .p-lg-absolute .top-lg-1,
+  .p-lg-sticky.top-lg-1,
+  .p-lg-sticky .top-lg-1,
+  .p-lg-relative.top-lg-1,
+  .p-lg-relative .top-lg-1,
+  .p-lg-fixed.top-lg-1,
+  .p-lg-fixed .top-lg-1 {
     top: 10%;
   }
-  .p-lg-absolute.left-1, .p-lg-absolute .left-1,
-  .p-lg-fixed.left-1,
-  .p-lg-fixed .left-1,
-  .p-lg-sticky.left-1,
-  .p-lg-sticky .left-1,
-  .p-lg-relative.left-1,
-  .p-lg-relative .left-1,
-  .p-lg-static.left-1,
-  .p-lg-static .left-1 {
-    left: 10%;
-  }
-  .p-lg-absolute.right-1, .p-lg-absolute .right-1,
-  .p-lg-fixed.right-1,
-  .p-lg-fixed .right-1,
-  .p-lg-sticky.right-1,
-  .p-lg-sticky .right-1,
-  .p-lg-relative.right-1,
-  .p-lg-relative .right-1,
-  .p-lg-static.right-1,
-  .p-lg-static .right-1 {
-    right: 10%;
-  }
-  .p-lg-absolute.bottom-1, .p-lg-absolute .bottom-1,
-  .p-lg-fixed.bottom-1,
-  .p-lg-fixed .bottom-1,
-  .p-lg-sticky.bottom-1,
-  .p-lg-sticky .bottom-1,
-  .p-lg-relative.bottom-1,
-  .p-lg-relative .bottom-1,
-  .p-lg-static.bottom-1,
-  .p-lg-static .bottom-1 {
+  .p-lg-absolute.bottom-lg-1, .p-lg-absolute .bottom-lg-1,
+  .p-lg-sticky.bottom-lg-1,
+  .p-lg-sticky .bottom-lg-1,
+  .p-lg-relative.bottom-lg-1,
+  .p-lg-relative .bottom-lg-1,
+  .p-lg-fixed.bottom-lg-1,
+  .p-lg-fixed .bottom-lg-1 {
     bottom: 10%;
   }
-  .p-lg-absolute.top-2, .p-lg-absolute .top-2,
-  .p-lg-fixed.top-2,
-  .p-lg-fixed .top-2,
-  .p-lg-sticky.top-2,
-  .p-lg-sticky .top-2,
-  .p-lg-relative.top-2,
-  .p-lg-relative .top-2,
-  .p-lg-static.top-2,
-  .p-lg-static .top-2 {
+  .p-lg-absolute.left-lg-1, .p-lg-absolute .left-lg-1,
+  .p-lg-sticky.left-lg-1,
+  .p-lg-sticky .left-lg-1,
+  .p-lg-relative.left-lg-1,
+  .p-lg-relative .left-lg-1,
+  .p-lg-fixed.left-lg-1,
+  .p-lg-fixed .left-lg-1 {
+    left: 10%;
+  }
+  .p-lg-absolute.right-lg-1, .p-lg-absolute .right-lg-1,
+  .p-lg-sticky.right-lg-1,
+  .p-lg-sticky .right-lg-1,
+  .p-lg-relative.right-lg-1,
+  .p-lg-relative .right-lg-1,
+  .p-lg-fixed.right-lg-1,
+  .p-lg-fixed .right-lg-1 {
+    right: 10%;
+  }
+  .p-lg-absolute.top-lg-2, .p-lg-absolute .top-lg-2,
+  .p-lg-sticky.top-lg-2,
+  .p-lg-sticky .top-lg-2,
+  .p-lg-relative.top-lg-2,
+  .p-lg-relative .top-lg-2,
+  .p-lg-fixed.top-lg-2,
+  .p-lg-fixed .top-lg-2 {
     top: 20%;
   }
-  .p-lg-absolute.left-2, .p-lg-absolute .left-2,
-  .p-lg-fixed.left-2,
-  .p-lg-fixed .left-2,
-  .p-lg-sticky.left-2,
-  .p-lg-sticky .left-2,
-  .p-lg-relative.left-2,
-  .p-lg-relative .left-2,
-  .p-lg-static.left-2,
-  .p-lg-static .left-2 {
-    left: 20%;
-  }
-  .p-lg-absolute.right-2, .p-lg-absolute .right-2,
-  .p-lg-fixed.right-2,
-  .p-lg-fixed .right-2,
-  .p-lg-sticky.right-2,
-  .p-lg-sticky .right-2,
-  .p-lg-relative.right-2,
-  .p-lg-relative .right-2,
-  .p-lg-static.right-2,
-  .p-lg-static .right-2 {
-    right: 20%;
-  }
-  .p-lg-absolute.bottom-2, .p-lg-absolute .bottom-2,
-  .p-lg-fixed.bottom-2,
-  .p-lg-fixed .bottom-2,
-  .p-lg-sticky.bottom-2,
-  .p-lg-sticky .bottom-2,
-  .p-lg-relative.bottom-2,
-  .p-lg-relative .bottom-2,
-  .p-lg-static.bottom-2,
-  .p-lg-static .bottom-2 {
+  .p-lg-absolute.bottom-lg-2, .p-lg-absolute .bottom-lg-2,
+  .p-lg-sticky.bottom-lg-2,
+  .p-lg-sticky .bottom-lg-2,
+  .p-lg-relative.bottom-lg-2,
+  .p-lg-relative .bottom-lg-2,
+  .p-lg-fixed.bottom-lg-2,
+  .p-lg-fixed .bottom-lg-2 {
     bottom: 20%;
   }
-  .p-lg-absolute.top-3, .p-lg-absolute .top-3,
-  .p-lg-fixed.top-3,
-  .p-lg-fixed .top-3,
-  .p-lg-sticky.top-3,
-  .p-lg-sticky .top-3,
-  .p-lg-relative.top-3,
-  .p-lg-relative .top-3,
-  .p-lg-static.top-3,
-  .p-lg-static .top-3 {
+  .p-lg-absolute.left-lg-2, .p-lg-absolute .left-lg-2,
+  .p-lg-sticky.left-lg-2,
+  .p-lg-sticky .left-lg-2,
+  .p-lg-relative.left-lg-2,
+  .p-lg-relative .left-lg-2,
+  .p-lg-fixed.left-lg-2,
+  .p-lg-fixed .left-lg-2 {
+    left: 20%;
+  }
+  .p-lg-absolute.right-lg-2, .p-lg-absolute .right-lg-2,
+  .p-lg-sticky.right-lg-2,
+  .p-lg-sticky .right-lg-2,
+  .p-lg-relative.right-lg-2,
+  .p-lg-relative .right-lg-2,
+  .p-lg-fixed.right-lg-2,
+  .p-lg-fixed .right-lg-2 {
+    right: 20%;
+  }
+  .p-lg-absolute.top-lg-3, .p-lg-absolute .top-lg-3,
+  .p-lg-sticky.top-lg-3,
+  .p-lg-sticky .top-lg-3,
+  .p-lg-relative.top-lg-3,
+  .p-lg-relative .top-lg-3,
+  .p-lg-fixed.top-lg-3,
+  .p-lg-fixed .top-lg-3 {
     top: 30%;
   }
-  .p-lg-absolute.left-3, .p-lg-absolute .left-3,
-  .p-lg-fixed.left-3,
-  .p-lg-fixed .left-3,
-  .p-lg-sticky.left-3,
-  .p-lg-sticky .left-3,
-  .p-lg-relative.left-3,
-  .p-lg-relative .left-3,
-  .p-lg-static.left-3,
-  .p-lg-static .left-3 {
-    left: 30%;
-  }
-  .p-lg-absolute.right-3, .p-lg-absolute .right-3,
-  .p-lg-fixed.right-3,
-  .p-lg-fixed .right-3,
-  .p-lg-sticky.right-3,
-  .p-lg-sticky .right-3,
-  .p-lg-relative.right-3,
-  .p-lg-relative .right-3,
-  .p-lg-static.right-3,
-  .p-lg-static .right-3 {
-    right: 30%;
-  }
-  .p-lg-absolute.bottom-3, .p-lg-absolute .bottom-3,
-  .p-lg-fixed.bottom-3,
-  .p-lg-fixed .bottom-3,
-  .p-lg-sticky.bottom-3,
-  .p-lg-sticky .bottom-3,
-  .p-lg-relative.bottom-3,
-  .p-lg-relative .bottom-3,
-  .p-lg-static.bottom-3,
-  .p-lg-static .bottom-3 {
+  .p-lg-absolute.bottom-lg-3, .p-lg-absolute .bottom-lg-3,
+  .p-lg-sticky.bottom-lg-3,
+  .p-lg-sticky .bottom-lg-3,
+  .p-lg-relative.bottom-lg-3,
+  .p-lg-relative .bottom-lg-3,
+  .p-lg-fixed.bottom-lg-3,
+  .p-lg-fixed .bottom-lg-3 {
     bottom: 30%;
   }
-  .p-lg-absolute.top-4, .p-lg-absolute .top-4,
-  .p-lg-fixed.top-4,
-  .p-lg-fixed .top-4,
-  .p-lg-sticky.top-4,
-  .p-lg-sticky .top-4,
-  .p-lg-relative.top-4,
-  .p-lg-relative .top-4,
-  .p-lg-static.top-4,
-  .p-lg-static .top-4 {
+  .p-lg-absolute.left-lg-3, .p-lg-absolute .left-lg-3,
+  .p-lg-sticky.left-lg-3,
+  .p-lg-sticky .left-lg-3,
+  .p-lg-relative.left-lg-3,
+  .p-lg-relative .left-lg-3,
+  .p-lg-fixed.left-lg-3,
+  .p-lg-fixed .left-lg-3 {
+    left: 30%;
+  }
+  .p-lg-absolute.right-lg-3, .p-lg-absolute .right-lg-3,
+  .p-lg-sticky.right-lg-3,
+  .p-lg-sticky .right-lg-3,
+  .p-lg-relative.right-lg-3,
+  .p-lg-relative .right-lg-3,
+  .p-lg-fixed.right-lg-3,
+  .p-lg-fixed .right-lg-3 {
+    right: 30%;
+  }
+  .p-lg-absolute.top-lg-4, .p-lg-absolute .top-lg-4,
+  .p-lg-sticky.top-lg-4,
+  .p-lg-sticky .top-lg-4,
+  .p-lg-relative.top-lg-4,
+  .p-lg-relative .top-lg-4,
+  .p-lg-fixed.top-lg-4,
+  .p-lg-fixed .top-lg-4 {
     top: 40%;
   }
-  .p-lg-absolute.left-4, .p-lg-absolute .left-4,
-  .p-lg-fixed.left-4,
-  .p-lg-fixed .left-4,
-  .p-lg-sticky.left-4,
-  .p-lg-sticky .left-4,
-  .p-lg-relative.left-4,
-  .p-lg-relative .left-4,
-  .p-lg-static.left-4,
-  .p-lg-static .left-4 {
-    left: 40%;
-  }
-  .p-lg-absolute.right-4, .p-lg-absolute .right-4,
-  .p-lg-fixed.right-4,
-  .p-lg-fixed .right-4,
-  .p-lg-sticky.right-4,
-  .p-lg-sticky .right-4,
-  .p-lg-relative.right-4,
-  .p-lg-relative .right-4,
-  .p-lg-static.right-4,
-  .p-lg-static .right-4 {
-    right: 40%;
-  }
-  .p-lg-absolute.bottom-4, .p-lg-absolute .bottom-4,
-  .p-lg-fixed.bottom-4,
-  .p-lg-fixed .bottom-4,
-  .p-lg-sticky.bottom-4,
-  .p-lg-sticky .bottom-4,
-  .p-lg-relative.bottom-4,
-  .p-lg-relative .bottom-4,
-  .p-lg-static.bottom-4,
-  .p-lg-static .bottom-4 {
+  .p-lg-absolute.bottom-lg-4, .p-lg-absolute .bottom-lg-4,
+  .p-lg-sticky.bottom-lg-4,
+  .p-lg-sticky .bottom-lg-4,
+  .p-lg-relative.bottom-lg-4,
+  .p-lg-relative .bottom-lg-4,
+  .p-lg-fixed.bottom-lg-4,
+  .p-lg-fixed .bottom-lg-4 {
     bottom: 40%;
   }
-  .p-lg-absolute.top-5, .p-lg-absolute .top-5,
-  .p-lg-fixed.top-5,
-  .p-lg-fixed .top-5,
-  .p-lg-sticky.top-5,
-  .p-lg-sticky .top-5,
-  .p-lg-relative.top-5,
-  .p-lg-relative .top-5,
-  .p-lg-static.top-5,
-  .p-lg-static .top-5 {
+  .p-lg-absolute.left-lg-4, .p-lg-absolute .left-lg-4,
+  .p-lg-sticky.left-lg-4,
+  .p-lg-sticky .left-lg-4,
+  .p-lg-relative.left-lg-4,
+  .p-lg-relative .left-lg-4,
+  .p-lg-fixed.left-lg-4,
+  .p-lg-fixed .left-lg-4 {
+    left: 40%;
+  }
+  .p-lg-absolute.right-lg-4, .p-lg-absolute .right-lg-4,
+  .p-lg-sticky.right-lg-4,
+  .p-lg-sticky .right-lg-4,
+  .p-lg-relative.right-lg-4,
+  .p-lg-relative .right-lg-4,
+  .p-lg-fixed.right-lg-4,
+  .p-lg-fixed .right-lg-4 {
+    right: 40%;
+  }
+  .p-lg-absolute.top-lg-5, .p-lg-absolute .top-lg-5,
+  .p-lg-sticky.top-lg-5,
+  .p-lg-sticky .top-lg-5,
+  .p-lg-relative.top-lg-5,
+  .p-lg-relative .top-lg-5,
+  .p-lg-fixed.top-lg-5,
+  .p-lg-fixed .top-lg-5 {
     top: 50%;
   }
-  .p-lg-absolute.left-5, .p-lg-absolute .left-5,
-  .p-lg-fixed.left-5,
-  .p-lg-fixed .left-5,
-  .p-lg-sticky.left-5,
-  .p-lg-sticky .left-5,
-  .p-lg-relative.left-5,
-  .p-lg-relative .left-5,
-  .p-lg-static.left-5,
-  .p-lg-static .left-5 {
-    left: 50%;
-  }
-  .p-lg-absolute.right-5, .p-lg-absolute .right-5,
-  .p-lg-fixed.right-5,
-  .p-lg-fixed .right-5,
-  .p-lg-sticky.right-5,
-  .p-lg-sticky .right-5,
-  .p-lg-relative.right-5,
-  .p-lg-relative .right-5,
-  .p-lg-static.right-5,
-  .p-lg-static .right-5 {
-    right: 50%;
-  }
-  .p-lg-absolute.bottom-5, .p-lg-absolute .bottom-5,
-  .p-lg-fixed.bottom-5,
-  .p-lg-fixed .bottom-5,
-  .p-lg-sticky.bottom-5,
-  .p-lg-sticky .bottom-5,
-  .p-lg-relative.bottom-5,
-  .p-lg-relative .bottom-5,
-  .p-lg-static.bottom-5,
-  .p-lg-static .bottom-5 {
+  .p-lg-absolute.bottom-lg-5, .p-lg-absolute .bottom-lg-5,
+  .p-lg-sticky.bottom-lg-5,
+  .p-lg-sticky .bottom-lg-5,
+  .p-lg-relative.bottom-lg-5,
+  .p-lg-relative .bottom-lg-5,
+  .p-lg-fixed.bottom-lg-5,
+  .p-lg-fixed .bottom-lg-5 {
     bottom: 50%;
   }
-  .p-lg-absolute.top-6, .p-lg-absolute .top-6,
-  .p-lg-fixed.top-6,
-  .p-lg-fixed .top-6,
-  .p-lg-sticky.top-6,
-  .p-lg-sticky .top-6,
-  .p-lg-relative.top-6,
-  .p-lg-relative .top-6,
-  .p-lg-static.top-6,
-  .p-lg-static .top-6 {
+  .p-lg-absolute.left-lg-5, .p-lg-absolute .left-lg-5,
+  .p-lg-sticky.left-lg-5,
+  .p-lg-sticky .left-lg-5,
+  .p-lg-relative.left-lg-5,
+  .p-lg-relative .left-lg-5,
+  .p-lg-fixed.left-lg-5,
+  .p-lg-fixed .left-lg-5 {
+    left: 50%;
+  }
+  .p-lg-absolute.right-lg-5, .p-lg-absolute .right-lg-5,
+  .p-lg-sticky.right-lg-5,
+  .p-lg-sticky .right-lg-5,
+  .p-lg-relative.right-lg-5,
+  .p-lg-relative .right-lg-5,
+  .p-lg-fixed.right-lg-5,
+  .p-lg-fixed .right-lg-5 {
+    right: 50%;
+  }
+  .p-lg-absolute.top-lg-6, .p-lg-absolute .top-lg-6,
+  .p-lg-sticky.top-lg-6,
+  .p-lg-sticky .top-lg-6,
+  .p-lg-relative.top-lg-6,
+  .p-lg-relative .top-lg-6,
+  .p-lg-fixed.top-lg-6,
+  .p-lg-fixed .top-lg-6 {
     top: 60%;
   }
-  .p-lg-absolute.left-6, .p-lg-absolute .left-6,
-  .p-lg-fixed.left-6,
-  .p-lg-fixed .left-6,
-  .p-lg-sticky.left-6,
-  .p-lg-sticky .left-6,
-  .p-lg-relative.left-6,
-  .p-lg-relative .left-6,
-  .p-lg-static.left-6,
-  .p-lg-static .left-6 {
-    left: 60%;
-  }
-  .p-lg-absolute.right-6, .p-lg-absolute .right-6,
-  .p-lg-fixed.right-6,
-  .p-lg-fixed .right-6,
-  .p-lg-sticky.right-6,
-  .p-lg-sticky .right-6,
-  .p-lg-relative.right-6,
-  .p-lg-relative .right-6,
-  .p-lg-static.right-6,
-  .p-lg-static .right-6 {
-    right: 60%;
-  }
-  .p-lg-absolute.bottom-6, .p-lg-absolute .bottom-6,
-  .p-lg-fixed.bottom-6,
-  .p-lg-fixed .bottom-6,
-  .p-lg-sticky.bottom-6,
-  .p-lg-sticky .bottom-6,
-  .p-lg-relative.bottom-6,
-  .p-lg-relative .bottom-6,
-  .p-lg-static.bottom-6,
-  .p-lg-static .bottom-6 {
+  .p-lg-absolute.bottom-lg-6, .p-lg-absolute .bottom-lg-6,
+  .p-lg-sticky.bottom-lg-6,
+  .p-lg-sticky .bottom-lg-6,
+  .p-lg-relative.bottom-lg-6,
+  .p-lg-relative .bottom-lg-6,
+  .p-lg-fixed.bottom-lg-6,
+  .p-lg-fixed .bottom-lg-6 {
     bottom: 60%;
   }
-  .p-lg-absolute.top-7, .p-lg-absolute .top-7,
-  .p-lg-fixed.top-7,
-  .p-lg-fixed .top-7,
-  .p-lg-sticky.top-7,
-  .p-lg-sticky .top-7,
-  .p-lg-relative.top-7,
-  .p-lg-relative .top-7,
-  .p-lg-static.top-7,
-  .p-lg-static .top-7 {
+  .p-lg-absolute.left-lg-6, .p-lg-absolute .left-lg-6,
+  .p-lg-sticky.left-lg-6,
+  .p-lg-sticky .left-lg-6,
+  .p-lg-relative.left-lg-6,
+  .p-lg-relative .left-lg-6,
+  .p-lg-fixed.left-lg-6,
+  .p-lg-fixed .left-lg-6 {
+    left: 60%;
+  }
+  .p-lg-absolute.right-lg-6, .p-lg-absolute .right-lg-6,
+  .p-lg-sticky.right-lg-6,
+  .p-lg-sticky .right-lg-6,
+  .p-lg-relative.right-lg-6,
+  .p-lg-relative .right-lg-6,
+  .p-lg-fixed.right-lg-6,
+  .p-lg-fixed .right-lg-6 {
+    right: 60%;
+  }
+  .p-lg-absolute.top-lg-7, .p-lg-absolute .top-lg-7,
+  .p-lg-sticky.top-lg-7,
+  .p-lg-sticky .top-lg-7,
+  .p-lg-relative.top-lg-7,
+  .p-lg-relative .top-lg-7,
+  .p-lg-fixed.top-lg-7,
+  .p-lg-fixed .top-lg-7 {
     top: 70%;
   }
-  .p-lg-absolute.left-7, .p-lg-absolute .left-7,
-  .p-lg-fixed.left-7,
-  .p-lg-fixed .left-7,
-  .p-lg-sticky.left-7,
-  .p-lg-sticky .left-7,
-  .p-lg-relative.left-7,
-  .p-lg-relative .left-7,
-  .p-lg-static.left-7,
-  .p-lg-static .left-7 {
-    left: 70%;
-  }
-  .p-lg-absolute.right-7, .p-lg-absolute .right-7,
-  .p-lg-fixed.right-7,
-  .p-lg-fixed .right-7,
-  .p-lg-sticky.right-7,
-  .p-lg-sticky .right-7,
-  .p-lg-relative.right-7,
-  .p-lg-relative .right-7,
-  .p-lg-static.right-7,
-  .p-lg-static .right-7 {
-    right: 70%;
-  }
-  .p-lg-absolute.bottom-7, .p-lg-absolute .bottom-7,
-  .p-lg-fixed.bottom-7,
-  .p-lg-fixed .bottom-7,
-  .p-lg-sticky.bottom-7,
-  .p-lg-sticky .bottom-7,
-  .p-lg-relative.bottom-7,
-  .p-lg-relative .bottom-7,
-  .p-lg-static.bottom-7,
-  .p-lg-static .bottom-7 {
+  .p-lg-absolute.bottom-lg-7, .p-lg-absolute .bottom-lg-7,
+  .p-lg-sticky.bottom-lg-7,
+  .p-lg-sticky .bottom-lg-7,
+  .p-lg-relative.bottom-lg-7,
+  .p-lg-relative .bottom-lg-7,
+  .p-lg-fixed.bottom-lg-7,
+  .p-lg-fixed .bottom-lg-7 {
     bottom: 70%;
   }
-  .p-lg-absolute.top-8, .p-lg-absolute .top-8,
-  .p-lg-fixed.top-8,
-  .p-lg-fixed .top-8,
-  .p-lg-sticky.top-8,
-  .p-lg-sticky .top-8,
-  .p-lg-relative.top-8,
-  .p-lg-relative .top-8,
-  .p-lg-static.top-8,
-  .p-lg-static .top-8 {
+  .p-lg-absolute.left-lg-7, .p-lg-absolute .left-lg-7,
+  .p-lg-sticky.left-lg-7,
+  .p-lg-sticky .left-lg-7,
+  .p-lg-relative.left-lg-7,
+  .p-lg-relative .left-lg-7,
+  .p-lg-fixed.left-lg-7,
+  .p-lg-fixed .left-lg-7 {
+    left: 70%;
+  }
+  .p-lg-absolute.right-lg-7, .p-lg-absolute .right-lg-7,
+  .p-lg-sticky.right-lg-7,
+  .p-lg-sticky .right-lg-7,
+  .p-lg-relative.right-lg-7,
+  .p-lg-relative .right-lg-7,
+  .p-lg-fixed.right-lg-7,
+  .p-lg-fixed .right-lg-7 {
+    right: 70%;
+  }
+  .p-lg-absolute.top-lg-8, .p-lg-absolute .top-lg-8,
+  .p-lg-sticky.top-lg-8,
+  .p-lg-sticky .top-lg-8,
+  .p-lg-relative.top-lg-8,
+  .p-lg-relative .top-lg-8,
+  .p-lg-fixed.top-lg-8,
+  .p-lg-fixed .top-lg-8 {
     top: 80%;
   }
-  .p-lg-absolute.left-8, .p-lg-absolute .left-8,
-  .p-lg-fixed.left-8,
-  .p-lg-fixed .left-8,
-  .p-lg-sticky.left-8,
-  .p-lg-sticky .left-8,
-  .p-lg-relative.left-8,
-  .p-lg-relative .left-8,
-  .p-lg-static.left-8,
-  .p-lg-static .left-8 {
-    left: 80%;
-  }
-  .p-lg-absolute.right-8, .p-lg-absolute .right-8,
-  .p-lg-fixed.right-8,
-  .p-lg-fixed .right-8,
-  .p-lg-sticky.right-8,
-  .p-lg-sticky .right-8,
-  .p-lg-relative.right-8,
-  .p-lg-relative .right-8,
-  .p-lg-static.right-8,
-  .p-lg-static .right-8 {
-    right: 80%;
-  }
-  .p-lg-absolute.bottom-8, .p-lg-absolute .bottom-8,
-  .p-lg-fixed.bottom-8,
-  .p-lg-fixed .bottom-8,
-  .p-lg-sticky.bottom-8,
-  .p-lg-sticky .bottom-8,
-  .p-lg-relative.bottom-8,
-  .p-lg-relative .bottom-8,
-  .p-lg-static.bottom-8,
-  .p-lg-static .bottom-8 {
+  .p-lg-absolute.bottom-lg-8, .p-lg-absolute .bottom-lg-8,
+  .p-lg-sticky.bottom-lg-8,
+  .p-lg-sticky .bottom-lg-8,
+  .p-lg-relative.bottom-lg-8,
+  .p-lg-relative .bottom-lg-8,
+  .p-lg-fixed.bottom-lg-8,
+  .p-lg-fixed .bottom-lg-8 {
     bottom: 80%;
   }
-  .p-lg-absolute.top-9, .p-lg-absolute .top-9,
-  .p-lg-fixed.top-9,
-  .p-lg-fixed .top-9,
-  .p-lg-sticky.top-9,
-  .p-lg-sticky .top-9,
-  .p-lg-relative.top-9,
-  .p-lg-relative .top-9,
-  .p-lg-static.top-9,
-  .p-lg-static .top-9 {
+  .p-lg-absolute.left-lg-8, .p-lg-absolute .left-lg-8,
+  .p-lg-sticky.left-lg-8,
+  .p-lg-sticky .left-lg-8,
+  .p-lg-relative.left-lg-8,
+  .p-lg-relative .left-lg-8,
+  .p-lg-fixed.left-lg-8,
+  .p-lg-fixed .left-lg-8 {
+    left: 80%;
+  }
+  .p-lg-absolute.right-lg-8, .p-lg-absolute .right-lg-8,
+  .p-lg-sticky.right-lg-8,
+  .p-lg-sticky .right-lg-8,
+  .p-lg-relative.right-lg-8,
+  .p-lg-relative .right-lg-8,
+  .p-lg-fixed.right-lg-8,
+  .p-lg-fixed .right-lg-8 {
+    right: 80%;
+  }
+  .p-lg-absolute.top-lg-9, .p-lg-absolute .top-lg-9,
+  .p-lg-sticky.top-lg-9,
+  .p-lg-sticky .top-lg-9,
+  .p-lg-relative.top-lg-9,
+  .p-lg-relative .top-lg-9,
+  .p-lg-fixed.top-lg-9,
+  .p-lg-fixed .top-lg-9 {
     top: 90%;
   }
-  .p-lg-absolute.left-9, .p-lg-absolute .left-9,
-  .p-lg-fixed.left-9,
-  .p-lg-fixed .left-9,
-  .p-lg-sticky.left-9,
-  .p-lg-sticky .left-9,
-  .p-lg-relative.left-9,
-  .p-lg-relative .left-9,
-  .p-lg-static.left-9,
-  .p-lg-static .left-9 {
-    left: 90%;
-  }
-  .p-lg-absolute.right-9, .p-lg-absolute .right-9,
-  .p-lg-fixed.right-9,
-  .p-lg-fixed .right-9,
-  .p-lg-sticky.right-9,
-  .p-lg-sticky .right-9,
-  .p-lg-relative.right-9,
-  .p-lg-relative .right-9,
-  .p-lg-static.right-9,
-  .p-lg-static .right-9 {
-    right: 90%;
-  }
-  .p-lg-absolute.bottom-9, .p-lg-absolute .bottom-9,
-  .p-lg-fixed.bottom-9,
-  .p-lg-fixed .bottom-9,
-  .p-lg-sticky.bottom-9,
-  .p-lg-sticky .bottom-9,
-  .p-lg-relative.bottom-9,
-  .p-lg-relative .bottom-9,
-  .p-lg-static.bottom-9,
-  .p-lg-static .bottom-9 {
+  .p-lg-absolute.bottom-lg-9, .p-lg-absolute .bottom-lg-9,
+  .p-lg-sticky.bottom-lg-9,
+  .p-lg-sticky .bottom-lg-9,
+  .p-lg-relative.bottom-lg-9,
+  .p-lg-relative .bottom-lg-9,
+  .p-lg-fixed.bottom-lg-9,
+  .p-lg-fixed .bottom-lg-9 {
     bottom: 90%;
   }
-  .p-lg-absolute.top-10, .p-lg-absolute .top-10,
-  .p-lg-fixed.top-10,
-  .p-lg-fixed .top-10,
-  .p-lg-sticky.top-10,
-  .p-lg-sticky .top-10,
-  .p-lg-relative.top-10,
-  .p-lg-relative .top-10,
-  .p-lg-static.top-10,
-  .p-lg-static .top-10 {
+  .p-lg-absolute.left-lg-9, .p-lg-absolute .left-lg-9,
+  .p-lg-sticky.left-lg-9,
+  .p-lg-sticky .left-lg-9,
+  .p-lg-relative.left-lg-9,
+  .p-lg-relative .left-lg-9,
+  .p-lg-fixed.left-lg-9,
+  .p-lg-fixed .left-lg-9 {
+    left: 90%;
+  }
+  .p-lg-absolute.right-lg-9, .p-lg-absolute .right-lg-9,
+  .p-lg-sticky.right-lg-9,
+  .p-lg-sticky .right-lg-9,
+  .p-lg-relative.right-lg-9,
+  .p-lg-relative .right-lg-9,
+  .p-lg-fixed.right-lg-9,
+  .p-lg-fixed .right-lg-9 {
+    right: 90%;
+  }
+  .p-lg-absolute.top-lg-10, .p-lg-absolute .top-lg-10,
+  .p-lg-sticky.top-lg-10,
+  .p-lg-sticky .top-lg-10,
+  .p-lg-relative.top-lg-10,
+  .p-lg-relative .top-lg-10,
+  .p-lg-fixed.top-lg-10,
+  .p-lg-fixed .top-lg-10 {
     top: 100%;
   }
-  .p-lg-absolute.left-10, .p-lg-absolute .left-10,
-  .p-lg-fixed.left-10,
-  .p-lg-fixed .left-10,
-  .p-lg-sticky.left-10,
-  .p-lg-sticky .left-10,
-  .p-lg-relative.left-10,
-  .p-lg-relative .left-10,
-  .p-lg-static.left-10,
-  .p-lg-static .left-10 {
+  .p-lg-absolute.bottom-lg-10, .p-lg-absolute .bottom-lg-10,
+  .p-lg-sticky.bottom-lg-10,
+  .p-lg-sticky .bottom-lg-10,
+  .p-lg-relative.bottom-lg-10,
+  .p-lg-relative .bottom-lg-10,
+  .p-lg-fixed.bottom-lg-10,
+  .p-lg-fixed .bottom-lg-10 {
+    bottom: 100%;
+  }
+  .p-lg-absolute.left-lg-10, .p-lg-absolute .left-lg-10,
+  .p-lg-sticky.left-lg-10,
+  .p-lg-sticky .left-lg-10,
+  .p-lg-relative.left-lg-10,
+  .p-lg-relative .left-lg-10,
+  .p-lg-fixed.left-lg-10,
+  .p-lg-fixed .left-lg-10 {
     left: 100%;
   }
-  .p-lg-absolute.right-10, .p-lg-absolute .right-10,
-  .p-lg-fixed.right-10,
-  .p-lg-fixed .right-10,
-  .p-lg-sticky.right-10,
-  .p-lg-sticky .right-10,
-  .p-lg-relative.right-10,
-  .p-lg-relative .right-10,
-  .p-lg-static.right-10,
-  .p-lg-static .right-10 {
+  .p-lg-absolute.right-lg-10, .p-lg-absolute .right-lg-10,
+  .p-lg-sticky.right-lg-10,
+  .p-lg-sticky .right-lg-10,
+  .p-lg-relative.right-lg-10,
+  .p-lg-relative .right-lg-10,
+  .p-lg-fixed.right-lg-10,
+  .p-lg-fixed .right-lg-10 {
     right: 100%;
-  }
-  .p-lg-absolute.bottom-10, .p-lg-absolute .bottom-10,
-  .p-lg-fixed.bottom-10,
-  .p-lg-fixed .bottom-10,
-  .p-lg-sticky.bottom-10,
-  .p-lg-sticky .bottom-10,
-  .p-lg-relative.bottom-10,
-  .p-lg-relative .bottom-10,
-  .p-lg-static.bottom-10,
-  .p-lg-static .bottom-10 {
-    bottom: 100%;
   }
 }
 @media screen and (min-width: 1200px) {
   .p-xl-static {
-    position: static;
+    position: static !important;
   }
   .p-xl-relative {
-    position: relative;
+    position: relative !important;
   }
   .p-xl-fixed {
-    position: fixed;
+    position: fixed !important;
   }
   .p-xl-absolute {
-    position: absolute;
+    position: absolute !important;
   }
   .p-xl-sticky {
     position: sticky !important;
   }
-  .p-xl-absolute.top-0, .p-xl-absolute .top-0,
-  .p-xl-fixed.top-0,
-  .p-xl-fixed .top-0,
-  .p-xl-sticky.top-0,
-  .p-xl-sticky .top-0,
-  .p-xl-relative.top-0,
-  .p-xl-relative .top-0,
-  .p-xl-static.top-0,
-  .p-xl-static .top-0 {
+  .p-xl-absolute.top-xl-0, .p-xl-absolute .top-xl-0,
+  .p-xl-sticky.top-xl-0,
+  .p-xl-sticky .top-xl-0,
+  .p-xl-relative.top-xl-0,
+  .p-xl-relative .top-xl-0,
+  .p-xl-fixed.top-xl-0,
+  .p-xl-fixed .top-xl-0 {
     top: 0%;
   }
-  .p-xl-absolute.left-0, .p-xl-absolute .left-0,
-  .p-xl-fixed.left-0,
-  .p-xl-fixed .left-0,
-  .p-xl-sticky.left-0,
-  .p-xl-sticky .left-0,
-  .p-xl-relative.left-0,
-  .p-xl-relative .left-0,
-  .p-xl-static.left-0,
-  .p-xl-static .left-0 {
-    left: 0%;
-  }
-  .p-xl-absolute.right-0, .p-xl-absolute .right-0,
-  .p-xl-fixed.right-0,
-  .p-xl-fixed .right-0,
-  .p-xl-sticky.right-0,
-  .p-xl-sticky .right-0,
-  .p-xl-relative.right-0,
-  .p-xl-relative .right-0,
-  .p-xl-static.right-0,
-  .p-xl-static .right-0 {
-    right: 0%;
-  }
-  .p-xl-absolute.bottom-0, .p-xl-absolute .bottom-0,
-  .p-xl-fixed.bottom-0,
-  .p-xl-fixed .bottom-0,
-  .p-xl-sticky.bottom-0,
-  .p-xl-sticky .bottom-0,
-  .p-xl-relative.bottom-0,
-  .p-xl-relative .bottom-0,
-  .p-xl-static.bottom-0,
-  .p-xl-static .bottom-0 {
+  .p-xl-absolute.bottom-xl-0, .p-xl-absolute .bottom-xl-0,
+  .p-xl-sticky.bottom-xl-0,
+  .p-xl-sticky .bottom-xl-0,
+  .p-xl-relative.bottom-xl-0,
+  .p-xl-relative .bottom-xl-0,
+  .p-xl-fixed.bottom-xl-0,
+  .p-xl-fixed .bottom-xl-0 {
     bottom: 0%;
   }
-  .p-xl-absolute.top-1, .p-xl-absolute .top-1,
-  .p-xl-fixed.top-1,
-  .p-xl-fixed .top-1,
-  .p-xl-sticky.top-1,
-  .p-xl-sticky .top-1,
-  .p-xl-relative.top-1,
-  .p-xl-relative .top-1,
-  .p-xl-static.top-1,
-  .p-xl-static .top-1 {
+  .p-xl-absolute.left-xl-0, .p-xl-absolute .left-xl-0,
+  .p-xl-sticky.left-xl-0,
+  .p-xl-sticky .left-xl-0,
+  .p-xl-relative.left-xl-0,
+  .p-xl-relative .left-xl-0,
+  .p-xl-fixed.left-xl-0,
+  .p-xl-fixed .left-xl-0 {
+    left: 0%;
+  }
+  .p-xl-absolute.right-xl-0, .p-xl-absolute .right-xl-0,
+  .p-xl-sticky.right-xl-0,
+  .p-xl-sticky .right-xl-0,
+  .p-xl-relative.right-xl-0,
+  .p-xl-relative .right-xl-0,
+  .p-xl-fixed.right-xl-0,
+  .p-xl-fixed .right-xl-0 {
+    right: 0%;
+  }
+  .p-xl-absolute.top-xl-1, .p-xl-absolute .top-xl-1,
+  .p-xl-sticky.top-xl-1,
+  .p-xl-sticky .top-xl-1,
+  .p-xl-relative.top-xl-1,
+  .p-xl-relative .top-xl-1,
+  .p-xl-fixed.top-xl-1,
+  .p-xl-fixed .top-xl-1 {
     top: 10%;
   }
-  .p-xl-absolute.left-1, .p-xl-absolute .left-1,
-  .p-xl-fixed.left-1,
-  .p-xl-fixed .left-1,
-  .p-xl-sticky.left-1,
-  .p-xl-sticky .left-1,
-  .p-xl-relative.left-1,
-  .p-xl-relative .left-1,
-  .p-xl-static.left-1,
-  .p-xl-static .left-1 {
-    left: 10%;
-  }
-  .p-xl-absolute.right-1, .p-xl-absolute .right-1,
-  .p-xl-fixed.right-1,
-  .p-xl-fixed .right-1,
-  .p-xl-sticky.right-1,
-  .p-xl-sticky .right-1,
-  .p-xl-relative.right-1,
-  .p-xl-relative .right-1,
-  .p-xl-static.right-1,
-  .p-xl-static .right-1 {
-    right: 10%;
-  }
-  .p-xl-absolute.bottom-1, .p-xl-absolute .bottom-1,
-  .p-xl-fixed.bottom-1,
-  .p-xl-fixed .bottom-1,
-  .p-xl-sticky.bottom-1,
-  .p-xl-sticky .bottom-1,
-  .p-xl-relative.bottom-1,
-  .p-xl-relative .bottom-1,
-  .p-xl-static.bottom-1,
-  .p-xl-static .bottom-1 {
+  .p-xl-absolute.bottom-xl-1, .p-xl-absolute .bottom-xl-1,
+  .p-xl-sticky.bottom-xl-1,
+  .p-xl-sticky .bottom-xl-1,
+  .p-xl-relative.bottom-xl-1,
+  .p-xl-relative .bottom-xl-1,
+  .p-xl-fixed.bottom-xl-1,
+  .p-xl-fixed .bottom-xl-1 {
     bottom: 10%;
   }
-  .p-xl-absolute.top-2, .p-xl-absolute .top-2,
-  .p-xl-fixed.top-2,
-  .p-xl-fixed .top-2,
-  .p-xl-sticky.top-2,
-  .p-xl-sticky .top-2,
-  .p-xl-relative.top-2,
-  .p-xl-relative .top-2,
-  .p-xl-static.top-2,
-  .p-xl-static .top-2 {
+  .p-xl-absolute.left-xl-1, .p-xl-absolute .left-xl-1,
+  .p-xl-sticky.left-xl-1,
+  .p-xl-sticky .left-xl-1,
+  .p-xl-relative.left-xl-1,
+  .p-xl-relative .left-xl-1,
+  .p-xl-fixed.left-xl-1,
+  .p-xl-fixed .left-xl-1 {
+    left: 10%;
+  }
+  .p-xl-absolute.right-xl-1, .p-xl-absolute .right-xl-1,
+  .p-xl-sticky.right-xl-1,
+  .p-xl-sticky .right-xl-1,
+  .p-xl-relative.right-xl-1,
+  .p-xl-relative .right-xl-1,
+  .p-xl-fixed.right-xl-1,
+  .p-xl-fixed .right-xl-1 {
+    right: 10%;
+  }
+  .p-xl-absolute.top-xl-2, .p-xl-absolute .top-xl-2,
+  .p-xl-sticky.top-xl-2,
+  .p-xl-sticky .top-xl-2,
+  .p-xl-relative.top-xl-2,
+  .p-xl-relative .top-xl-2,
+  .p-xl-fixed.top-xl-2,
+  .p-xl-fixed .top-xl-2 {
     top: 20%;
   }
-  .p-xl-absolute.left-2, .p-xl-absolute .left-2,
-  .p-xl-fixed.left-2,
-  .p-xl-fixed .left-2,
-  .p-xl-sticky.left-2,
-  .p-xl-sticky .left-2,
-  .p-xl-relative.left-2,
-  .p-xl-relative .left-2,
-  .p-xl-static.left-2,
-  .p-xl-static .left-2 {
-    left: 20%;
-  }
-  .p-xl-absolute.right-2, .p-xl-absolute .right-2,
-  .p-xl-fixed.right-2,
-  .p-xl-fixed .right-2,
-  .p-xl-sticky.right-2,
-  .p-xl-sticky .right-2,
-  .p-xl-relative.right-2,
-  .p-xl-relative .right-2,
-  .p-xl-static.right-2,
-  .p-xl-static .right-2 {
-    right: 20%;
-  }
-  .p-xl-absolute.bottom-2, .p-xl-absolute .bottom-2,
-  .p-xl-fixed.bottom-2,
-  .p-xl-fixed .bottom-2,
-  .p-xl-sticky.bottom-2,
-  .p-xl-sticky .bottom-2,
-  .p-xl-relative.bottom-2,
-  .p-xl-relative .bottom-2,
-  .p-xl-static.bottom-2,
-  .p-xl-static .bottom-2 {
+  .p-xl-absolute.bottom-xl-2, .p-xl-absolute .bottom-xl-2,
+  .p-xl-sticky.bottom-xl-2,
+  .p-xl-sticky .bottom-xl-2,
+  .p-xl-relative.bottom-xl-2,
+  .p-xl-relative .bottom-xl-2,
+  .p-xl-fixed.bottom-xl-2,
+  .p-xl-fixed .bottom-xl-2 {
     bottom: 20%;
   }
-  .p-xl-absolute.top-3, .p-xl-absolute .top-3,
-  .p-xl-fixed.top-3,
-  .p-xl-fixed .top-3,
-  .p-xl-sticky.top-3,
-  .p-xl-sticky .top-3,
-  .p-xl-relative.top-3,
-  .p-xl-relative .top-3,
-  .p-xl-static.top-3,
-  .p-xl-static .top-3 {
+  .p-xl-absolute.left-xl-2, .p-xl-absolute .left-xl-2,
+  .p-xl-sticky.left-xl-2,
+  .p-xl-sticky .left-xl-2,
+  .p-xl-relative.left-xl-2,
+  .p-xl-relative .left-xl-2,
+  .p-xl-fixed.left-xl-2,
+  .p-xl-fixed .left-xl-2 {
+    left: 20%;
+  }
+  .p-xl-absolute.right-xl-2, .p-xl-absolute .right-xl-2,
+  .p-xl-sticky.right-xl-2,
+  .p-xl-sticky .right-xl-2,
+  .p-xl-relative.right-xl-2,
+  .p-xl-relative .right-xl-2,
+  .p-xl-fixed.right-xl-2,
+  .p-xl-fixed .right-xl-2 {
+    right: 20%;
+  }
+  .p-xl-absolute.top-xl-3, .p-xl-absolute .top-xl-3,
+  .p-xl-sticky.top-xl-3,
+  .p-xl-sticky .top-xl-3,
+  .p-xl-relative.top-xl-3,
+  .p-xl-relative .top-xl-3,
+  .p-xl-fixed.top-xl-3,
+  .p-xl-fixed .top-xl-3 {
     top: 30%;
   }
-  .p-xl-absolute.left-3, .p-xl-absolute .left-3,
-  .p-xl-fixed.left-3,
-  .p-xl-fixed .left-3,
-  .p-xl-sticky.left-3,
-  .p-xl-sticky .left-3,
-  .p-xl-relative.left-3,
-  .p-xl-relative .left-3,
-  .p-xl-static.left-3,
-  .p-xl-static .left-3 {
-    left: 30%;
-  }
-  .p-xl-absolute.right-3, .p-xl-absolute .right-3,
-  .p-xl-fixed.right-3,
-  .p-xl-fixed .right-3,
-  .p-xl-sticky.right-3,
-  .p-xl-sticky .right-3,
-  .p-xl-relative.right-3,
-  .p-xl-relative .right-3,
-  .p-xl-static.right-3,
-  .p-xl-static .right-3 {
-    right: 30%;
-  }
-  .p-xl-absolute.bottom-3, .p-xl-absolute .bottom-3,
-  .p-xl-fixed.bottom-3,
-  .p-xl-fixed .bottom-3,
-  .p-xl-sticky.bottom-3,
-  .p-xl-sticky .bottom-3,
-  .p-xl-relative.bottom-3,
-  .p-xl-relative .bottom-3,
-  .p-xl-static.bottom-3,
-  .p-xl-static .bottom-3 {
+  .p-xl-absolute.bottom-xl-3, .p-xl-absolute .bottom-xl-3,
+  .p-xl-sticky.bottom-xl-3,
+  .p-xl-sticky .bottom-xl-3,
+  .p-xl-relative.bottom-xl-3,
+  .p-xl-relative .bottom-xl-3,
+  .p-xl-fixed.bottom-xl-3,
+  .p-xl-fixed .bottom-xl-3 {
     bottom: 30%;
   }
-  .p-xl-absolute.top-4, .p-xl-absolute .top-4,
-  .p-xl-fixed.top-4,
-  .p-xl-fixed .top-4,
-  .p-xl-sticky.top-4,
-  .p-xl-sticky .top-4,
-  .p-xl-relative.top-4,
-  .p-xl-relative .top-4,
-  .p-xl-static.top-4,
-  .p-xl-static .top-4 {
+  .p-xl-absolute.left-xl-3, .p-xl-absolute .left-xl-3,
+  .p-xl-sticky.left-xl-3,
+  .p-xl-sticky .left-xl-3,
+  .p-xl-relative.left-xl-3,
+  .p-xl-relative .left-xl-3,
+  .p-xl-fixed.left-xl-3,
+  .p-xl-fixed .left-xl-3 {
+    left: 30%;
+  }
+  .p-xl-absolute.right-xl-3, .p-xl-absolute .right-xl-3,
+  .p-xl-sticky.right-xl-3,
+  .p-xl-sticky .right-xl-3,
+  .p-xl-relative.right-xl-3,
+  .p-xl-relative .right-xl-3,
+  .p-xl-fixed.right-xl-3,
+  .p-xl-fixed .right-xl-3 {
+    right: 30%;
+  }
+  .p-xl-absolute.top-xl-4, .p-xl-absolute .top-xl-4,
+  .p-xl-sticky.top-xl-4,
+  .p-xl-sticky .top-xl-4,
+  .p-xl-relative.top-xl-4,
+  .p-xl-relative .top-xl-4,
+  .p-xl-fixed.top-xl-4,
+  .p-xl-fixed .top-xl-4 {
     top: 40%;
   }
-  .p-xl-absolute.left-4, .p-xl-absolute .left-4,
-  .p-xl-fixed.left-4,
-  .p-xl-fixed .left-4,
-  .p-xl-sticky.left-4,
-  .p-xl-sticky .left-4,
-  .p-xl-relative.left-4,
-  .p-xl-relative .left-4,
-  .p-xl-static.left-4,
-  .p-xl-static .left-4 {
-    left: 40%;
-  }
-  .p-xl-absolute.right-4, .p-xl-absolute .right-4,
-  .p-xl-fixed.right-4,
-  .p-xl-fixed .right-4,
-  .p-xl-sticky.right-4,
-  .p-xl-sticky .right-4,
-  .p-xl-relative.right-4,
-  .p-xl-relative .right-4,
-  .p-xl-static.right-4,
-  .p-xl-static .right-4 {
-    right: 40%;
-  }
-  .p-xl-absolute.bottom-4, .p-xl-absolute .bottom-4,
-  .p-xl-fixed.bottom-4,
-  .p-xl-fixed .bottom-4,
-  .p-xl-sticky.bottom-4,
-  .p-xl-sticky .bottom-4,
-  .p-xl-relative.bottom-4,
-  .p-xl-relative .bottom-4,
-  .p-xl-static.bottom-4,
-  .p-xl-static .bottom-4 {
+  .p-xl-absolute.bottom-xl-4, .p-xl-absolute .bottom-xl-4,
+  .p-xl-sticky.bottom-xl-4,
+  .p-xl-sticky .bottom-xl-4,
+  .p-xl-relative.bottom-xl-4,
+  .p-xl-relative .bottom-xl-4,
+  .p-xl-fixed.bottom-xl-4,
+  .p-xl-fixed .bottom-xl-4 {
     bottom: 40%;
   }
-  .p-xl-absolute.top-5, .p-xl-absolute .top-5,
-  .p-xl-fixed.top-5,
-  .p-xl-fixed .top-5,
-  .p-xl-sticky.top-5,
-  .p-xl-sticky .top-5,
-  .p-xl-relative.top-5,
-  .p-xl-relative .top-5,
-  .p-xl-static.top-5,
-  .p-xl-static .top-5 {
+  .p-xl-absolute.left-xl-4, .p-xl-absolute .left-xl-4,
+  .p-xl-sticky.left-xl-4,
+  .p-xl-sticky .left-xl-4,
+  .p-xl-relative.left-xl-4,
+  .p-xl-relative .left-xl-4,
+  .p-xl-fixed.left-xl-4,
+  .p-xl-fixed .left-xl-4 {
+    left: 40%;
+  }
+  .p-xl-absolute.right-xl-4, .p-xl-absolute .right-xl-4,
+  .p-xl-sticky.right-xl-4,
+  .p-xl-sticky .right-xl-4,
+  .p-xl-relative.right-xl-4,
+  .p-xl-relative .right-xl-4,
+  .p-xl-fixed.right-xl-4,
+  .p-xl-fixed .right-xl-4 {
+    right: 40%;
+  }
+  .p-xl-absolute.top-xl-5, .p-xl-absolute .top-xl-5,
+  .p-xl-sticky.top-xl-5,
+  .p-xl-sticky .top-xl-5,
+  .p-xl-relative.top-xl-5,
+  .p-xl-relative .top-xl-5,
+  .p-xl-fixed.top-xl-5,
+  .p-xl-fixed .top-xl-5 {
     top: 50%;
   }
-  .p-xl-absolute.left-5, .p-xl-absolute .left-5,
-  .p-xl-fixed.left-5,
-  .p-xl-fixed .left-5,
-  .p-xl-sticky.left-5,
-  .p-xl-sticky .left-5,
-  .p-xl-relative.left-5,
-  .p-xl-relative .left-5,
-  .p-xl-static.left-5,
-  .p-xl-static .left-5 {
-    left: 50%;
-  }
-  .p-xl-absolute.right-5, .p-xl-absolute .right-5,
-  .p-xl-fixed.right-5,
-  .p-xl-fixed .right-5,
-  .p-xl-sticky.right-5,
-  .p-xl-sticky .right-5,
-  .p-xl-relative.right-5,
-  .p-xl-relative .right-5,
-  .p-xl-static.right-5,
-  .p-xl-static .right-5 {
-    right: 50%;
-  }
-  .p-xl-absolute.bottom-5, .p-xl-absolute .bottom-5,
-  .p-xl-fixed.bottom-5,
-  .p-xl-fixed .bottom-5,
-  .p-xl-sticky.bottom-5,
-  .p-xl-sticky .bottom-5,
-  .p-xl-relative.bottom-5,
-  .p-xl-relative .bottom-5,
-  .p-xl-static.bottom-5,
-  .p-xl-static .bottom-5 {
+  .p-xl-absolute.bottom-xl-5, .p-xl-absolute .bottom-xl-5,
+  .p-xl-sticky.bottom-xl-5,
+  .p-xl-sticky .bottom-xl-5,
+  .p-xl-relative.bottom-xl-5,
+  .p-xl-relative .bottom-xl-5,
+  .p-xl-fixed.bottom-xl-5,
+  .p-xl-fixed .bottom-xl-5 {
     bottom: 50%;
   }
-  .p-xl-absolute.top-6, .p-xl-absolute .top-6,
-  .p-xl-fixed.top-6,
-  .p-xl-fixed .top-6,
-  .p-xl-sticky.top-6,
-  .p-xl-sticky .top-6,
-  .p-xl-relative.top-6,
-  .p-xl-relative .top-6,
-  .p-xl-static.top-6,
-  .p-xl-static .top-6 {
+  .p-xl-absolute.left-xl-5, .p-xl-absolute .left-xl-5,
+  .p-xl-sticky.left-xl-5,
+  .p-xl-sticky .left-xl-5,
+  .p-xl-relative.left-xl-5,
+  .p-xl-relative .left-xl-5,
+  .p-xl-fixed.left-xl-5,
+  .p-xl-fixed .left-xl-5 {
+    left: 50%;
+  }
+  .p-xl-absolute.right-xl-5, .p-xl-absolute .right-xl-5,
+  .p-xl-sticky.right-xl-5,
+  .p-xl-sticky .right-xl-5,
+  .p-xl-relative.right-xl-5,
+  .p-xl-relative .right-xl-5,
+  .p-xl-fixed.right-xl-5,
+  .p-xl-fixed .right-xl-5 {
+    right: 50%;
+  }
+  .p-xl-absolute.top-xl-6, .p-xl-absolute .top-xl-6,
+  .p-xl-sticky.top-xl-6,
+  .p-xl-sticky .top-xl-6,
+  .p-xl-relative.top-xl-6,
+  .p-xl-relative .top-xl-6,
+  .p-xl-fixed.top-xl-6,
+  .p-xl-fixed .top-xl-6 {
     top: 60%;
   }
-  .p-xl-absolute.left-6, .p-xl-absolute .left-6,
-  .p-xl-fixed.left-6,
-  .p-xl-fixed .left-6,
-  .p-xl-sticky.left-6,
-  .p-xl-sticky .left-6,
-  .p-xl-relative.left-6,
-  .p-xl-relative .left-6,
-  .p-xl-static.left-6,
-  .p-xl-static .left-6 {
-    left: 60%;
-  }
-  .p-xl-absolute.right-6, .p-xl-absolute .right-6,
-  .p-xl-fixed.right-6,
-  .p-xl-fixed .right-6,
-  .p-xl-sticky.right-6,
-  .p-xl-sticky .right-6,
-  .p-xl-relative.right-6,
-  .p-xl-relative .right-6,
-  .p-xl-static.right-6,
-  .p-xl-static .right-6 {
-    right: 60%;
-  }
-  .p-xl-absolute.bottom-6, .p-xl-absolute .bottom-6,
-  .p-xl-fixed.bottom-6,
-  .p-xl-fixed .bottom-6,
-  .p-xl-sticky.bottom-6,
-  .p-xl-sticky .bottom-6,
-  .p-xl-relative.bottom-6,
-  .p-xl-relative .bottom-6,
-  .p-xl-static.bottom-6,
-  .p-xl-static .bottom-6 {
+  .p-xl-absolute.bottom-xl-6, .p-xl-absolute .bottom-xl-6,
+  .p-xl-sticky.bottom-xl-6,
+  .p-xl-sticky .bottom-xl-6,
+  .p-xl-relative.bottom-xl-6,
+  .p-xl-relative .bottom-xl-6,
+  .p-xl-fixed.bottom-xl-6,
+  .p-xl-fixed .bottom-xl-6 {
     bottom: 60%;
   }
-  .p-xl-absolute.top-7, .p-xl-absolute .top-7,
-  .p-xl-fixed.top-7,
-  .p-xl-fixed .top-7,
-  .p-xl-sticky.top-7,
-  .p-xl-sticky .top-7,
-  .p-xl-relative.top-7,
-  .p-xl-relative .top-7,
-  .p-xl-static.top-7,
-  .p-xl-static .top-7 {
+  .p-xl-absolute.left-xl-6, .p-xl-absolute .left-xl-6,
+  .p-xl-sticky.left-xl-6,
+  .p-xl-sticky .left-xl-6,
+  .p-xl-relative.left-xl-6,
+  .p-xl-relative .left-xl-6,
+  .p-xl-fixed.left-xl-6,
+  .p-xl-fixed .left-xl-6 {
+    left: 60%;
+  }
+  .p-xl-absolute.right-xl-6, .p-xl-absolute .right-xl-6,
+  .p-xl-sticky.right-xl-6,
+  .p-xl-sticky .right-xl-6,
+  .p-xl-relative.right-xl-6,
+  .p-xl-relative .right-xl-6,
+  .p-xl-fixed.right-xl-6,
+  .p-xl-fixed .right-xl-6 {
+    right: 60%;
+  }
+  .p-xl-absolute.top-xl-7, .p-xl-absolute .top-xl-7,
+  .p-xl-sticky.top-xl-7,
+  .p-xl-sticky .top-xl-7,
+  .p-xl-relative.top-xl-7,
+  .p-xl-relative .top-xl-7,
+  .p-xl-fixed.top-xl-7,
+  .p-xl-fixed .top-xl-7 {
     top: 70%;
   }
-  .p-xl-absolute.left-7, .p-xl-absolute .left-7,
-  .p-xl-fixed.left-7,
-  .p-xl-fixed .left-7,
-  .p-xl-sticky.left-7,
-  .p-xl-sticky .left-7,
-  .p-xl-relative.left-7,
-  .p-xl-relative .left-7,
-  .p-xl-static.left-7,
-  .p-xl-static .left-7 {
-    left: 70%;
-  }
-  .p-xl-absolute.right-7, .p-xl-absolute .right-7,
-  .p-xl-fixed.right-7,
-  .p-xl-fixed .right-7,
-  .p-xl-sticky.right-7,
-  .p-xl-sticky .right-7,
-  .p-xl-relative.right-7,
-  .p-xl-relative .right-7,
-  .p-xl-static.right-7,
-  .p-xl-static .right-7 {
-    right: 70%;
-  }
-  .p-xl-absolute.bottom-7, .p-xl-absolute .bottom-7,
-  .p-xl-fixed.bottom-7,
-  .p-xl-fixed .bottom-7,
-  .p-xl-sticky.bottom-7,
-  .p-xl-sticky .bottom-7,
-  .p-xl-relative.bottom-7,
-  .p-xl-relative .bottom-7,
-  .p-xl-static.bottom-7,
-  .p-xl-static .bottom-7 {
+  .p-xl-absolute.bottom-xl-7, .p-xl-absolute .bottom-xl-7,
+  .p-xl-sticky.bottom-xl-7,
+  .p-xl-sticky .bottom-xl-7,
+  .p-xl-relative.bottom-xl-7,
+  .p-xl-relative .bottom-xl-7,
+  .p-xl-fixed.bottom-xl-7,
+  .p-xl-fixed .bottom-xl-7 {
     bottom: 70%;
   }
-  .p-xl-absolute.top-8, .p-xl-absolute .top-8,
-  .p-xl-fixed.top-8,
-  .p-xl-fixed .top-8,
-  .p-xl-sticky.top-8,
-  .p-xl-sticky .top-8,
-  .p-xl-relative.top-8,
-  .p-xl-relative .top-8,
-  .p-xl-static.top-8,
-  .p-xl-static .top-8 {
+  .p-xl-absolute.left-xl-7, .p-xl-absolute .left-xl-7,
+  .p-xl-sticky.left-xl-7,
+  .p-xl-sticky .left-xl-7,
+  .p-xl-relative.left-xl-7,
+  .p-xl-relative .left-xl-7,
+  .p-xl-fixed.left-xl-7,
+  .p-xl-fixed .left-xl-7 {
+    left: 70%;
+  }
+  .p-xl-absolute.right-xl-7, .p-xl-absolute .right-xl-7,
+  .p-xl-sticky.right-xl-7,
+  .p-xl-sticky .right-xl-7,
+  .p-xl-relative.right-xl-7,
+  .p-xl-relative .right-xl-7,
+  .p-xl-fixed.right-xl-7,
+  .p-xl-fixed .right-xl-7 {
+    right: 70%;
+  }
+  .p-xl-absolute.top-xl-8, .p-xl-absolute .top-xl-8,
+  .p-xl-sticky.top-xl-8,
+  .p-xl-sticky .top-xl-8,
+  .p-xl-relative.top-xl-8,
+  .p-xl-relative .top-xl-8,
+  .p-xl-fixed.top-xl-8,
+  .p-xl-fixed .top-xl-8 {
     top: 80%;
   }
-  .p-xl-absolute.left-8, .p-xl-absolute .left-8,
-  .p-xl-fixed.left-8,
-  .p-xl-fixed .left-8,
-  .p-xl-sticky.left-8,
-  .p-xl-sticky .left-8,
-  .p-xl-relative.left-8,
-  .p-xl-relative .left-8,
-  .p-xl-static.left-8,
-  .p-xl-static .left-8 {
-    left: 80%;
-  }
-  .p-xl-absolute.right-8, .p-xl-absolute .right-8,
-  .p-xl-fixed.right-8,
-  .p-xl-fixed .right-8,
-  .p-xl-sticky.right-8,
-  .p-xl-sticky .right-8,
-  .p-xl-relative.right-8,
-  .p-xl-relative .right-8,
-  .p-xl-static.right-8,
-  .p-xl-static .right-8 {
-    right: 80%;
-  }
-  .p-xl-absolute.bottom-8, .p-xl-absolute .bottom-8,
-  .p-xl-fixed.bottom-8,
-  .p-xl-fixed .bottom-8,
-  .p-xl-sticky.bottom-8,
-  .p-xl-sticky .bottom-8,
-  .p-xl-relative.bottom-8,
-  .p-xl-relative .bottom-8,
-  .p-xl-static.bottom-8,
-  .p-xl-static .bottom-8 {
+  .p-xl-absolute.bottom-xl-8, .p-xl-absolute .bottom-xl-8,
+  .p-xl-sticky.bottom-xl-8,
+  .p-xl-sticky .bottom-xl-8,
+  .p-xl-relative.bottom-xl-8,
+  .p-xl-relative .bottom-xl-8,
+  .p-xl-fixed.bottom-xl-8,
+  .p-xl-fixed .bottom-xl-8 {
     bottom: 80%;
   }
-  .p-xl-absolute.top-9, .p-xl-absolute .top-9,
-  .p-xl-fixed.top-9,
-  .p-xl-fixed .top-9,
-  .p-xl-sticky.top-9,
-  .p-xl-sticky .top-9,
-  .p-xl-relative.top-9,
-  .p-xl-relative .top-9,
-  .p-xl-static.top-9,
-  .p-xl-static .top-9 {
+  .p-xl-absolute.left-xl-8, .p-xl-absolute .left-xl-8,
+  .p-xl-sticky.left-xl-8,
+  .p-xl-sticky .left-xl-8,
+  .p-xl-relative.left-xl-8,
+  .p-xl-relative .left-xl-8,
+  .p-xl-fixed.left-xl-8,
+  .p-xl-fixed .left-xl-8 {
+    left: 80%;
+  }
+  .p-xl-absolute.right-xl-8, .p-xl-absolute .right-xl-8,
+  .p-xl-sticky.right-xl-8,
+  .p-xl-sticky .right-xl-8,
+  .p-xl-relative.right-xl-8,
+  .p-xl-relative .right-xl-8,
+  .p-xl-fixed.right-xl-8,
+  .p-xl-fixed .right-xl-8 {
+    right: 80%;
+  }
+  .p-xl-absolute.top-xl-9, .p-xl-absolute .top-xl-9,
+  .p-xl-sticky.top-xl-9,
+  .p-xl-sticky .top-xl-9,
+  .p-xl-relative.top-xl-9,
+  .p-xl-relative .top-xl-9,
+  .p-xl-fixed.top-xl-9,
+  .p-xl-fixed .top-xl-9 {
     top: 90%;
   }
-  .p-xl-absolute.left-9, .p-xl-absolute .left-9,
-  .p-xl-fixed.left-9,
-  .p-xl-fixed .left-9,
-  .p-xl-sticky.left-9,
-  .p-xl-sticky .left-9,
-  .p-xl-relative.left-9,
-  .p-xl-relative .left-9,
-  .p-xl-static.left-9,
-  .p-xl-static .left-9 {
-    left: 90%;
-  }
-  .p-xl-absolute.right-9, .p-xl-absolute .right-9,
-  .p-xl-fixed.right-9,
-  .p-xl-fixed .right-9,
-  .p-xl-sticky.right-9,
-  .p-xl-sticky .right-9,
-  .p-xl-relative.right-9,
-  .p-xl-relative .right-9,
-  .p-xl-static.right-9,
-  .p-xl-static .right-9 {
-    right: 90%;
-  }
-  .p-xl-absolute.bottom-9, .p-xl-absolute .bottom-9,
-  .p-xl-fixed.bottom-9,
-  .p-xl-fixed .bottom-9,
-  .p-xl-sticky.bottom-9,
-  .p-xl-sticky .bottom-9,
-  .p-xl-relative.bottom-9,
-  .p-xl-relative .bottom-9,
-  .p-xl-static.bottom-9,
-  .p-xl-static .bottom-9 {
+  .p-xl-absolute.bottom-xl-9, .p-xl-absolute .bottom-xl-9,
+  .p-xl-sticky.bottom-xl-9,
+  .p-xl-sticky .bottom-xl-9,
+  .p-xl-relative.bottom-xl-9,
+  .p-xl-relative .bottom-xl-9,
+  .p-xl-fixed.bottom-xl-9,
+  .p-xl-fixed .bottom-xl-9 {
     bottom: 90%;
   }
-  .p-xl-absolute.top-10, .p-xl-absolute .top-10,
-  .p-xl-fixed.top-10,
-  .p-xl-fixed .top-10,
-  .p-xl-sticky.top-10,
-  .p-xl-sticky .top-10,
-  .p-xl-relative.top-10,
-  .p-xl-relative .top-10,
-  .p-xl-static.top-10,
-  .p-xl-static .top-10 {
+  .p-xl-absolute.left-xl-9, .p-xl-absolute .left-xl-9,
+  .p-xl-sticky.left-xl-9,
+  .p-xl-sticky .left-xl-9,
+  .p-xl-relative.left-xl-9,
+  .p-xl-relative .left-xl-9,
+  .p-xl-fixed.left-xl-9,
+  .p-xl-fixed .left-xl-9 {
+    left: 90%;
+  }
+  .p-xl-absolute.right-xl-9, .p-xl-absolute .right-xl-9,
+  .p-xl-sticky.right-xl-9,
+  .p-xl-sticky .right-xl-9,
+  .p-xl-relative.right-xl-9,
+  .p-xl-relative .right-xl-9,
+  .p-xl-fixed.right-xl-9,
+  .p-xl-fixed .right-xl-9 {
+    right: 90%;
+  }
+  .p-xl-absolute.top-xl-10, .p-xl-absolute .top-xl-10,
+  .p-xl-sticky.top-xl-10,
+  .p-xl-sticky .top-xl-10,
+  .p-xl-relative.top-xl-10,
+  .p-xl-relative .top-xl-10,
+  .p-xl-fixed.top-xl-10,
+  .p-xl-fixed .top-xl-10 {
     top: 100%;
   }
-  .p-xl-absolute.left-10, .p-xl-absolute .left-10,
-  .p-xl-fixed.left-10,
-  .p-xl-fixed .left-10,
-  .p-xl-sticky.left-10,
-  .p-xl-sticky .left-10,
-  .p-xl-relative.left-10,
-  .p-xl-relative .left-10,
-  .p-xl-static.left-10,
-  .p-xl-static .left-10 {
+  .p-xl-absolute.bottom-xl-10, .p-xl-absolute .bottom-xl-10,
+  .p-xl-sticky.bottom-xl-10,
+  .p-xl-sticky .bottom-xl-10,
+  .p-xl-relative.bottom-xl-10,
+  .p-xl-relative .bottom-xl-10,
+  .p-xl-fixed.bottom-xl-10,
+  .p-xl-fixed .bottom-xl-10 {
+    bottom: 100%;
+  }
+  .p-xl-absolute.left-xl-10, .p-xl-absolute .left-xl-10,
+  .p-xl-sticky.left-xl-10,
+  .p-xl-sticky .left-xl-10,
+  .p-xl-relative.left-xl-10,
+  .p-xl-relative .left-xl-10,
+  .p-xl-fixed.left-xl-10,
+  .p-xl-fixed .left-xl-10 {
     left: 100%;
   }
-  .p-xl-absolute.right-10, .p-xl-absolute .right-10,
-  .p-xl-fixed.right-10,
-  .p-xl-fixed .right-10,
-  .p-xl-sticky.right-10,
-  .p-xl-sticky .right-10,
-  .p-xl-relative.right-10,
-  .p-xl-relative .right-10,
-  .p-xl-static.right-10,
-  .p-xl-static .right-10 {
+  .p-xl-absolute.right-xl-10, .p-xl-absolute .right-xl-10,
+  .p-xl-sticky.right-xl-10,
+  .p-xl-sticky .right-xl-10,
+  .p-xl-relative.right-xl-10,
+  .p-xl-relative .right-xl-10,
+  .p-xl-fixed.right-xl-10,
+  .p-xl-fixed .right-xl-10 {
     right: 100%;
-  }
-  .p-xl-absolute.bottom-10, .p-xl-absolute .bottom-10,
-  .p-xl-fixed.bottom-10,
-  .p-xl-fixed .bottom-10,
-  .p-xl-sticky.bottom-10,
-  .p-xl-sticky .bottom-10,
-  .p-xl-relative.bottom-10,
-  .p-xl-relative .bottom-10,
-  .p-xl-static.bottom-10,
-  .p-xl-static .bottom-10 {
-    bottom: 100%;
   }
 }
 @media screen and (min-width: 1400px) {
   .p-xxl-static {
-    position: static;
+    position: static !important;
   }
   .p-xxl-relative {
-    position: relative;
+    position: relative !important;
   }
   .p-xxl-fixed {
-    position: fixed;
+    position: fixed !important;
   }
   .p-xxl-absolute {
-    position: absolute;
+    position: absolute !important;
   }
   .p-xxl-sticky {
     position: sticky !important;
   }
-  .p-xxl-absolute.top-0, .p-xxl-absolute .top-0,
-  .p-xxl-fixed.top-0,
-  .p-xxl-fixed .top-0,
-  .p-xxl-sticky.top-0,
-  .p-xxl-sticky .top-0,
-  .p-xxl-relative.top-0,
-  .p-xxl-relative .top-0,
-  .p-xxl-static.top-0,
-  .p-xxl-static .top-0 {
+  .p-xxl-absolute.top-xxl-0, .p-xxl-absolute .top-xxl-0,
+  .p-xxl-sticky.top-xxl-0,
+  .p-xxl-sticky .top-xxl-0,
+  .p-xxl-relative.top-xxl-0,
+  .p-xxl-relative .top-xxl-0,
+  .p-xxl-fixed.top-xxl-0,
+  .p-xxl-fixed .top-xxl-0 {
     top: 0%;
   }
-  .p-xxl-absolute.left-0, .p-xxl-absolute .left-0,
-  .p-xxl-fixed.left-0,
-  .p-xxl-fixed .left-0,
-  .p-xxl-sticky.left-0,
-  .p-xxl-sticky .left-0,
-  .p-xxl-relative.left-0,
-  .p-xxl-relative .left-0,
-  .p-xxl-static.left-0,
-  .p-xxl-static .left-0 {
-    left: 0%;
-  }
-  .p-xxl-absolute.right-0, .p-xxl-absolute .right-0,
-  .p-xxl-fixed.right-0,
-  .p-xxl-fixed .right-0,
-  .p-xxl-sticky.right-0,
-  .p-xxl-sticky .right-0,
-  .p-xxl-relative.right-0,
-  .p-xxl-relative .right-0,
-  .p-xxl-static.right-0,
-  .p-xxl-static .right-0 {
-    right: 0%;
-  }
-  .p-xxl-absolute.bottom-0, .p-xxl-absolute .bottom-0,
-  .p-xxl-fixed.bottom-0,
-  .p-xxl-fixed .bottom-0,
-  .p-xxl-sticky.bottom-0,
-  .p-xxl-sticky .bottom-0,
-  .p-xxl-relative.bottom-0,
-  .p-xxl-relative .bottom-0,
-  .p-xxl-static.bottom-0,
-  .p-xxl-static .bottom-0 {
+  .p-xxl-absolute.bottom-xxl-0, .p-xxl-absolute .bottom-xxl-0,
+  .p-xxl-sticky.bottom-xxl-0,
+  .p-xxl-sticky .bottom-xxl-0,
+  .p-xxl-relative.bottom-xxl-0,
+  .p-xxl-relative .bottom-xxl-0,
+  .p-xxl-fixed.bottom-xxl-0,
+  .p-xxl-fixed .bottom-xxl-0 {
     bottom: 0%;
   }
-  .p-xxl-absolute.top-1, .p-xxl-absolute .top-1,
-  .p-xxl-fixed.top-1,
-  .p-xxl-fixed .top-1,
-  .p-xxl-sticky.top-1,
-  .p-xxl-sticky .top-1,
-  .p-xxl-relative.top-1,
-  .p-xxl-relative .top-1,
-  .p-xxl-static.top-1,
-  .p-xxl-static .top-1 {
+  .p-xxl-absolute.left-xxl-0, .p-xxl-absolute .left-xxl-0,
+  .p-xxl-sticky.left-xxl-0,
+  .p-xxl-sticky .left-xxl-0,
+  .p-xxl-relative.left-xxl-0,
+  .p-xxl-relative .left-xxl-0,
+  .p-xxl-fixed.left-xxl-0,
+  .p-xxl-fixed .left-xxl-0 {
+    left: 0%;
+  }
+  .p-xxl-absolute.right-xxl-0, .p-xxl-absolute .right-xxl-0,
+  .p-xxl-sticky.right-xxl-0,
+  .p-xxl-sticky .right-xxl-0,
+  .p-xxl-relative.right-xxl-0,
+  .p-xxl-relative .right-xxl-0,
+  .p-xxl-fixed.right-xxl-0,
+  .p-xxl-fixed .right-xxl-0 {
+    right: 0%;
+  }
+  .p-xxl-absolute.top-xxl-1, .p-xxl-absolute .top-xxl-1,
+  .p-xxl-sticky.top-xxl-1,
+  .p-xxl-sticky .top-xxl-1,
+  .p-xxl-relative.top-xxl-1,
+  .p-xxl-relative .top-xxl-1,
+  .p-xxl-fixed.top-xxl-1,
+  .p-xxl-fixed .top-xxl-1 {
     top: 10%;
   }
-  .p-xxl-absolute.left-1, .p-xxl-absolute .left-1,
-  .p-xxl-fixed.left-1,
-  .p-xxl-fixed .left-1,
-  .p-xxl-sticky.left-1,
-  .p-xxl-sticky .left-1,
-  .p-xxl-relative.left-1,
-  .p-xxl-relative .left-1,
-  .p-xxl-static.left-1,
-  .p-xxl-static .left-1 {
-    left: 10%;
-  }
-  .p-xxl-absolute.right-1, .p-xxl-absolute .right-1,
-  .p-xxl-fixed.right-1,
-  .p-xxl-fixed .right-1,
-  .p-xxl-sticky.right-1,
-  .p-xxl-sticky .right-1,
-  .p-xxl-relative.right-1,
-  .p-xxl-relative .right-1,
-  .p-xxl-static.right-1,
-  .p-xxl-static .right-1 {
-    right: 10%;
-  }
-  .p-xxl-absolute.bottom-1, .p-xxl-absolute .bottom-1,
-  .p-xxl-fixed.bottom-1,
-  .p-xxl-fixed .bottom-1,
-  .p-xxl-sticky.bottom-1,
-  .p-xxl-sticky .bottom-1,
-  .p-xxl-relative.bottom-1,
-  .p-xxl-relative .bottom-1,
-  .p-xxl-static.bottom-1,
-  .p-xxl-static .bottom-1 {
+  .p-xxl-absolute.bottom-xxl-1, .p-xxl-absolute .bottom-xxl-1,
+  .p-xxl-sticky.bottom-xxl-1,
+  .p-xxl-sticky .bottom-xxl-1,
+  .p-xxl-relative.bottom-xxl-1,
+  .p-xxl-relative .bottom-xxl-1,
+  .p-xxl-fixed.bottom-xxl-1,
+  .p-xxl-fixed .bottom-xxl-1 {
     bottom: 10%;
   }
-  .p-xxl-absolute.top-2, .p-xxl-absolute .top-2,
-  .p-xxl-fixed.top-2,
-  .p-xxl-fixed .top-2,
-  .p-xxl-sticky.top-2,
-  .p-xxl-sticky .top-2,
-  .p-xxl-relative.top-2,
-  .p-xxl-relative .top-2,
-  .p-xxl-static.top-2,
-  .p-xxl-static .top-2 {
+  .p-xxl-absolute.left-xxl-1, .p-xxl-absolute .left-xxl-1,
+  .p-xxl-sticky.left-xxl-1,
+  .p-xxl-sticky .left-xxl-1,
+  .p-xxl-relative.left-xxl-1,
+  .p-xxl-relative .left-xxl-1,
+  .p-xxl-fixed.left-xxl-1,
+  .p-xxl-fixed .left-xxl-1 {
+    left: 10%;
+  }
+  .p-xxl-absolute.right-xxl-1, .p-xxl-absolute .right-xxl-1,
+  .p-xxl-sticky.right-xxl-1,
+  .p-xxl-sticky .right-xxl-1,
+  .p-xxl-relative.right-xxl-1,
+  .p-xxl-relative .right-xxl-1,
+  .p-xxl-fixed.right-xxl-1,
+  .p-xxl-fixed .right-xxl-1 {
+    right: 10%;
+  }
+  .p-xxl-absolute.top-xxl-2, .p-xxl-absolute .top-xxl-2,
+  .p-xxl-sticky.top-xxl-2,
+  .p-xxl-sticky .top-xxl-2,
+  .p-xxl-relative.top-xxl-2,
+  .p-xxl-relative .top-xxl-2,
+  .p-xxl-fixed.top-xxl-2,
+  .p-xxl-fixed .top-xxl-2 {
     top: 20%;
   }
-  .p-xxl-absolute.left-2, .p-xxl-absolute .left-2,
-  .p-xxl-fixed.left-2,
-  .p-xxl-fixed .left-2,
-  .p-xxl-sticky.left-2,
-  .p-xxl-sticky .left-2,
-  .p-xxl-relative.left-2,
-  .p-xxl-relative .left-2,
-  .p-xxl-static.left-2,
-  .p-xxl-static .left-2 {
-    left: 20%;
-  }
-  .p-xxl-absolute.right-2, .p-xxl-absolute .right-2,
-  .p-xxl-fixed.right-2,
-  .p-xxl-fixed .right-2,
-  .p-xxl-sticky.right-2,
-  .p-xxl-sticky .right-2,
-  .p-xxl-relative.right-2,
-  .p-xxl-relative .right-2,
-  .p-xxl-static.right-2,
-  .p-xxl-static .right-2 {
-    right: 20%;
-  }
-  .p-xxl-absolute.bottom-2, .p-xxl-absolute .bottom-2,
-  .p-xxl-fixed.bottom-2,
-  .p-xxl-fixed .bottom-2,
-  .p-xxl-sticky.bottom-2,
-  .p-xxl-sticky .bottom-2,
-  .p-xxl-relative.bottom-2,
-  .p-xxl-relative .bottom-2,
-  .p-xxl-static.bottom-2,
-  .p-xxl-static .bottom-2 {
+  .p-xxl-absolute.bottom-xxl-2, .p-xxl-absolute .bottom-xxl-2,
+  .p-xxl-sticky.bottom-xxl-2,
+  .p-xxl-sticky .bottom-xxl-2,
+  .p-xxl-relative.bottom-xxl-2,
+  .p-xxl-relative .bottom-xxl-2,
+  .p-xxl-fixed.bottom-xxl-2,
+  .p-xxl-fixed .bottom-xxl-2 {
     bottom: 20%;
   }
-  .p-xxl-absolute.top-3, .p-xxl-absolute .top-3,
-  .p-xxl-fixed.top-3,
-  .p-xxl-fixed .top-3,
-  .p-xxl-sticky.top-3,
-  .p-xxl-sticky .top-3,
-  .p-xxl-relative.top-3,
-  .p-xxl-relative .top-3,
-  .p-xxl-static.top-3,
-  .p-xxl-static .top-3 {
+  .p-xxl-absolute.left-xxl-2, .p-xxl-absolute .left-xxl-2,
+  .p-xxl-sticky.left-xxl-2,
+  .p-xxl-sticky .left-xxl-2,
+  .p-xxl-relative.left-xxl-2,
+  .p-xxl-relative .left-xxl-2,
+  .p-xxl-fixed.left-xxl-2,
+  .p-xxl-fixed .left-xxl-2 {
+    left: 20%;
+  }
+  .p-xxl-absolute.right-xxl-2, .p-xxl-absolute .right-xxl-2,
+  .p-xxl-sticky.right-xxl-2,
+  .p-xxl-sticky .right-xxl-2,
+  .p-xxl-relative.right-xxl-2,
+  .p-xxl-relative .right-xxl-2,
+  .p-xxl-fixed.right-xxl-2,
+  .p-xxl-fixed .right-xxl-2 {
+    right: 20%;
+  }
+  .p-xxl-absolute.top-xxl-3, .p-xxl-absolute .top-xxl-3,
+  .p-xxl-sticky.top-xxl-3,
+  .p-xxl-sticky .top-xxl-3,
+  .p-xxl-relative.top-xxl-3,
+  .p-xxl-relative .top-xxl-3,
+  .p-xxl-fixed.top-xxl-3,
+  .p-xxl-fixed .top-xxl-3 {
     top: 30%;
   }
-  .p-xxl-absolute.left-3, .p-xxl-absolute .left-3,
-  .p-xxl-fixed.left-3,
-  .p-xxl-fixed .left-3,
-  .p-xxl-sticky.left-3,
-  .p-xxl-sticky .left-3,
-  .p-xxl-relative.left-3,
-  .p-xxl-relative .left-3,
-  .p-xxl-static.left-3,
-  .p-xxl-static .left-3 {
-    left: 30%;
-  }
-  .p-xxl-absolute.right-3, .p-xxl-absolute .right-3,
-  .p-xxl-fixed.right-3,
-  .p-xxl-fixed .right-3,
-  .p-xxl-sticky.right-3,
-  .p-xxl-sticky .right-3,
-  .p-xxl-relative.right-3,
-  .p-xxl-relative .right-3,
-  .p-xxl-static.right-3,
-  .p-xxl-static .right-3 {
-    right: 30%;
-  }
-  .p-xxl-absolute.bottom-3, .p-xxl-absolute .bottom-3,
-  .p-xxl-fixed.bottom-3,
-  .p-xxl-fixed .bottom-3,
-  .p-xxl-sticky.bottom-3,
-  .p-xxl-sticky .bottom-3,
-  .p-xxl-relative.bottom-3,
-  .p-xxl-relative .bottom-3,
-  .p-xxl-static.bottom-3,
-  .p-xxl-static .bottom-3 {
+  .p-xxl-absolute.bottom-xxl-3, .p-xxl-absolute .bottom-xxl-3,
+  .p-xxl-sticky.bottom-xxl-3,
+  .p-xxl-sticky .bottom-xxl-3,
+  .p-xxl-relative.bottom-xxl-3,
+  .p-xxl-relative .bottom-xxl-3,
+  .p-xxl-fixed.bottom-xxl-3,
+  .p-xxl-fixed .bottom-xxl-3 {
     bottom: 30%;
   }
-  .p-xxl-absolute.top-4, .p-xxl-absolute .top-4,
-  .p-xxl-fixed.top-4,
-  .p-xxl-fixed .top-4,
-  .p-xxl-sticky.top-4,
-  .p-xxl-sticky .top-4,
-  .p-xxl-relative.top-4,
-  .p-xxl-relative .top-4,
-  .p-xxl-static.top-4,
-  .p-xxl-static .top-4 {
+  .p-xxl-absolute.left-xxl-3, .p-xxl-absolute .left-xxl-3,
+  .p-xxl-sticky.left-xxl-3,
+  .p-xxl-sticky .left-xxl-3,
+  .p-xxl-relative.left-xxl-3,
+  .p-xxl-relative .left-xxl-3,
+  .p-xxl-fixed.left-xxl-3,
+  .p-xxl-fixed .left-xxl-3 {
+    left: 30%;
+  }
+  .p-xxl-absolute.right-xxl-3, .p-xxl-absolute .right-xxl-3,
+  .p-xxl-sticky.right-xxl-3,
+  .p-xxl-sticky .right-xxl-3,
+  .p-xxl-relative.right-xxl-3,
+  .p-xxl-relative .right-xxl-3,
+  .p-xxl-fixed.right-xxl-3,
+  .p-xxl-fixed .right-xxl-3 {
+    right: 30%;
+  }
+  .p-xxl-absolute.top-xxl-4, .p-xxl-absolute .top-xxl-4,
+  .p-xxl-sticky.top-xxl-4,
+  .p-xxl-sticky .top-xxl-4,
+  .p-xxl-relative.top-xxl-4,
+  .p-xxl-relative .top-xxl-4,
+  .p-xxl-fixed.top-xxl-4,
+  .p-xxl-fixed .top-xxl-4 {
     top: 40%;
   }
-  .p-xxl-absolute.left-4, .p-xxl-absolute .left-4,
-  .p-xxl-fixed.left-4,
-  .p-xxl-fixed .left-4,
-  .p-xxl-sticky.left-4,
-  .p-xxl-sticky .left-4,
-  .p-xxl-relative.left-4,
-  .p-xxl-relative .left-4,
-  .p-xxl-static.left-4,
-  .p-xxl-static .left-4 {
-    left: 40%;
-  }
-  .p-xxl-absolute.right-4, .p-xxl-absolute .right-4,
-  .p-xxl-fixed.right-4,
-  .p-xxl-fixed .right-4,
-  .p-xxl-sticky.right-4,
-  .p-xxl-sticky .right-4,
-  .p-xxl-relative.right-4,
-  .p-xxl-relative .right-4,
-  .p-xxl-static.right-4,
-  .p-xxl-static .right-4 {
-    right: 40%;
-  }
-  .p-xxl-absolute.bottom-4, .p-xxl-absolute .bottom-4,
-  .p-xxl-fixed.bottom-4,
-  .p-xxl-fixed .bottom-4,
-  .p-xxl-sticky.bottom-4,
-  .p-xxl-sticky .bottom-4,
-  .p-xxl-relative.bottom-4,
-  .p-xxl-relative .bottom-4,
-  .p-xxl-static.bottom-4,
-  .p-xxl-static .bottom-4 {
+  .p-xxl-absolute.bottom-xxl-4, .p-xxl-absolute .bottom-xxl-4,
+  .p-xxl-sticky.bottom-xxl-4,
+  .p-xxl-sticky .bottom-xxl-4,
+  .p-xxl-relative.bottom-xxl-4,
+  .p-xxl-relative .bottom-xxl-4,
+  .p-xxl-fixed.bottom-xxl-4,
+  .p-xxl-fixed .bottom-xxl-4 {
     bottom: 40%;
   }
-  .p-xxl-absolute.top-5, .p-xxl-absolute .top-5,
-  .p-xxl-fixed.top-5,
-  .p-xxl-fixed .top-5,
-  .p-xxl-sticky.top-5,
-  .p-xxl-sticky .top-5,
-  .p-xxl-relative.top-5,
-  .p-xxl-relative .top-5,
-  .p-xxl-static.top-5,
-  .p-xxl-static .top-5 {
+  .p-xxl-absolute.left-xxl-4, .p-xxl-absolute .left-xxl-4,
+  .p-xxl-sticky.left-xxl-4,
+  .p-xxl-sticky .left-xxl-4,
+  .p-xxl-relative.left-xxl-4,
+  .p-xxl-relative .left-xxl-4,
+  .p-xxl-fixed.left-xxl-4,
+  .p-xxl-fixed .left-xxl-4 {
+    left: 40%;
+  }
+  .p-xxl-absolute.right-xxl-4, .p-xxl-absolute .right-xxl-4,
+  .p-xxl-sticky.right-xxl-4,
+  .p-xxl-sticky .right-xxl-4,
+  .p-xxl-relative.right-xxl-4,
+  .p-xxl-relative .right-xxl-4,
+  .p-xxl-fixed.right-xxl-4,
+  .p-xxl-fixed .right-xxl-4 {
+    right: 40%;
+  }
+  .p-xxl-absolute.top-xxl-5, .p-xxl-absolute .top-xxl-5,
+  .p-xxl-sticky.top-xxl-5,
+  .p-xxl-sticky .top-xxl-5,
+  .p-xxl-relative.top-xxl-5,
+  .p-xxl-relative .top-xxl-5,
+  .p-xxl-fixed.top-xxl-5,
+  .p-xxl-fixed .top-xxl-5 {
     top: 50%;
   }
-  .p-xxl-absolute.left-5, .p-xxl-absolute .left-5,
-  .p-xxl-fixed.left-5,
-  .p-xxl-fixed .left-5,
-  .p-xxl-sticky.left-5,
-  .p-xxl-sticky .left-5,
-  .p-xxl-relative.left-5,
-  .p-xxl-relative .left-5,
-  .p-xxl-static.left-5,
-  .p-xxl-static .left-5 {
-    left: 50%;
-  }
-  .p-xxl-absolute.right-5, .p-xxl-absolute .right-5,
-  .p-xxl-fixed.right-5,
-  .p-xxl-fixed .right-5,
-  .p-xxl-sticky.right-5,
-  .p-xxl-sticky .right-5,
-  .p-xxl-relative.right-5,
-  .p-xxl-relative .right-5,
-  .p-xxl-static.right-5,
-  .p-xxl-static .right-5 {
-    right: 50%;
-  }
-  .p-xxl-absolute.bottom-5, .p-xxl-absolute .bottom-5,
-  .p-xxl-fixed.bottom-5,
-  .p-xxl-fixed .bottom-5,
-  .p-xxl-sticky.bottom-5,
-  .p-xxl-sticky .bottom-5,
-  .p-xxl-relative.bottom-5,
-  .p-xxl-relative .bottom-5,
-  .p-xxl-static.bottom-5,
-  .p-xxl-static .bottom-5 {
+  .p-xxl-absolute.bottom-xxl-5, .p-xxl-absolute .bottom-xxl-5,
+  .p-xxl-sticky.bottom-xxl-5,
+  .p-xxl-sticky .bottom-xxl-5,
+  .p-xxl-relative.bottom-xxl-5,
+  .p-xxl-relative .bottom-xxl-5,
+  .p-xxl-fixed.bottom-xxl-5,
+  .p-xxl-fixed .bottom-xxl-5 {
     bottom: 50%;
   }
-  .p-xxl-absolute.top-6, .p-xxl-absolute .top-6,
-  .p-xxl-fixed.top-6,
-  .p-xxl-fixed .top-6,
-  .p-xxl-sticky.top-6,
-  .p-xxl-sticky .top-6,
-  .p-xxl-relative.top-6,
-  .p-xxl-relative .top-6,
-  .p-xxl-static.top-6,
-  .p-xxl-static .top-6 {
+  .p-xxl-absolute.left-xxl-5, .p-xxl-absolute .left-xxl-5,
+  .p-xxl-sticky.left-xxl-5,
+  .p-xxl-sticky .left-xxl-5,
+  .p-xxl-relative.left-xxl-5,
+  .p-xxl-relative .left-xxl-5,
+  .p-xxl-fixed.left-xxl-5,
+  .p-xxl-fixed .left-xxl-5 {
+    left: 50%;
+  }
+  .p-xxl-absolute.right-xxl-5, .p-xxl-absolute .right-xxl-5,
+  .p-xxl-sticky.right-xxl-5,
+  .p-xxl-sticky .right-xxl-5,
+  .p-xxl-relative.right-xxl-5,
+  .p-xxl-relative .right-xxl-5,
+  .p-xxl-fixed.right-xxl-5,
+  .p-xxl-fixed .right-xxl-5 {
+    right: 50%;
+  }
+  .p-xxl-absolute.top-xxl-6, .p-xxl-absolute .top-xxl-6,
+  .p-xxl-sticky.top-xxl-6,
+  .p-xxl-sticky .top-xxl-6,
+  .p-xxl-relative.top-xxl-6,
+  .p-xxl-relative .top-xxl-6,
+  .p-xxl-fixed.top-xxl-6,
+  .p-xxl-fixed .top-xxl-6 {
     top: 60%;
   }
-  .p-xxl-absolute.left-6, .p-xxl-absolute .left-6,
-  .p-xxl-fixed.left-6,
-  .p-xxl-fixed .left-6,
-  .p-xxl-sticky.left-6,
-  .p-xxl-sticky .left-6,
-  .p-xxl-relative.left-6,
-  .p-xxl-relative .left-6,
-  .p-xxl-static.left-6,
-  .p-xxl-static .left-6 {
-    left: 60%;
-  }
-  .p-xxl-absolute.right-6, .p-xxl-absolute .right-6,
-  .p-xxl-fixed.right-6,
-  .p-xxl-fixed .right-6,
-  .p-xxl-sticky.right-6,
-  .p-xxl-sticky .right-6,
-  .p-xxl-relative.right-6,
-  .p-xxl-relative .right-6,
-  .p-xxl-static.right-6,
-  .p-xxl-static .right-6 {
-    right: 60%;
-  }
-  .p-xxl-absolute.bottom-6, .p-xxl-absolute .bottom-6,
-  .p-xxl-fixed.bottom-6,
-  .p-xxl-fixed .bottom-6,
-  .p-xxl-sticky.bottom-6,
-  .p-xxl-sticky .bottom-6,
-  .p-xxl-relative.bottom-6,
-  .p-xxl-relative .bottom-6,
-  .p-xxl-static.bottom-6,
-  .p-xxl-static .bottom-6 {
+  .p-xxl-absolute.bottom-xxl-6, .p-xxl-absolute .bottom-xxl-6,
+  .p-xxl-sticky.bottom-xxl-6,
+  .p-xxl-sticky .bottom-xxl-6,
+  .p-xxl-relative.bottom-xxl-6,
+  .p-xxl-relative .bottom-xxl-6,
+  .p-xxl-fixed.bottom-xxl-6,
+  .p-xxl-fixed .bottom-xxl-6 {
     bottom: 60%;
   }
-  .p-xxl-absolute.top-7, .p-xxl-absolute .top-7,
-  .p-xxl-fixed.top-7,
-  .p-xxl-fixed .top-7,
-  .p-xxl-sticky.top-7,
-  .p-xxl-sticky .top-7,
-  .p-xxl-relative.top-7,
-  .p-xxl-relative .top-7,
-  .p-xxl-static.top-7,
-  .p-xxl-static .top-7 {
+  .p-xxl-absolute.left-xxl-6, .p-xxl-absolute .left-xxl-6,
+  .p-xxl-sticky.left-xxl-6,
+  .p-xxl-sticky .left-xxl-6,
+  .p-xxl-relative.left-xxl-6,
+  .p-xxl-relative .left-xxl-6,
+  .p-xxl-fixed.left-xxl-6,
+  .p-xxl-fixed .left-xxl-6 {
+    left: 60%;
+  }
+  .p-xxl-absolute.right-xxl-6, .p-xxl-absolute .right-xxl-6,
+  .p-xxl-sticky.right-xxl-6,
+  .p-xxl-sticky .right-xxl-6,
+  .p-xxl-relative.right-xxl-6,
+  .p-xxl-relative .right-xxl-6,
+  .p-xxl-fixed.right-xxl-6,
+  .p-xxl-fixed .right-xxl-6 {
+    right: 60%;
+  }
+  .p-xxl-absolute.top-xxl-7, .p-xxl-absolute .top-xxl-7,
+  .p-xxl-sticky.top-xxl-7,
+  .p-xxl-sticky .top-xxl-7,
+  .p-xxl-relative.top-xxl-7,
+  .p-xxl-relative .top-xxl-7,
+  .p-xxl-fixed.top-xxl-7,
+  .p-xxl-fixed .top-xxl-7 {
     top: 70%;
   }
-  .p-xxl-absolute.left-7, .p-xxl-absolute .left-7,
-  .p-xxl-fixed.left-7,
-  .p-xxl-fixed .left-7,
-  .p-xxl-sticky.left-7,
-  .p-xxl-sticky .left-7,
-  .p-xxl-relative.left-7,
-  .p-xxl-relative .left-7,
-  .p-xxl-static.left-7,
-  .p-xxl-static .left-7 {
-    left: 70%;
-  }
-  .p-xxl-absolute.right-7, .p-xxl-absolute .right-7,
-  .p-xxl-fixed.right-7,
-  .p-xxl-fixed .right-7,
-  .p-xxl-sticky.right-7,
-  .p-xxl-sticky .right-7,
-  .p-xxl-relative.right-7,
-  .p-xxl-relative .right-7,
-  .p-xxl-static.right-7,
-  .p-xxl-static .right-7 {
-    right: 70%;
-  }
-  .p-xxl-absolute.bottom-7, .p-xxl-absolute .bottom-7,
-  .p-xxl-fixed.bottom-7,
-  .p-xxl-fixed .bottom-7,
-  .p-xxl-sticky.bottom-7,
-  .p-xxl-sticky .bottom-7,
-  .p-xxl-relative.bottom-7,
-  .p-xxl-relative .bottom-7,
-  .p-xxl-static.bottom-7,
-  .p-xxl-static .bottom-7 {
+  .p-xxl-absolute.bottom-xxl-7, .p-xxl-absolute .bottom-xxl-7,
+  .p-xxl-sticky.bottom-xxl-7,
+  .p-xxl-sticky .bottom-xxl-7,
+  .p-xxl-relative.bottom-xxl-7,
+  .p-xxl-relative .bottom-xxl-7,
+  .p-xxl-fixed.bottom-xxl-7,
+  .p-xxl-fixed .bottom-xxl-7 {
     bottom: 70%;
   }
-  .p-xxl-absolute.top-8, .p-xxl-absolute .top-8,
-  .p-xxl-fixed.top-8,
-  .p-xxl-fixed .top-8,
-  .p-xxl-sticky.top-8,
-  .p-xxl-sticky .top-8,
-  .p-xxl-relative.top-8,
-  .p-xxl-relative .top-8,
-  .p-xxl-static.top-8,
-  .p-xxl-static .top-8 {
+  .p-xxl-absolute.left-xxl-7, .p-xxl-absolute .left-xxl-7,
+  .p-xxl-sticky.left-xxl-7,
+  .p-xxl-sticky .left-xxl-7,
+  .p-xxl-relative.left-xxl-7,
+  .p-xxl-relative .left-xxl-7,
+  .p-xxl-fixed.left-xxl-7,
+  .p-xxl-fixed .left-xxl-7 {
+    left: 70%;
+  }
+  .p-xxl-absolute.right-xxl-7, .p-xxl-absolute .right-xxl-7,
+  .p-xxl-sticky.right-xxl-7,
+  .p-xxl-sticky .right-xxl-7,
+  .p-xxl-relative.right-xxl-7,
+  .p-xxl-relative .right-xxl-7,
+  .p-xxl-fixed.right-xxl-7,
+  .p-xxl-fixed .right-xxl-7 {
+    right: 70%;
+  }
+  .p-xxl-absolute.top-xxl-8, .p-xxl-absolute .top-xxl-8,
+  .p-xxl-sticky.top-xxl-8,
+  .p-xxl-sticky .top-xxl-8,
+  .p-xxl-relative.top-xxl-8,
+  .p-xxl-relative .top-xxl-8,
+  .p-xxl-fixed.top-xxl-8,
+  .p-xxl-fixed .top-xxl-8 {
     top: 80%;
   }
-  .p-xxl-absolute.left-8, .p-xxl-absolute .left-8,
-  .p-xxl-fixed.left-8,
-  .p-xxl-fixed .left-8,
-  .p-xxl-sticky.left-8,
-  .p-xxl-sticky .left-8,
-  .p-xxl-relative.left-8,
-  .p-xxl-relative .left-8,
-  .p-xxl-static.left-8,
-  .p-xxl-static .left-8 {
-    left: 80%;
-  }
-  .p-xxl-absolute.right-8, .p-xxl-absolute .right-8,
-  .p-xxl-fixed.right-8,
-  .p-xxl-fixed .right-8,
-  .p-xxl-sticky.right-8,
-  .p-xxl-sticky .right-8,
-  .p-xxl-relative.right-8,
-  .p-xxl-relative .right-8,
-  .p-xxl-static.right-8,
-  .p-xxl-static .right-8 {
-    right: 80%;
-  }
-  .p-xxl-absolute.bottom-8, .p-xxl-absolute .bottom-8,
-  .p-xxl-fixed.bottom-8,
-  .p-xxl-fixed .bottom-8,
-  .p-xxl-sticky.bottom-8,
-  .p-xxl-sticky .bottom-8,
-  .p-xxl-relative.bottom-8,
-  .p-xxl-relative .bottom-8,
-  .p-xxl-static.bottom-8,
-  .p-xxl-static .bottom-8 {
+  .p-xxl-absolute.bottom-xxl-8, .p-xxl-absolute .bottom-xxl-8,
+  .p-xxl-sticky.bottom-xxl-8,
+  .p-xxl-sticky .bottom-xxl-8,
+  .p-xxl-relative.bottom-xxl-8,
+  .p-xxl-relative .bottom-xxl-8,
+  .p-xxl-fixed.bottom-xxl-8,
+  .p-xxl-fixed .bottom-xxl-8 {
     bottom: 80%;
   }
-  .p-xxl-absolute.top-9, .p-xxl-absolute .top-9,
-  .p-xxl-fixed.top-9,
-  .p-xxl-fixed .top-9,
-  .p-xxl-sticky.top-9,
-  .p-xxl-sticky .top-9,
-  .p-xxl-relative.top-9,
-  .p-xxl-relative .top-9,
-  .p-xxl-static.top-9,
-  .p-xxl-static .top-9 {
+  .p-xxl-absolute.left-xxl-8, .p-xxl-absolute .left-xxl-8,
+  .p-xxl-sticky.left-xxl-8,
+  .p-xxl-sticky .left-xxl-8,
+  .p-xxl-relative.left-xxl-8,
+  .p-xxl-relative .left-xxl-8,
+  .p-xxl-fixed.left-xxl-8,
+  .p-xxl-fixed .left-xxl-8 {
+    left: 80%;
+  }
+  .p-xxl-absolute.right-xxl-8, .p-xxl-absolute .right-xxl-8,
+  .p-xxl-sticky.right-xxl-8,
+  .p-xxl-sticky .right-xxl-8,
+  .p-xxl-relative.right-xxl-8,
+  .p-xxl-relative .right-xxl-8,
+  .p-xxl-fixed.right-xxl-8,
+  .p-xxl-fixed .right-xxl-8 {
+    right: 80%;
+  }
+  .p-xxl-absolute.top-xxl-9, .p-xxl-absolute .top-xxl-9,
+  .p-xxl-sticky.top-xxl-9,
+  .p-xxl-sticky .top-xxl-9,
+  .p-xxl-relative.top-xxl-9,
+  .p-xxl-relative .top-xxl-9,
+  .p-xxl-fixed.top-xxl-9,
+  .p-xxl-fixed .top-xxl-9 {
     top: 90%;
   }
-  .p-xxl-absolute.left-9, .p-xxl-absolute .left-9,
-  .p-xxl-fixed.left-9,
-  .p-xxl-fixed .left-9,
-  .p-xxl-sticky.left-9,
-  .p-xxl-sticky .left-9,
-  .p-xxl-relative.left-9,
-  .p-xxl-relative .left-9,
-  .p-xxl-static.left-9,
-  .p-xxl-static .left-9 {
-    left: 90%;
-  }
-  .p-xxl-absolute.right-9, .p-xxl-absolute .right-9,
-  .p-xxl-fixed.right-9,
-  .p-xxl-fixed .right-9,
-  .p-xxl-sticky.right-9,
-  .p-xxl-sticky .right-9,
-  .p-xxl-relative.right-9,
-  .p-xxl-relative .right-9,
-  .p-xxl-static.right-9,
-  .p-xxl-static .right-9 {
-    right: 90%;
-  }
-  .p-xxl-absolute.bottom-9, .p-xxl-absolute .bottom-9,
-  .p-xxl-fixed.bottom-9,
-  .p-xxl-fixed .bottom-9,
-  .p-xxl-sticky.bottom-9,
-  .p-xxl-sticky .bottom-9,
-  .p-xxl-relative.bottom-9,
-  .p-xxl-relative .bottom-9,
-  .p-xxl-static.bottom-9,
-  .p-xxl-static .bottom-9 {
+  .p-xxl-absolute.bottom-xxl-9, .p-xxl-absolute .bottom-xxl-9,
+  .p-xxl-sticky.bottom-xxl-9,
+  .p-xxl-sticky .bottom-xxl-9,
+  .p-xxl-relative.bottom-xxl-9,
+  .p-xxl-relative .bottom-xxl-9,
+  .p-xxl-fixed.bottom-xxl-9,
+  .p-xxl-fixed .bottom-xxl-9 {
     bottom: 90%;
   }
-  .p-xxl-absolute.top-10, .p-xxl-absolute .top-10,
-  .p-xxl-fixed.top-10,
-  .p-xxl-fixed .top-10,
-  .p-xxl-sticky.top-10,
-  .p-xxl-sticky .top-10,
-  .p-xxl-relative.top-10,
-  .p-xxl-relative .top-10,
-  .p-xxl-static.top-10,
-  .p-xxl-static .top-10 {
+  .p-xxl-absolute.left-xxl-9, .p-xxl-absolute .left-xxl-9,
+  .p-xxl-sticky.left-xxl-9,
+  .p-xxl-sticky .left-xxl-9,
+  .p-xxl-relative.left-xxl-9,
+  .p-xxl-relative .left-xxl-9,
+  .p-xxl-fixed.left-xxl-9,
+  .p-xxl-fixed .left-xxl-9 {
+    left: 90%;
+  }
+  .p-xxl-absolute.right-xxl-9, .p-xxl-absolute .right-xxl-9,
+  .p-xxl-sticky.right-xxl-9,
+  .p-xxl-sticky .right-xxl-9,
+  .p-xxl-relative.right-xxl-9,
+  .p-xxl-relative .right-xxl-9,
+  .p-xxl-fixed.right-xxl-9,
+  .p-xxl-fixed .right-xxl-9 {
+    right: 90%;
+  }
+  .p-xxl-absolute.top-xxl-10, .p-xxl-absolute .top-xxl-10,
+  .p-xxl-sticky.top-xxl-10,
+  .p-xxl-sticky .top-xxl-10,
+  .p-xxl-relative.top-xxl-10,
+  .p-xxl-relative .top-xxl-10,
+  .p-xxl-fixed.top-xxl-10,
+  .p-xxl-fixed .top-xxl-10 {
     top: 100%;
   }
-  .p-xxl-absolute.left-10, .p-xxl-absolute .left-10,
-  .p-xxl-fixed.left-10,
-  .p-xxl-fixed .left-10,
-  .p-xxl-sticky.left-10,
-  .p-xxl-sticky .left-10,
-  .p-xxl-relative.left-10,
-  .p-xxl-relative .left-10,
-  .p-xxl-static.left-10,
-  .p-xxl-static .left-10 {
+  .p-xxl-absolute.bottom-xxl-10, .p-xxl-absolute .bottom-xxl-10,
+  .p-xxl-sticky.bottom-xxl-10,
+  .p-xxl-sticky .bottom-xxl-10,
+  .p-xxl-relative.bottom-xxl-10,
+  .p-xxl-relative .bottom-xxl-10,
+  .p-xxl-fixed.bottom-xxl-10,
+  .p-xxl-fixed .bottom-xxl-10 {
+    bottom: 100%;
+  }
+  .p-xxl-absolute.left-xxl-10, .p-xxl-absolute .left-xxl-10,
+  .p-xxl-sticky.left-xxl-10,
+  .p-xxl-sticky .left-xxl-10,
+  .p-xxl-relative.left-xxl-10,
+  .p-xxl-relative .left-xxl-10,
+  .p-xxl-fixed.left-xxl-10,
+  .p-xxl-fixed .left-xxl-10 {
     left: 100%;
   }
-  .p-xxl-absolute.right-10, .p-xxl-absolute .right-10,
-  .p-xxl-fixed.right-10,
-  .p-xxl-fixed .right-10,
-  .p-xxl-sticky.right-10,
-  .p-xxl-sticky .right-10,
-  .p-xxl-relative.right-10,
-  .p-xxl-relative .right-10,
-  .p-xxl-static.right-10,
-  .p-xxl-static .right-10 {
+  .p-xxl-absolute.right-xxl-10, .p-xxl-absolute .right-xxl-10,
+  .p-xxl-sticky.right-xxl-10,
+  .p-xxl-sticky .right-xxl-10,
+  .p-xxl-relative.right-xxl-10,
+  .p-xxl-relative .right-xxl-10,
+  .p-xxl-fixed.right-xxl-10,
+  .p-xxl-fixed .right-xxl-10 {
     right: 100%;
-  }
-  .p-xxl-absolute.bottom-10, .p-xxl-absolute .bottom-10,
-  .p-xxl-fixed.bottom-10,
-  .p-xxl-fixed .bottom-10,
-  .p-xxl-sticky.bottom-10,
-  .p-xxl-sticky .bottom-10,
-  .p-xxl-relative.bottom-10,
-  .p-xxl-relative .bottom-10,
-  .p-xxl-static.bottom-10,
-  .p-xxl-static .bottom-10 {
-    bottom: 100%;
   }
 }
 .z-index-0 {
@@ -12947,6 +12343,92 @@ table.table.table-bordered td {
   }
   .w-xxl-100 {
     width: 100%;
+  }
+}
+.h-25 {
+  height: 25vh;
+}
+
+.h-50 {
+  height: 50vh;
+}
+
+.h-75 {
+  height: 75vh;
+}
+
+.h-100 {
+  height: 100vh;
+}
+
+@media only screen and (min-width: 576px) {
+  .h-sm-25 {
+    height: 25vh;
+  }
+  .h-sm-50 {
+    height: 50vh;
+  }
+  .h-sm-75 {
+    height: 75vh;
+  }
+  .h-sm-100 {
+    height: 100vh;
+  }
+}
+@media only screen and (min-width: 768px) {
+  .h-md-25 {
+    height: 25vh;
+  }
+  .h-md-50 {
+    height: 50vh;
+  }
+  .h-md-75 {
+    height: 75vh;
+  }
+  .h-md-100 {
+    height: 100vh;
+  }
+}
+@media only screen and (min-width: 992px) {
+  .h-lg-25 {
+    height: 25vh;
+  }
+  .h-lg-50 {
+    height: 50vh;
+  }
+  .h-lg-75 {
+    height: 75vh;
+  }
+  .h-lg-100 {
+    height: 100vh;
+  }
+}
+@media only screen and (min-width: 1200px) {
+  .h-xl-25 {
+    height: 25vh;
+  }
+  .h-xl-50 {
+    height: 50vh;
+  }
+  .h-xl-75 {
+    height: 75vh;
+  }
+  .h-xl-100 {
+    height: 100vh;
+  }
+}
+@media only screen and (min-width: 1400px) {
+  .h-xxl-25 {
+    height: 25vh;
+  }
+  .h-xxl-50 {
+    height: 50vh;
+  }
+  .h-xxl-75 {
+    height: 75vh;
+  }
+  .h-xxl-100 {
+    height: 100vh;
   }
 }
 .carousel {

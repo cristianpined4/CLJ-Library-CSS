@@ -25,11 +25,28 @@
   }
 
   .row {
+    &:has(
+        .col:not([class*="sm-"]):not([class*="lg"]):not([class*="md"]):not(
+            [class*="xs"]
+          ):not([class*="xxl"]):not([class*="xl"])
+      ) {
+      display: flex;
+      flex-direction: row;
+      flex-wrap: wrap;
+    }
     .col {
       float: left;
       padding-left: calc($gutter-width / 2);
       padding-right: calc($gutter-width / 2);
+      &:not([class*="sm-"]):not([class*="lg"]):not([class*="md"]):not(
+          [class*="xs"]
+        ):not([class*="xxl"]):not([class*="xl"]) {
+        display: flex;
+        flex-direction: column;
+        flex: 1 1 auto;
+      }
     }
+
     & .col[class*="push-"],
     & .col[class*="pull-"] {
       position: relative;
