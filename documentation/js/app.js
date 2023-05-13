@@ -35,5 +35,8 @@ document.addEventListener("DOMContentLoaded", (e) => {
     navLink: "aside.menu nav.list a,.navbar-nav .navbar-item a",
     container: "section.contenido",
     path: "./documentation/views",
+    callback: () => {
+      hljs.highlightAll();
+    },
   });
 });

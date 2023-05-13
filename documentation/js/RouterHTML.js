@@ -1,5 +1,5 @@
 /* 
-    RouterHTML.js --Version: 1.0.0
+    RouterHTML.js --Version: 1.1.0
     Autor: Cristian Pineda <cristian.pineda.1997@outlook.com>
     License: MIT
     
@@ -7,6 +7,7 @@
         - navLink : css selector for links <a></a>.
         - container : css selector where the content will be displayed.
         - path : address of the folder where the .html files are stored.
+        - callback : function that will be executed after loading the content.
 
     Note: the link href path must match the name of the .html file without the extension.
 */
@@ -17,10 +18,12 @@ String.prototype.toCapitalizerCase = function () {
   return this.charAt(0).toUpperCase() + this.slice(1);
 };
 
-const RouterHTML = (option = { navLink: "", container: "", path: "" }) => {
+const RouterHTML = (
+  option = { navLink: "", container: "", path: "", callback: "" }
+) => {
   if (!(option instanceof Object))
     return console.error("> the option parameter must be an object");
-  let { navLink, container, path } = option,
+  let { navLink, container, path, callback } = option,
     title = document.title;
 
   if (/index(.html|.php)+/g.test(location.pathname))
@@ -28,7 +31,7 @@ const RouterHTML = (option = { navLink: "", container: "", path: "" }) => {
 
   document.querySelector(container).innerHTML = /*html*/ `
         <div id="loader" style="display: flex;justify-content: center;align-items: center;width: inherit;height: 80vh;">
-            <img src="./documentation/svg/bars.svg" style="max-width: 20%; max-height: auto;">
+            <img src="https://cristianpined4.github.io/CLJ-Library-CSS/documentation/svg/bars.svg" style="max-width: 20%; max-height: auto;">
         </div>
     `;
 
@@ -61,6 +64,7 @@ const RouterHTML = (option = { navLink: "", container: "", path: "" }) => {
           .replaceAll("<", "&lt;")
           .replaceAll(">", "&gt;");
       });
+      if (callback != "" && callback instanceof Function) callback();
     })
     .catch((err) => {
       document.title = `Page not found - ${title}`;
@@ -75,7 +79,7 @@ const RouterHTML = (option = { navLink: "", container: "", path: "" }) => {
         .forEach((el) => el.classList.remove("active"));
       document.querySelector(container).innerHTML = /*html*/ `
                 <div id="loader" style="display: flex;justify-content: center;align-items: center;width: inherit;height: 80vh;">
-                    <img src="./documentation/svg/bars.svg" style="max-width: 20%; max-height: auto;">
+                    <img src="https://cristianpined4.github.io/CLJ-Library-CSS/documentation/svg/bars.svg" style="max-width: 20%; max-height: auto;">
                 </div>
             `;
       let hash = e.target.hash.replace("#/", "");
@@ -101,6 +105,7 @@ const RouterHTML = (option = { navLink: "", container: "", path: "" }) => {
             document
               .querySelector(".navbar-collapse.collapse")
               .classList.remove("show");
+          if (callback != "" && callback instanceof Function) callback();
         })
         .catch((err) => {
           document.title = `Page not found - ${title}`;
