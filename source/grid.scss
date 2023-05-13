@@ -31,7 +31,6 @@
           ):not([class*="xxl"]):not([class*="xl"])
       ) {
       display: flex;
-      flex-direction: row;
       flex-wrap: wrap;
     }
     .col {
@@ -43,7 +42,7 @@
         ):not([class*="xxl"]):not([class*="xl"]) {
         display: flex;
         flex-direction: column;
-        flex: 1 1 auto;
+        flex: 1 0 0%;
       }
     }
 
