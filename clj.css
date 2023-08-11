@@ -12217,7 +12217,7 @@ table.table td,
 table.table th {
   padding: 8px;
   text-align: left;
-  vertical-align: top;
+  vertical-align: middle;
   border-top: 1px solid #dee2e6;
 }
 table tbody tr:hover,
